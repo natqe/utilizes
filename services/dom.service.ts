@@ -1,4 +1,4 @@
-import { values, isNumber } from 'lodash'
+import { values, isNaN } from 'lodash'
 
 export const
   offset = (item: Element | Partial<ReturnType<Element['getBoundingClientRect']>>) => {
@@ -40,10 +40,10 @@ export const
     return visible
 
   },
-  mapZIndex = () => values(document.querySelectorAll('body *'))
-    .map(a => ({
-      zIndex: parseFloat(getComputedStyle(a).zIndex),
-      element: a
-    }))
-    .filter(a => isNumber(a.zIndex))
-    .sort((a, b) => a.zIndex - b.zIndex)
+  mapZIndex = () => values(document.querySelectorAll('body *')).
+    map(element => ({
+      element,
+      zIndex: +getComputedStyle(element).zIndex
+    })).
+    filter(({ zIndex }) => !isNaN(zIndex)).
+    sort((a, b) => a.zIndex - b.zIndex)

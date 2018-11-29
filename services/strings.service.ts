@@ -48,13 +48,13 @@ export const
     return prefix + (num ? num + 1 : defaultNum)
 
   },
-  camelClassCase = word => upperFirst(camelCase(word))
+  camelClassCase = (word: string) => upperFirst(camelCase(word))
 
 
 export function ensureUnique(name: number, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
 export function ensureUnique(name: string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
 export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
-export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name { // more relaxed private implementation signature 
+export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name { // more relaxed private implementation signature
   if (!by ? !includes(items, name) : !some(items, { [by]: name })) return name
   else if (typeof name === 'string') return ensureUnique(incrementLast(name), items, by)
   else if (typeof name === 'number') return (!by ? max(items) : maxBy(items, by)[by]) + 1
