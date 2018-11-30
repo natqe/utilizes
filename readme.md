@@ -182,9 +182,9 @@ offset(specialElement.getBoundingClientRect())
 
 ### visiblePartOf
 
-Get the current offset of the given element
+Get the current x and y of given element. also return the offset.
 
-**Usage:** `visiblePartOf(elem: HTMLElement): { offsetTop: number, offsetLeft: number, x: number, y: number }`
+**Usage:** `visiblePartOf(elem: HTMLElement): { x: number, y: number, offsetTop: number, offsetLeft: number }`
 
 ```typescript
 import { visiblePartOf } from 'utilizes'
