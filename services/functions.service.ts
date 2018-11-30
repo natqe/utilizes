@@ -8,6 +8,11 @@ export const
     return func
 
   },
-  bind = that => each(that, (_, key) => {
-    if (typeof that[key] === 'function' && typeof that[key].bind === 'function') that[key] = that[key].bind(that)
-  })
+  bind = that => {
+
+    for (const key of Object.getOwnPropertyNames(Object.getPrototypeOf(that))) if (typeof that[key] === 'function' && that[key].bind === Function.prototype.bind)
+      that[key] = that[key].bind(that)
+
+    return that
+
+  }

@@ -6,23 +6,35 @@ Simple js utilities to speed your work
 
  - [Installation](#installation)
  <!-- - [Changelog](CHANGELOG.md) -->
- - [String](#string)
-    - [ensureUnique](#ensureUnique)
-    - [incrementLast](#incrementLast)
-    - [extractLastNumber](#extractLastNumber)
-    - [sumBestMatch](#sumBestMatch)
-    - [chars](#chars)
-    - [charsAll](#charsAll)
-    - [prefix](#prefix)
-    - [camelClassCase](#camelClassCase)
  - [Array](#Array)
     - [push](#push)
     - [someTruthy](#someTruthy)
     - [someTruthyRight](#someTruthyRight)
- - [Object](#object)
-    - [setRecursive](#setRecursive)
+ - [Dom](#Dom)
+    - [createStyle](#createStyle)
+    - [mapZIndex](#mapZIndex)
+    - [offset](#offset)
+    - [visiblePartOf](#visiblePartOf)
+ - [Function](#Function)
+    - [bind](#bind)
+    - [doDeclare](#doDeclare)
+ - [Number](#number)
+    - [rangeWithNames](#rangeWithNames)
+ - [Object](#Object)
     - [delRecursive](#delRecursive)
+    - [setRecursive](#setRecursive)
     - [toEnum](#toEnum)
+ - [String](#String)
+    - [camelClassCase](#camelClassCase)
+    - [chars](#chars)
+    - [charsAll](#charsAll)
+    - [ensureUnique](#ensureUnique)
+    - [extractLastNumber](#extractLastNumber)
+    - [incrementLast](#incrementLast)
+    - [prefix](#prefix)
+    - [sumBestMatch](#sumBestMatch)
+ - [Timer](#Timer)
+    - [interval](#interval)
 <!-- - [Date](#date)
     - [lengthSeconds](#lengthSeconds)
     - [secondsToTime](#secondsToTime)
@@ -30,18 +42,7 @@ Simple js utilities to speed your work
     - [amountOfWeekDaysInYear](#amountOfWeekDaysInYear)
     - [secondsToHours](#secondsToHours)
     - [isPast](#isPast)
-- [Dom](#dom)
-    - [visiblePartOf](#visiblePartOf)
-    - [offset](#offset)
-    - [mapZIndex](#mapZIndex)
-    - [createStyle](#createStyle)
-- [Function](#function)
-    - [doDeclare](#doDeclare)
-    - [bind](#bind)
-- [Number](#number)
-    - [rangeWithNames](#rangeWithNames)
-- [Timer](#Timer)
-    - [interval](#interval) -->
+-->
 
 ## Installation
 
@@ -60,143 +61,6 @@ using typescript:
   ```typescript
   import * as utilizes from 'utilizes'
   ```
-
-## String
-
-### ensureUnique
-
-Return safety unique string from bunch of items
-
-**Usage:** `ensureUnique(str: string, items: ({ [k: string]: any } | typeof str)[], by?: string | number): string`
-
-```typescript
-import { ensureUnique } from 'utilizes'
-
-ensureUnique('name', ['name', 'otherName', 'oneMoreName'])
-// Output: "name2"
-ensureUnique('dexter', [{ nickname: 'dexter' }, { nickname: 'dexter2' }, { nickname: 'otherNick' }], 'nickname')
-// Output: "dexter3"
-```
-
-### incrementLast
-
-Return string with the number in the end incremented
-
-**Usage:** `incrementLast(str: string, defaultNum?: number): string`
-
-```typescript
-import { incrementLast } from 'utilizes'
-
-incrementLast('name1')
-// Output: "name2"
-incrementLast('name01')
-// Output: "name02"
-incrementLast('name') // When the given string does not end with number, the default number is 2
-// Output: "name2"
-incrementLast('name', 5) // The second argument is the default number to use when the given string does not end with number
-// Output: "name5"
-incrementLast('name1', 5) // defaultNum as no effect in this case
-// Output: "name2"
-```
-
-### extractLastNumber
-
-Extract last number from given string. return array with the string without the number, and the number himself
-
-**Usage:** `extractLastNumber(str: string): [string, number]`
-
-```typescript
-import { extractLastNumber } from 'utilizes'
-
-extractLastNumber('name1')
-// Output: ["name", 1]
-extractLastNumber('name')
-// Output: ["name", null]
-extractLastNumber('name01')
-// Output: ["name0", 1]
-```
-
-### sumBestMatch
-
-get sum of best match for the given strings
-
-**Usage:** `sumBestMatch(mainStrings: string[], targetStrings: string[]): { bestMatch: { target: string, rating: number }, ratings: Array<{ target: string, rating: number }> }`
-
-```typescript
-import { sumBestMatch } from 'utilizes'
-
-sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
-// Output: {
-//     ratings: [
-//       { target: 'one', rating: 0.6888888888888888 },
-//       { target: 'two', rating: 0.35555555555555557 },
-//       { target: 'three', rating: 0.2222222222222222 }
-//     ],
-//     bestMatch: { target: 'one', rating: 0.6888888888888888 }
-//   }
-```
-
-### chars
-
-Return characters of the english language
-
-**Usage:** `chars(type?: "number" | "lower" | "upper"): string[]`
-
-```typescript
-import { chars } from 'utilizes'
-
-chars() // same as chars('lower')
-// Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-chars('upper')
-// Output: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-chars('number')
-// Output: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-```
-
-### charsAll
-
-Return characters of the english language
-
-**Usage:** `charsAll(): string[]`
-
-```typescript
-import { charsAll } from 'utilizes'
-
-charsAll()
-// Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-```
-
-### prefix
-
-Adding fix to beginning of string only if the string is present.
-
-**Usage:** `prefix(...args: string[]): string`
-
-```typescript
-import { prefix } from 'utilizes'
-
-prefix('Mr ', 'john')
-// Output: 'Mr john'
-prefix('Mr ', null)
-// Output: ''
-prefix('Mr ', 'john', ' is ', 'reach')
-// Output: 'Mr john is reach'
-prefix('Mr ', 'john', ' is ', undefined)
-// Output: 'Mr john'
-```
-
-### camelClassCase
-
-Convert given string to class like syntax
-
-**Usage:** `camelClassCase(str: string): string`
-
-```typescript
-import { camelClassCase } from 'utilizes'
-
-camelClassCase('mr_john')
-// Output: 'MrJohn'
-```
 
 ## Array
 
@@ -267,7 +131,171 @@ someTruthyRight([0, false, undefined, null], falsy => falsy)
 // Output: 0
 ```
 
+
+## Dom
+
+### createStyle
+
+Creates style element with the css inserted to him and ready to put into the document
+
+**Usage:** `createStyle(css: string): HTMLStyleElement`
+
+```typescript
+import { createStyle } from 'utilizes'
+
+document.head.appendChild(createStyle(`
+    .my-element{
+    color: red;
+    }
+`))
+```
+
+### mapZIndex
+
+Get information about z-index state in your application
+
+**Usage:** `mapZIndex(): Array<{ element: Element, zIndex: number }>`
+
+```typescript
+import { mapZIndex } from 'utilizes'
+
+mapZIndex()
+// Output: tree of your elements with the information about they z-index value
+```
+
+### offset
+
+Get the current offset of the given element
+
+**Usage:** `offset(item: Element | Partial<ClientRect> | Partial<DOMRect>): { top: number, left: number }`
+
+```typescript
+import { offset } from 'utilizes'
+
+const specialElement = document.getElementById('special-element')
+
+offset(specialElement)
+// Output the offset top and offset left of given element
+offset(specialElement.getBoundingClientRect())
+// also work
+```
+
+### visiblePartOf
+
+Get the current offset of the given element
+
+**Usage:** `visiblePartOf(elem: HTMLElement): { offsetTop: number, offsetLeft: number, x: number, y: number }`
+
+```typescript
+import { visiblePartOf } from 'utilizes'
+
+const specialElement = document.getElementById('special-element')
+
+visiblePartOf(specialElement)
+// Output the x and y of the element, also give you information about the current offset top and left
+```
+
+## Function
+
+### bind
+
+Bind all methods of the given object to the object
+
+**Usage:** `bind<T>(this: T): T`
+
+```typescript
+import { bind } from 'utilizes'
+
+class CoolService {
+
+  constructor() {
+    bind(this) // binding this via utilizes.bind
+  }
+
+  count = 0
+
+  increment() {
+    this.count++
+  }
+
+}
+
+const coolService = new CoolService()
+
+const increment = coolService.increment
+
+increment() // 'this.count++' point to coolService.count
+
+console.log(coolService.count)
+// Output: 1
+```
+
+### doDeclare
+
+Invoke your function when you declare it
+
+**Usage:** `doDeclare(func: Function, args?: any[]): Function`
+
+```typescript
+import { doDeclare } from 'utilizes'
+
+const func = doDeclare(()=> console.log(123))
+// Output: 123
+func()
+// Output: 123
+```
+
+## Number
+
+### rangeWithNames
+
+Creates an array of objects from given range, each object contain number and his name
+
+**Usage:** `rangeWithNames(start: number, end: number, step?: number): Array<{ number: number; name: string; }>`
+
+```typescript
+import { rangeWithNames } from 'utilizes'
+
+rangeWithNames(1,3)
+// Output: [ { number: 1, name: 'one' }, { number: 2, name: 'two' } ]
+rangeWithNames(3,5)
+// Output: [ { number: 3, name: 'three' }, { number: 4, name: 'four' } ]
+```
+
 ##Object
+
+### delRecursive
+
+Delete recursive properties of object
+
+**Usage:** `delRecursive<T extends Object>(on: T, to: any[]): T`
+
+```typescript
+import { delRecursive } from 'utilizes'
+
+const person = {
+  id: 1,
+  name: 'john',
+  metadata: {
+    personId: 1,
+    goodParson: true,
+    family: {
+      sister: 'lola'
+    }
+  }
+}
+
+const propsToDelete = ['id', 'personId', 'sister']
+
+delRecursive(person, propsToDelete)
+// Output:  {
+//   name: 'john',
+//   metadata: {
+//     goodParson: true,
+//     family: { }
+//   }
+// }
+```
 
 ### setRecursive
 
@@ -322,39 +350,6 @@ setRecursive(person, propsToSet, true) // This will set the given properties eve
 //   }
 ```
 
-### delRecursive
-
-Delete recursive properties of object
-
-**Usage:** `delRecursive<T extends Object>(on: T, to: any[]): T`
-
-```typescript
-import { delRecursive } from 'utilizes'
-
-const person = {
-  id: 1,
-  name: 'john',
-  metadata: {
-    personId: 1,
-    goodParson: true,
-    family: {
-      sister: 'lola'
-    }
-  }
-}
-
-const propsToDelete = ['id', 'personId', 'sister']
-
-delRecursive(person, propsToDelete)
-// Output:  {
-//   name: 'john',
-//   metadata: {
-//     goodParson: true,
-//     family: { }
-//   }
-// }
-```
-
 ### toEnum
 
 Convert given object to enum like
@@ -367,23 +362,184 @@ import { toEnum } from 'utilizes'
 toEnum({ 1: 'good' })
 // Output: { '1': 'good', good: '1' }
 ```
-<!--
-## Date
 
-### lengthSeconds
+## String
 
-Get difference between to hours as seconds in number
+### camelClassCase
 
-**Usage:** `lengthSeconds(start: string | Date, end: : string | Date): number`
+Convert given string to class like syntax
+
+**Usage:** `camelClassCase(str: string): string`
 
 ```typescript
-import { lengthSeconds } from 'utilizes'
-import * as moment from 'moment'
+import { camelClassCase } from 'utilizes'
 
-lengthSeconds(
-      moment().toDate(),
-      moment().add(2, 'seconds').toDate()
-)
-// Output: 2
+camelClassCase('mr_john')
+// Output: 'MrJohn'
+```
 
-``` -->
+### chars
+
+Return characters of the english language
+
+**Usage:** `chars(type?: "number" | "lower" | "upper"): string[]`
+
+```typescript
+import { chars } from 'utilizes'
+
+chars() // same as chars('lower')
+// Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+chars('upper')
+// Output: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+chars('number')
+// Output: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+```
+
+### charsAll
+
+Return characters of the english language
+
+**Usage:** `charsAll(): string[]`
+
+```typescript
+import { charsAll } from 'utilizes'
+
+charsAll()
+// Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+```
+
+### ensureUnique
+
+Return safety unique string from bunch of items
+
+**Usage:** `ensureUnique(str: string, items: ({ [k: string]: any } | typeof str)[], by?: string | number): string`
+
+```typescript
+import { ensureUnique } from 'utilizes'
+
+ensureUnique('name', ['name', 'otherName', 'oneMoreName'])
+// Output: "name2"
+ensureUnique('dexter', [{ nickname: 'dexter' }, { nickname: 'dexter2' }, { nickname: 'otherNick' }], 'nickname')
+// Output: "dexter3"
+```
+
+### extractLastNumber
+
+Extract last number from given string. return array with the string without the number, and the number himself
+
+**Usage:** `extractLastNumber(str: string): [string, number]`
+
+```typescript
+import { extractLastNumber } from 'utilizes'
+
+extractLastNumber('name1')
+// Output: ["name", 1]
+extractLastNumber('name')
+// Output: ["name", null]
+extractLastNumber('name01')
+// Output: ["name0", 1]
+```
+
+### incrementLast
+
+Return string with the number in the end incremented
+
+**Usage:** `incrementLast(str: string, defaultNum?: number): string`
+
+```typescript
+import { incrementLast } from 'utilizes'
+
+incrementLast('name1')
+// Output: "name2"
+incrementLast('name01')
+// Output: "name02"
+incrementLast('name') // When the given string does not end with number, the default number is 2
+// Output: "name2"
+incrementLast('name', 5) // The second argument is the default number to use when the given string does not end with number
+// Output: "name5"
+incrementLast('name1', 5) // defaultNum as no effect in this case
+// Output: "name2"
+```
+
+### prefix
+
+Adding fix to beginning of string only if the string is present.
+
+**Usage:** `prefix(...args: string[]): string`
+
+```typescript
+import { prefix } from 'utilizes'
+
+prefix('Mr ', 'john')
+// Output: 'Mr john'
+prefix('Mr ', null)
+// Output: ''
+prefix(null, 'john')
+// Output: 'john'
+prefix('Mr ', 'john', ' is', ' rich')
+// Output: 'Mr john is rich'
+prefix('Mr ', 'john', ' is ', undefined)
+// Output: 'Mr john'
+prefix('Mr ', 'john', null, ' rich')
+// Output: 'Mr john rich'
+```
+
+### sumBestMatch
+
+get sum of best match for the given strings
+
+**Usage:** `sumBestMatch(mainStrings: string[], targetStrings: string[]): { bestMatch: { target: string, rating: number }, ratings: Array<{ target: string, rating: number }> }`
+
+```typescript
+import { sumBestMatch } from 'utilizes'
+
+sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
+// Output: {
+//     ratings: [
+//       { target: 'one', rating: 0.6888888888888888 },
+//       { target: 'two', rating: 0.35555555555555557 },
+//       { target: 'three', rating: 0.2222222222222222 }
+//     ],
+//     bestMatch: { target: 'one', rating: 0.6888888888888888 }
+//   }
+```
+
+## Timer
+
+### interval
+
+This function is like native setInterval, except its stopped when the given handler returns true or an error is accrue
+
+**Usage:** `interval(handler: (...args: any[]) => boolean, timeout?: number, ...args: any[]): number`
+
+```typescript
+import { interval } from 'utilizes'
+
+let counter = 0
+
+interval(()=> ++counter === 5)
+// stopped when the counter incremented to 5
+// or you can stop it manually like you stop native setInterval function ->
+const handle = interval(()=> {
+
+    ++counter
+
+    if(counter === 5) clearInterval(handle)
+
+})
+
+// note: the interval is stopped when error is accrue ->
+interval(()=>{
+    throw new Error()
+})
+// log error to the console once and the interval no longer exist
+// you can stop this behavior by using trycatch ->
+interval(()=>{
+    try{
+        throw new Error()
+    }catch(e){
+        console.error(e)
+    }
+})
+// this will not stop the interval process
+```

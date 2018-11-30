@@ -46,4 +46,13 @@ export const
       zIndex: +getComputedStyle(element).zIndex
     })).
     filter(({ zIndex }) => !isNaN(zIndex)).
-    sort((a, b) => a.zIndex - b.zIndex)
+    sort((a, b) => a.zIndex - b.zIndex),
+  createStyle = (css: string) => {
+
+    const style = document.createElement('style')
+
+    style.textContent = css
+
+    return style
+
+  }

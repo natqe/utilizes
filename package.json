@@ -8,14 +8,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@types/lodash": "^4.14.116",
-    "@types/number-to-words": "^1.2.0",
-    "@types/string-similarity": "^1.2.0",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "number-to-words": "^1.2.4",
     "string-similarity": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.116",
+    "@types/number-to-words": "^1.2.0",
+    "@types/string-similarity": "^1.2.0"
   }
 }
