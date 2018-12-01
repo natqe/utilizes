@@ -99,7 +99,7 @@ import { push } from 'utilizes'
 
 ### someTruthy
 
-Checks if predicate returns truthy for any element of collection. Iteration is stopped once predicate returns truthy
+Checks if the callback returns truthy for any element of the array. Iteration is stopped once the callback returns truthy
 
 Return the truthy value or the last falsy value if none of the iteration returns truthy
 
@@ -118,7 +118,7 @@ someTruthy([0, 1, 2], num => num, true) // The last argument is for iterates fro
 
 ### someTruthyRight
 
-This function is like [someTruthy](#someTruthy) with the third argument evaluate to true
+This function is like [someTruthy](#someTruthy) but with the third argument evaluate to true
 
 **Usage:** `someTruthyRight<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y): Y`
 
@@ -457,7 +457,7 @@ incrementLast('name') // When the given string does not end with number, the def
 // Output: "name2"
 incrementLast('name', 5) // The second argument is the default number to use when the given string does not end with number
 // Output: "name5"
-incrementLast('name1', 5) // defaultNum as no effect in this case
+incrementLast('name1', 5) // defaultNum has no effect in this case
 // Output: "name2"
 ```
 
@@ -495,12 +495,12 @@ import { sumBestMatch } from 'utilizes'
 
 sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
 // Output: {
+//     bestMatch: { target: 'one', rating: 0.6888888888888888 },
 //     ratings: [
 //       { target: 'one', rating: 0.6888888888888888 },
 //       { target: 'two', rating: 0.35555555555555557 },
 //       { target: 'three', rating: 0.2222222222222222 }
-//     ],
-//     bestMatch: { target: 'one', rating: 0.6888888888888888 }
+//     ]
 //   }
 ```
 
