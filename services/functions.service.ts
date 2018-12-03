@@ -1,5 +1,3 @@
-import { each } from 'lodash'
-
 export const
   doDeclare = <T extends Function>(func: T, args = []): typeof func => {
 

@@ -21,7 +21,7 @@ export const
   someTruthyRight = <T, Y>(array: T[], callbackfn: (value: typeof array[0], index: number, list: typeof array) => Y) => someTruthy(array, callbackfn, true),
   push = (object, pathToArray, ...items) => {
 
-    if (!items.length && isArray(object) && object.push) {
+    if (!items.length && object.push === Array.prototype.push) {
 
       const item = pathToArray
 
