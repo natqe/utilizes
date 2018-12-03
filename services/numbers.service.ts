@@ -6,5 +6,3 @@ export const
     number,
     name: toWords(number)
   }))
-
-console.log(rangeWithNames(3, 5))

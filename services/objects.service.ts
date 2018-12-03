@@ -36,4 +36,5 @@ export const
 
     return object
 
-  }
+  },
+  setEach = <T extends object>(obs: T[], value: any, ...paths: Array<Many<string | number | symbol>>) => obs.map(object => set(object, value, ...paths))

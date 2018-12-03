@@ -23,6 +23,7 @@ Simple js utilities to speed your work
  - [Object](#Object)
     - [delRecursive](#delRecursive)
     - [set](#set)
+    - [setEach](#setEach)
     - [setRecursive](#setRecursive)
     - [toEnum](#toEnum)
  - [String](#String)
@@ -334,6 +335,35 @@ import { set } from 'utilizes'
   //   arr: [1],
   // }
 }
+```
+
+### setEach
+
+This function is like [set](#set) except its for multiple objects.
+
+**Usage:** `setEach<T extends object>(object: []T, value: any, ...paths: Many<string | number | symbol>[]): []T`
+
+```typescript
+import { setEach } from 'utilizes'
+
+const obs = [
+   {
+    prop: 1
+   },
+   {
+     prop: 1
+   }
+]
+
+setEach(ob, 2, 'prop')
+// Output:  [
+//    {
+//     prop: 2
+//    },
+//    {
+//      prop: 2
+//    }
+// ]
 ```
 
 ### setRecursive
