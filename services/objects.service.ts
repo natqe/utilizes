@@ -1,4 +1,4 @@
-import { invert, each, size, includes } from 'lodash'
+import { invert, each, size, includes, set as _set, Many, get } from 'lodash'
 
 const iterable = value => typeof value === 'function' || typeof value === 'object'
 
@@ -28,5 +28,12 @@ export const
     })
 
     return on
+
+  },
+  set = <T extends object>(object: T, value: any, ...paths: Array<Many<string | number | symbol>>) => {
+
+    each(paths, path => _set(object, path, typeof value !== 'function' ? value : value(get(object, path), path, object)))
+
+    return object
 
   }
