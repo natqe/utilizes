@@ -13,4 +13,5 @@ export const
 
     return that
 
-  }
+  },
+  invoke = doDeclare
