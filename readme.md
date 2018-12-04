@@ -530,6 +530,21 @@ incrementLast('name1', 5) // defaultNum has no effect in this case
 // Output: "name2"
 ```
 
+### maxByLastNumber
+
+Check array of items and return the item with the highest suffix number. if non is found return undefined.
+
+**Usage:** `maxByLastNumber(prefix: string, items: { [k: string]: any; }[] | string[], by?: string | number): string`
+
+```typescript
+import { maxByLastNumber } from 'utilizes'
+
+maxByLastNumber('name', ['name1', 'name2', 'otherName'])
+// Output: "name2"
+maxByLastNumber('dexter', [{ nickname: 'dexter3' }, { nickname: 'dexter2' }], 'nickname')
+// Output: "dexter3"
+```
+
 ### prefix
 
 Adding fix to beginning of string only if the string is present.

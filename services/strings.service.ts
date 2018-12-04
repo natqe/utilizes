@@ -8,7 +8,7 @@ const CHAR_TYPES = new class CHAR_TYPES {
 }
 
 export const
-  chars = (type: 'lower' | 'upper' | 'number' = CHAR_TYPES.lower) => {
+  chars = (type: keyof typeof CHAR_TYPES = CHAR_TYPES.lower) => {
 
     const notNum = type !== CHAR_TYPES.number
 
@@ -48,8 +48,22 @@ export const
     return prefix + (num ? num + 1 : defaultNum)
 
   },
-  camelClassCase = (word: string) => upperFirst(camelCase(word))
+  camelClassCase = (word: string) => upperFirst(camelCase(word)),
+  maxByLastNumber = (prefix: string, items: Array<{ [k: string]: any }> | Array<typeof prefix>, by?: string | number) => {
 
+    let accumulator: number
+
+    for (const curr of items) {
+
+      const [starts, num] = extractLastNumber(!by ? curr : curr[by])
+
+      if (starts === prefix) if(num > accumulator || typeof accumulator !== 'number') accumulator = num
+
+    }
+
+    if(typeof accumulator === 'number') return prefix + accumulator
+
+  }
 
 export function ensureUnique(name: number, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
 export function ensureUnique(name: string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
