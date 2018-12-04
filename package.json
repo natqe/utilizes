@@ -1,10 +1,14 @@
 {
   "name": "utilizes",
   "version": "1.2.56",
-  "description": "",
+  "description": "Simple js utilities to speed your work",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc && npm version patch && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natqe/utilizes.git"
   },
   "keywords": [],
   "author": "",
