@@ -234,7 +234,9 @@ console.log(coolService.count)
 
 ### doDeclare
 
-Invoke your function when you declare it
+Invoke your function when you declare it.
+
+aliases: "invoke"
 
 **Usage:** `doDeclare(func: Function, args?: any[]): Function`
 
