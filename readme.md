@@ -483,18 +483,18 @@ charsAll()
 
 Return safety unique string from bunch of items
 
-**Usage:** `ensureUnique(str: string, items: ({ [k: string]: any } | typeof str)[], by?: string | number): string`
+**Usage:** `ensureUnique(toBeUnique: string | number, items: ({ [k: typeof by]: typeof toBeUnique } | typeof toBeUnique)[], by?: string | number): typeof toBeUnique`
 
 ```typescript
 import { ensureUnique } from 'utilizes'
 
 ensureUnique('name', ['name', 'otherName', 'oneMoreName'])
 // Output: "name2"
-ensureUnique('dexter', [{ nickname: 'dexter' }, { nickname: 'dexter2' }, { nickname: 'otherNick' }], 'nickname')
+ensureUnique('dexter', [{ nickname: 'dexter' }, { nickname: 'dexter2' }, { nickname: 'otherNick' }], 'nickname') // the third argument is a prop to check when items are objects. default is null.
 // Output: "dexter3"
 ensureUnique(1, [1, 2, 3]) // work with numbers
 // Output: 4
-ensureUnique('name', ['name', 'Name2'], null, true) // case insensitive
+ensureUnique('name', ['name', 'Name2'], null, true) // the four argument is for case insensitive checking. default is false.
 // Output: "name3"
 ```
 
