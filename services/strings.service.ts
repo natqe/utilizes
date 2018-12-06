@@ -1,4 +1,4 @@
-import { chunk, flattenDeep, replace, reduce, find, maxBy, mean, some, max, upperFirst, camelCase, includes } from 'lodash'
+import { chunk, flattenDeep, replace, reduce, find, maxBy, mean, upperFirst, camelCase, includes, map } from 'lodash'
 import { findBestMatch, BestMatch, Rating } from 'string-similarity'
 
 const CHAR_TYPES = new class CHAR_TYPES {
@@ -57,19 +57,30 @@ export const
 
       const [starts, num] = extractLastNumber(!by ? curr : curr[by])
 
-      if (starts === prefix) if(num > accumulator || typeof accumulator !== 'number') accumulator = num
+      if (starts === prefix) if (num > accumulator || typeof accumulator !== 'number') accumulator = num
 
     }
 
-    if(typeof accumulator === 'number') return prefix + accumulator
+    if (typeof accumulator === 'number') return prefix + accumulator
 
   }
 
-export function ensureUnique(name: number, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
-export function ensureUnique(name: string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
-export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name // public signature
-export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number): typeof name { // more relaxed private implementation signature
-  if (!by ? !includes(items, name) : !some(items, { [by]: name })) return name
-  else if (typeof name === 'string') return ensureUnique(incrementLast(name), items, by)
-  else if (typeof name === 'number') return (!by ? max(items) : maxBy(items, by)[by]) + 1
+export function ensureUnique(name: number, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive?: boolean): typeof name // public signature
+export function ensureUnique(name: string, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive?: boolean): typeof name // public signature
+export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive?: boolean): typeof name // public signature
+export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive = false): typeof name { // more relaxed private implementation signature
+
+  let nameToCheck = name
+
+  if (by !== undefined && by !== null && items.every(item => item && typeof item !== 'string' && typeof item !== 'number')) items = map(items, by.toString())
+  if (caseInsensitive && typeof name !== 'number') {
+
+    items = items.map(item => item.toString().toLowerCase())
+
+    nameToCheck = name.toString().toLowerCase()
+
+  }
+
+  return !includes(items, nameToCheck) ? name : ensureUnique(typeof name !== 'number' ? incrementLast(name) : name + 1, items, by, caseInsensitive)
+
 }

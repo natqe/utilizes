@@ -4,39 +4,39 @@ Simple js utilities to speed your work
 
 ## Table of contents
 
- - [Installation](#installation)
+- [Installation](#installation)
  <!-- - [Changelog](CHANGELOG.md) -->
- - [Array](#Array)
-    - [push](#push)
-    - [someTruthy](#someTruthy)
-    - [someTruthyRight](#someTruthyRight)
- - [Dom](#Dom)
-    - [createStyle](#createStyle)
-    - [mapZIndex](#mapZIndex)
-    - [offset](#offset)
-    - [visiblePartOf](#visiblePartOf)
- - [Function](#Function)
-    - [bind](#bind)
-    - [doDeclare](#doDeclare)
- - [Number](#number)
-    - [rangeWithNames](#rangeWithNames)
- - [Object](#Object)
-    - [delRecursive](#delRecursive)
-    - [set](#set)
-    - [setEach](#setEach)
-    - [setRecursive](#setRecursive)
-    - [toEnum](#toEnum)
- - [String](#String)
-    - [camelClassCase](#camelClassCase)
-    - [chars](#chars)
-    - [charsAll](#charsAll)
-    - [ensureUnique](#ensureUnique)
-    - [extractLastNumber](#extractLastNumber)
-    - [incrementLast](#incrementLast)
-    - [prefix](#prefix)
-    - [sumBestMatch](#sumBestMatch)
- - [Timer](#Timer)
-    - [interval](#interval)
+- [Array](#Array)
+  - [push](#push)
+  - [someTruthy](#someTruthy)
+  - [someTruthyRight](#someTruthyRight)
+- [Dom](#Dom)
+  - [createStyle](#createStyle)
+  - [mapZIndex](#mapZIndex)
+  - [offset](#offset)
+  - [visiblePartOf](#visiblePartOf)
+- [Function](#Function)
+  - [bind](#bind)
+  - [doDeclare](#doDeclare)
+- [Number](#number)
+  - [rangeWithNames](#rangeWithNames)
+- [Object](#Object)
+  - [delRecursive](#delRecursive)
+  - [set](#set)
+  - [setEach](#setEach)
+  - [setRecursive](#setRecursive)
+  - [toEnum](#toEnum)
+- [String](#String)
+  - [camelClassCase](#camelClassCase)
+  - [chars](#chars)
+  - [charsAll](#charsAll)
+  - [ensureUnique](#ensureUnique)
+  - [extractLastNumber](#extractLastNumber)
+  - [incrementLast](#incrementLast)
+  - [prefix](#prefix)
+  - [sumBestMatch](#sumBestMatch)
+- [Timer](#Timer)
+  - [interval](#interval)
 <!-- - [Date](#date)
     - [lengthSeconds](#lengthSeconds)
     - [secondsToTime](#secondsToTime)
@@ -266,7 +266,7 @@ rangeWithNames(3,5)
 // Output: [ { number: 3, name: 'three' }, { number: 4, name: 'four' } ]
 ```
 
-##Object
+## Object
 
 ### delRecursive
 
@@ -492,6 +492,10 @@ ensureUnique('name', ['name', 'otherName', 'oneMoreName'])
 // Output: "name2"
 ensureUnique('dexter', [{ nickname: 'dexter' }, { nickname: 'dexter2' }, { nickname: 'otherNick' }], 'nickname')
 // Output: "dexter3"
+ensureUnique(1, [1, 2, 3]) // work with numbers
+// Output: 4
+ensureUnique('name', ['name', 'Name2'], null, true) // case insensitive
+// Output: "name3"
 ```
 
 ### extractLastNumber
