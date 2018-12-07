@@ -1,4 +1,4 @@
-import { chunk, flattenDeep, replace, reduce, find, maxBy, mean, upperFirst, camelCase, includes, map } from 'lodash'
+import { chunk, flattenDeep, replace, reduce, find, maxBy, mean, upperFirst, camelCase, includes, map, size } from 'lodash'
 import { findBestMatch, BestMatch, Rating } from 'string-similarity'
 
 const CHAR_TYPES = new class CHAR_TYPES {
@@ -65,22 +65,30 @@ export const
 
   }
 
-export function ensureUnique(name: number, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive?: boolean): typeof name // public signature
-export function ensureUnique(name: string, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive?: boolean): typeof name // public signature
-export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive?: boolean): typeof name // public signature
-export function ensureUnique(name: number | string, items: ({ [k: string]: any } | typeof name)[], by?: string | number, caseInsensitive = false): typeof name { // more relaxed private implementation signature
+export function ensureUnique(toBeUniq: number, items: Array<typeof toBeUniq> | Array<{ [k: string]: any }>, by?: string | number, caseInsensitive?: boolean): typeof toBeUniq // public signature
+export function ensureUnique(toBeUniq: string, items: Array<typeof toBeUniq> | Array<{ [k: string]: any }>, by?: string | number, caseInsensitive?: boolean): typeof toBeUniq // public signature
+export function ensureUnique(toBeUniq: number | string, items: Array<typeof toBeUniq> | Array<{ [k: string]: any }>, by?: string | number, caseInsensitive?: boolean): typeof toBeUniq // public signature
+export function ensureUnique(toBeUniq: number | string, items: Array<typeof toBeUniq> | Array<{ [k: string]: any }>, by?: string | number, caseInsensitive = false): typeof toBeUniq { // more relaxed private implementation signature
 
-  let nameToCheck = name
+  if (!size(items)) return toBeUniq
 
-  if (by !== undefined && by !== null && items.every(item => item && typeof item !== 'string' && typeof item !== 'number')) items = map(items, by.toString())
-  if (caseInsensitive && typeof name !== 'number') {
+  let nameToCheck = toBeUniq
 
-    items = items.map(item => item.toString().toLowerCase())
+  const itemsAsObjects = items as Array<{ [k: string]: typeof toBeUniq }>
 
-    nameToCheck = name.toString().toLowerCase()
+  if (by !== undefined && by !== null && itemsAsObjects.every(item => item && typeof item !== 'string' && typeof item !== 'number'))
+    items = map(itemsAsObjects, by.toString())
+
+  if (caseInsensitive && typeof toBeUniq !== 'number') {
+
+    items = (<Array<string>>items).map(item => item.toLowerCase())
+
+    nameToCheck = toBeUniq.toString().toLowerCase()
 
   }
 
-  return !includes(items, nameToCheck) ? name : ensureUnique(typeof name !== 'number' ? incrementLast(name) : name + 1, items, by, caseInsensitive)
+  return !includes(<Array<typeof toBeUniq>>items, nameToCheck) ?
+    toBeUniq :
+    ensureUnique(typeof toBeUniq !== 'number' ? incrementLast(toBeUniq) : toBeUniq + 1, items, by, caseInsensitive)
 
 }
