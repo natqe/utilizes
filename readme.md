@@ -11,6 +11,7 @@ Simple js utilities to speed your work
   - [someTruthy](#someTruthy)
   - [someTruthyRight](#someTruthyRight)
 - [Dom](#Dom)
+  - [area](#area)
   - [createStyle](#createStyle)
   - [mapZIndex](#mapZIndex)
   - [offset](#offset)
