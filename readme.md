@@ -136,6 +136,24 @@ someTruthyRight([0, false, undefined, null], falsy => falsy)
 
 ## Dom
 
+### area
+
+Return true if the given area is found on a given element, else false
+
+**Usage:** `area({ pageX: number; pageY: number; }, of: HTMLElement): boolean`
+
+```typescript
+import { area } from 'utilizes'
+
+const myButton = document.getElementById('my-button'))
+
+window.addEventListener('click', ({ pageX, pageY }) => {
+  if (area({ pageX, pageY }, myButton) {
+    alert(`you clicked on my button`)
+  }
+})
+```
+
 ### createStyle
 
 Creates style element with the css inserted to him and ready to put into the document

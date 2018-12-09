@@ -55,4 +55,17 @@ export const
 
     return style
 
+  },
+  area = ({ pageX, pageY }: { pageX: number, pageY: number }, of: HTMLElement) => {
+
+    const { x, y, offsetTop, offsetLeft } = visiblePartOf(of)
+
+    return pageY > offsetTop && pageY < (offsetTop + y) && pageX > offsetLeft && pageX < (offsetLeft + x)
+
   }
+
+window.addEventListener('click', ({ pageX, pageY }) => {
+  if (area({ pageX, pageY }, document.getElementById('my-button'))) {
+    alert(`you clicked on my button`)
+  }
+})
