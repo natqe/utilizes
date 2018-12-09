@@ -63,9 +63,3 @@ export const
     return pageY > offsetTop && pageY < (offsetTop + y) && pageX > offsetLeft && pageX < (offsetLeft + x)
 
   }
-
-window.addEventListener('click', ({ pageX, pageY }) => {
-  if (area({ pageX, pageY }, document.getElementById('my-button'))) {
-    alert(`you clicked on my button`)
-  }
-})
