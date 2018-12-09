@@ -1,5 +1,3 @@
-index.ts
 .gitignore
-/services
 .vscode
 tsconfig.json
