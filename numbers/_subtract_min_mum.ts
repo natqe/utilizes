@@ -1,0 +1,1 @@
+export const SUBTRACT_MIN_MUM = .000000000000002

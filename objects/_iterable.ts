@@ -1,0 +1,1 @@
+export const iterable = value => typeof value === 'function' || typeof value === 'object'
