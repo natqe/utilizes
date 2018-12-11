@@ -1,3 +1,5 @@
+import { bindAll } from 'lodash'
+
 export const
   doDeclare = <T extends Function>(func: T, args = []): typeof func => {
 
@@ -6,12 +8,5 @@ export const
     return func
 
   },
-  bind = that => {
-
-    for (const key of Object.getOwnPropertyNames(Object.getPrototypeOf(that))) if (typeof that[key] === 'function' && that[key].bind === Function.prototype.bind)
-      that[key] = that[key].bind(that)
-
-    return that
-
-  },
+  bind = that => bindAll(that, Object.getOwnPropertyNames(Object.getPrototypeOf(that))),
   invoke = doDeclare

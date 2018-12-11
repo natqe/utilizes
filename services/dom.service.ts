@@ -1,4 +1,4 @@
-import { values, isNaN } from 'lodash'
+import { values, isNaN, inRange } from 'lodash'
 
 export const
   offset = (item: Element | Partial<ReturnType<Element['getBoundingClientRect']>>) => {
@@ -60,6 +60,6 @@ export const
 
     const { x, y, offsetTop, offsetLeft } = visiblePartOf(of)
 
-    return pageY > offsetTop && pageY < (offsetTop + y) && pageX > offsetLeft && pageX < (offsetLeft + x)
+    return inRange(pageY, offsetTop, offsetTop + y) && inRange(pageX, offsetLeft, offsetLeft + x)
 
   }
