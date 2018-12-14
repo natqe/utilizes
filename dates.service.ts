@@ -1,5 +1,5 @@
-import * as moment from 'moment'
 import { times } from 'lodash'
+import moment from 'moment'
 
 const today = moment()
 

@@ -1,32 +1,106 @@
-export { oneOrAll } from './one-or-all'
-export { push } from './push'
-export { someTruthy } from './some-truthy'
-export { someTruthyRight } from './some-truthy-right'
-export { area } from './area'
-export { createStyle } from './create-style'
-export { mapZIndex } from './map-z-index'
-export { offset } from './offset'
-export { visiblePartOf } from './visible-part-of'
-export { bind } from './bind'
-export { doDeclare } from './do-declare'
-export { invoke } from './invoke'
-export { returns } from './returns'
-export { rangeWithNames } from './range-with-names'
-export { delRecursive } from './del-recursive'
-export { set } from './set'
-export { setEach } from './set-each'
-export { setRecursive } from './set-recursive'
-export { toEnum } from './to-enum'
-export { camelClassCase } from './camel-class-case'
-export { chars } from './chars'
-export { charsAll } from './chars-all'
-export { ensureUnique } from './ensure-unique'
-export { extractLastNumber } from './extract-last-number'
-export { incrementLast } from './increment-last'
-export { maxByLastNumber } from './max-by-last-number'
-export { prefix } from './prefix'
-export { sumBestMatch } from './sum-best-match'
-export { interval } from './interval'
-export * from './dates.service'
-import * as utilizes from '.'
-export default utilizes
+import { area } from './area'
+import { bind } from './bind'
+import { camelClassCase } from './camel-class-case'
+import { chars } from './chars'
+import { charsAll } from './chars-all'
+import { createStyle } from './create-style'
+import { amountOfWeekDaysInMonth, amountOfWeekDaysInYear, isPast, lengthSeconds, secondsToHours, secondsToTime } from './dates.service'
+import { delRecursive } from './del-recursive'
+import { doDeclare } from './do-declare'
+import { ensureUnique } from './ensure-unique'
+import { extractLastNumber } from './extract-last-number'
+import { incrementLast } from './increment-last'
+import { interval } from './interval'
+import { invoke } from './invoke'
+import { mapZIndex } from './map-z-index'
+import { maxByLastNumber } from './max-by-last-number'
+import { offset } from './offset'
+import { oneOrAll } from './one-or-all'
+import { prefix } from './prefix'
+import { push } from './push'
+import { rangeWithNames } from './range-with-names'
+import { returns } from './returns'
+import { set } from './set'
+import { setEach } from './set-each'
+import { setRecursive } from './set-recursive'
+import { someTruthy } from './some-truthy'
+import { someTruthyRight } from './some-truthy-right'
+import { sumBestMatch } from './sum-best-match'
+import { toEnum } from './to-enum'
+import { visiblePartOf } from './visible-part-of'
+
+export {
+  area,
+  bind,
+  camelClassCase,
+  chars,
+  charsAll,
+  createStyle,
+  amountOfWeekDaysInMonth,
+  amountOfWeekDaysInYear,
+  isPast,
+  lengthSeconds,
+  secondsToHours,
+  secondsToTime,
+  delRecursive,
+  doDeclare,
+  ensureUnique,
+  extractLastNumber,
+  incrementLast,
+  interval,
+  invoke,
+  mapZIndex,
+  maxByLastNumber,
+  offset,
+  oneOrAll,
+  prefix,
+  push,
+  rangeWithNames,
+  returns,
+  set,
+  setEach,
+  setRecursive,
+  someTruthy,
+  someTruthyRight,
+  sumBestMatch,
+  toEnum,
+  visiblePartOf
+}
+
+export default {
+  area,
+  bind,
+  camelClassCase,
+  chars,
+  charsAll,
+  createStyle,
+  amountOfWeekDaysInMonth,
+  amountOfWeekDaysInYear,
+  isPast,
+  lengthSeconds,
+  secondsToHours,
+  secondsToTime,
+  delRecursive,
+  doDeclare,
+  ensureUnique,
+  extractLastNumber,
+  incrementLast,
+  interval,
+  invoke,
+  mapZIndex,
+  maxByLastNumber,
+  offset,
+  oneOrAll,
+  prefix,
+  push,
+  rangeWithNames,
+  returns,
+  set,
+  setEach,
+  setRecursive,
+  someTruthy,
+  someTruthyRight,
+  sumBestMatch,
+  toEnum,
+  visiblePartOf
+}
