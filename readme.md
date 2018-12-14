@@ -7,6 +7,7 @@ Simple js utilities to speed your work
 - [Installation](#installation)
  <!-- - [Changelog](CHANGELOG.md) -->
 - [Array](#Array)
+  - [oneOrAll](#oneOrAll)
   - [push](#push)
   - [someTruthy](#someTruthy)
   - [someTruthyRight](#someTruthyRight)
@@ -19,6 +20,7 @@ Simple js utilities to speed your work
 - [Function](#Function)
   - [bind](#bind)
   - [doDeclare](#doDeclare)
+  - [returns](#returns)
 - [Number](#number)
   - [rangeWithNames](#rangeWithNames)
 - [Object](#Object)
@@ -34,6 +36,7 @@ Simple js utilities to speed your work
   - [ensureUnique](#ensureUnique)
   - [extractLastNumber](#extractLastNumber)
   - [incrementLast](#incrementLast)
+  - [maxByLastNumber](#maxByLastNumber)
   - [prefix](#prefix)
   - [sumBestMatch](#sumBestMatch)
 - [Timer](#Timer)
@@ -67,6 +70,25 @@ using typescript:
 
 ## Array
 
+### oneOrAll
+
+Return one when is have only one item, return all when is have more then one item.
+
+**Usage:** `oneOrAll<T>(array: Array<T> | T): Array<T> | T`
+
+```typescript
+import { oneOrAll } from '../one-or-all'
+
+oneOrAll(['item']) // Return one when is have only one item
+// Output: 'item'
+oneOrAll(['item', 'item2']) // Return all when is have more then one item
+// Output: ['item', 'item2']
+oneOrAll('item') // Return the value when is have value that are not array
+// Output: 'item'
+oneOrAll([]) // Ignore when its not have an items
+// Output: undefined
+```
+
 ### push
 
 Push safely to array. returning the length of the array - if the item pushed successfully.
@@ -74,7 +96,7 @@ Push safely to array. returning the length of the array - if the item pushed suc
 **Usage:** `push(object, pathToArray, ...items): number`
 
 ```typescript
-import { push } from 'utilizes'
+import { push } from 'utilizes/push'
 
 { /*example for using with array that inside an object */
 
@@ -109,11 +131,11 @@ Return the truthy value or the last falsy value if none of the iteration returns
 **Usage:** `someTruthy<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y, reverse?: boolean): Y`
 
 ```typescript
-import { someTruthy } from 'utilizes'
+import { someTruthy } from 'utilizes/some-truthy'
 
-someTruthy([0, 1, 2], num => num)
+someTruthy([0, 1, 2], num => num) // Return the first truthy value it find
 // Output: 1
-someTruthy([0, false, undefined, null], falsy => falsy)
+someTruthy([0, false, undefined, null], falsy => falsy) // Return the last falsy value it find if non of the given items is truthy
 // Output: null
 someTruthy([0, 1, 2], num => num, true) // The last argument is for iterates from right to left instead of left to right
 // Output: 2
@@ -126,11 +148,11 @@ This function is like [someTruthy](#someTruthy) but with the third argument eval
 **Usage:** `someTruthyRight<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y): Y`
 
 ```typescript
-import { someTruthyRight } from 'utilizes'
+import { someTruthyRight } from 'utilizes/some-truthy-right'
 
-someTruthyRight([0, 1, 2], num => num)
+someTruthyRight([0, 1, 2], num => num) // Return the first truthy value it found, from the right to left
 // Output: 2
-someTruthyRight([0, false, undefined, null], falsy => falsy)
+someTruthyRight([0, false, undefined, null], falsy => falsy) // Return the last falsy value if non of the given items is truthy, from the right to left
 // Output: 0
 ```
 
@@ -144,12 +166,12 @@ Return true if the given area is found on a given element, else false
 **Usage:** `area({ pageX: number; pageY: number; }, of: HTMLElement): boolean`
 
 ```typescript
-import { area } from 'utilizes'
+import { area } from 'utilizes/area'
 
 const myButton = document.getElementById('my-button'))
 
 window.addEventListener('click', ({ pageX, pageY }) => {
-  if (area({ pageX, pageY }, myButton) {
+  if (area({ pageX, pageY }, myButton)) {
     alert(`you clicked on my button`)
   }
 })
@@ -162,7 +184,7 @@ Creates style element with the css inserted to him and ready to put into the doc
 **Usage:** `createStyle(css: string): HTMLStyleElement`
 
 ```typescript
-import { createStyle } from 'utilizes'
+import { createStyle } from 'utilizes/create-style'
 
 document.head.appendChild(createStyle(`
     .my-element{
@@ -178,7 +200,7 @@ Get information about z-index state in your application
 **Usage:** `mapZIndex(): Array<{ element: Element, zIndex: number }>`
 
 ```typescript
-import { mapZIndex } from 'utilizes'
+import { mapZIndex } from 'utilizes/map-z-index'
 
 mapZIndex()
 // Output: tree of your elements with the information about they z-index value
@@ -191,7 +213,7 @@ Get the current offset of the given element
 **Usage:** `offset(item: Element | Partial<ClientRect> | Partial<DOMRect>): { top: number, left: number }`
 
 ```typescript
-import { offset } from 'utilizes'
+import { offset } from 'utilizes/offset'
 
 const specialElement = document.getElementById('special-element')
 
@@ -208,7 +230,7 @@ Get the current x and y of given element. also return the offset.
 **Usage:** `visiblePartOf(elem: HTMLElement): { x: number, y: number, offsetTop: number, offsetLeft: number }`
 
 ```typescript
-import { visiblePartOf } from 'utilizes'
+import { visiblePartOf } from 'utilizes/visible-part-of'
 
 const specialElement = document.getElementById('special-element')
 
@@ -225,7 +247,7 @@ Bind all methods of the given object to the object
 **Usage:** `bind<T>(this: T): T`
 
 ```typescript
-import { bind } from 'utilizes'
+import { bind } from 'utilizes/bind'
 
 class CoolService {
 
@@ -260,12 +282,25 @@ aliases: "invoke"
 **Usage:** `doDeclare(func: Function, args?: any[]): Function`
 
 ```typescript
-import { doDeclare } from 'utilizes'
+import { doDeclare } from 'utilizes/do-declare'
 
 const func = doDeclare(()=> console.log(123))
 // Output: 123
 func()
 // Output: 123
+```
+
+### returns
+
+Invoke set of functions with same arguments at ones, and get the results.
+
+**Usage:** `returns<T>(functions: Array<T>, ...args: any[]): Array<ReturnType<T>>`
+
+```typescript
+import { returns } from 'utilizes/returns'
+
+returns([(a, b) => a + b, (a, b)=> a - b], 2,1)
+// Output: [3,1]
 ```
 
 ## Number
@@ -277,7 +312,7 @@ Creates an array of objects from given range, each object contain number and his
 **Usage:** `rangeWithNames(start: number, end: number, step?: number): Array<{ number: number; name: string; }>`
 
 ```typescript
-import { rangeWithNames } from 'utilizes'
+import { rangeWithNames } from 'utilizes/range-with-names'
 
 rangeWithNames(1,3)
 // Output: [ { number: 1, name: 'one' }, { number: 2, name: 'two' } ]
@@ -294,7 +329,7 @@ Delete recursive properties of object
 **Usage:** `delRecursive<T extends Object>(on: T, to: any[]): T`
 
 ```typescript
-import { delRecursive } from 'utilizes'
+import { delRecursive } from 'utilizes/del-recursive'
 
 const person = {
   id: 1,
@@ -329,7 +364,7 @@ When value is function, the return value from it is set for the current path. if
 **Usage:** `set<T extends object>(object: T, value: any, ...paths: Many<string | number | symbol>[]): T`
 
 ```typescript
-import { set } from 'utilizes'
+import { set } from 'utilizes/set'
 
 {/*path can br one or more paths*/
   const ob = {
@@ -339,8 +374,8 @@ import { set } from 'utilizes'
   set(ob, 2, 'prop', 'anotherProp', '0.0')
   // Output:  {
   //   prop: 2,
-  //   anotherProp: 2
-  //   arr: [2],
+  //   anotherProp: 2,
+  //   0: [2],
   // }
 }
 
@@ -352,8 +387,8 @@ import { set } from 'utilizes'
   set(ob, (currentValue) => currentValue === 1 ? 2 : 1, 'prop', 'anotherProp', '0.0')
   // Output:  {
   //   prop: 2,
-  //   anotherProp: 1
-  //   arr: [1],
+  //   anotherProp: 1,
+  //   0: [1]
   // }
 }
 ```
@@ -365,7 +400,7 @@ This function is like [set](#set) except its for multiple objects.
 **Usage:** `setEach<T extends object>(object: []T, value: any, ...paths: Many<string | number | symbol>[]): []T`
 
 ```typescript
-import { setEach } from 'utilizes'
+import { setEach } from 'utilizes/set-each'
 
 const obs = [
    {
@@ -394,7 +429,7 @@ Set recursive properties on object
 **Usage:** `setRecursive<T extends Object>(on: T, to: { [k: string]: any; }, whenExist?: boolean): T`
 
 ```typescript
-import { setRecursive } from 'utilizes'
+import { setRecursive } from 'utilizes/set-recursive'
 
 const person = {
   id: 1,
@@ -403,6 +438,7 @@ const person = {
     personId: 1,
     goodParson: true,
     family: {
+      personId: 1,
       sister: 'lola'
     }
   }
@@ -423,7 +459,7 @@ setRecursive(person, propsToSet)
 //     }
 //   }
 // }
-setRecursive(person, propsToSet, true) // This will set the given properties even if they not exist initially
+setRecursive(person, propsToSet, false) // This will set the given properties even if they not exist initially
 // Output: {
 //   id: 2,
 //   personId: 2,
@@ -447,7 +483,7 @@ Convert given object to enum like
 **Usage:** `toEnum(ob: { [k: string]: any; }): { [x: string]: any; }`
 
 ```typescript
-import { toEnum } from 'utilizes'
+import { toEnum } from 'utilizes/to-enum'
 
 toEnum({ 1: 'good' })
 // Output: { '1': 'good', good: '1' }
@@ -462,7 +498,7 @@ Convert given string to class like syntax
 **Usage:** `camelClassCase(str: string): string`
 
 ```typescript
-import { camelClassCase } from 'utilizes'
+import { camelClassCase } from 'utilizes/camel-class-case'
 
 camelClassCase('mr_john')
 // Output: 'MrJohn'
@@ -475,7 +511,7 @@ Return characters of the english language
 **Usage:** `chars(type?: "number" | "lower" | "upper"): string[]`
 
 ```typescript
-import { chars } from 'utilizes'
+import { chars } from 'utilizes/chars'
 
 chars() // same as chars('lower')
 // Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -492,7 +528,7 @@ Return characters of the english language
 **Usage:** `charsAll(): string[]`
 
 ```typescript
-import { charsAll } from 'utilizes'
+import { charsAll } from 'utilizes/chars-all'
 
 charsAll()
 // Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -505,15 +541,15 @@ Return safety unique string from bunch of items
 **Usage:** `ensureUnique(toBeUniq: string | number, items: Array<typeof toBeUniq> | Array<{ [key: string]: any }>, by?: string | number): typeof toBeUniq`
 
 ```typescript
-import { ensureUnique } from 'utilizes'
+import { ensureUnique } from 'utilizes/ensure-unique'
 
-ensureUnique('name', ['name', 'otherName', 'oneMoreName'])
+ensureUnique('name', ['name', 'otherName', 'oneMoreName']) // Return the str with number in the end when the array have already the str, first time the number is 2.
 // Output: "name2"
 ensureUnique('dexter', [{ nickname: 'dexter' }, { nickname: 'dexter2' }], 'nickname') // The third argument is a prop to check when items are objects. default is null.
 // Output: "dexter3"
 ensureUnique(1, [1, 3]) // work with numbers
 // Output: 2
-ensureUnique('name', ['name', 'Name2'], null, true) // the four argument is for case insensitive checking. default is false.
+ensureUnique('name', ['name', 'Name2'], null, true) // the fourth argument is for case insensitive checking. default is false.
 // Output: "name3"
 ```
 
@@ -524,7 +560,7 @@ Extract last number from given string. return array with the string without the 
 **Usage:** `extractLastNumber(str: string): [string, number]`
 
 ```typescript
-import { extractLastNumber } from 'utilizes'
+import { extractLastNumber } from 'utilizes/extract-last-number'
 
 extractLastNumber('name1')
 // Output: ["name", 1]
@@ -541,7 +577,7 @@ Return string with the number in the end incremented
 **Usage:** `incrementLast(str: string, defaultNum?: number): string`
 
 ```typescript
-import { incrementLast } from 'utilizes'
+import { incrementLast } from 'utilizes/increment-last'
 
 incrementLast('name1')
 // Output: "name2"
@@ -562,7 +598,7 @@ Check array of items and return the item with the highest suffix number. if non 
 **Usage:** `maxByLastNumber(prefix: string, items: { [k: string]: any; }[] | string[], by?: string | number): string`
 
 ```typescript
-import { maxByLastNumber } from 'utilizes'
+import { maxByLastNumber } from 'utilizes/max-by-last-number'
 
 maxByLastNumber('name', ['name1', 'name2', 'otherName'])
 // Output: "name2"
@@ -577,7 +613,7 @@ Adding fix to beginning of string only if the string is present.
 **Usage:** `prefix(...args: string[]): string`
 
 ```typescript
-import { prefix } from 'utilizes'
+import { prefix } from 'utilizes/prefix'
 
 prefix('Mr ', 'john')
 // Output: 'Mr john'
@@ -600,7 +636,7 @@ get sum of best match for the given strings
 **Usage:** `sumBestMatch(mainStrings: string[], targetStrings: string[]): { bestMatch: { target: string, rating: number }, ratings: Array<{ target: string, rating: number }> }`
 
 ```typescript
-import { sumBestMatch } from 'utilizes'
+import { sumBestMatch } from 'utilizes/sum-best-match'
 
 sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
 // Output: {
@@ -622,7 +658,7 @@ This function is like native setInterval, except its stopped when the given hand
 **Usage:** `interval(handler: (...args: any[]) => boolean, timeout?: number, ...args: any[]): number`
 
 ```typescript
-import { interval } from 'utilizes'
+import { interval } from 'utilizes/interval'
 
 let counter = 0
 

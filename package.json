@@ -4,6 +4,7 @@
   "description": "Simple js utilities to speed your work",
   "main": "dist/index.js",
   "scripts": {
+    "test": "jest",
     "build": "tsc && npm version patch && npm publish"
   },
   "repository": {
@@ -20,8 +21,13 @@
     "string-similarity": "^1.2.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.116",
+    "@types/jest": "^23.3.10",
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.12.12",
     "@types/number-to-words": "^1.2.0",
-    "@types/string-similarity": "^1.2.0"
+    "@types/string-similarity": "^1.2.0",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
   }
 }

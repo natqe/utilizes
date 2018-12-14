@@ -5,6 +5,7 @@
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -13,11 +14,10 @@
     "outDir": "./dist",
     "baseUrl": "./src"
   },
-  "include": [
-    "*"
-  ],
+  "include": ["*"],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.test.ts",
+    "test"
   ]
 }
