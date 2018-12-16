@@ -1,4 +1,4 @@
-import { incrementLast } from '../increment-last'
+import { incrementLast } from '../src/increment-last'
 
 test(`Increment the last number of a given string`, () => expect(incrementLast('name1')).toBe(`name2`))
 

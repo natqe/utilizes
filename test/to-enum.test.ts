@@ -1,4 +1,4 @@
-import { toEnum } from '../to-enum'
+import { toEnum } from '../src/to-enum'
 
 const
   key = '1',

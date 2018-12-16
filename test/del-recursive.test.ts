@@ -1,4 +1,4 @@
-import { delRecursive } from '../del-recursive'
+import { delRecursive } from '../src/del-recursive'
 
 test(`Delete recursively all the props of the array input`, () => expect(
   delRecursive(

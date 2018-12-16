@@ -1,4 +1,4 @@
-import { area } from '../area'
+import { area } from '../src/area'
 
 test(`Return true if the given area is found on a given element, else false`, () => {
 

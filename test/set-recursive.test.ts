@@ -1,4 +1,4 @@
-import { setRecursive } from '../set-recursive'
+import { setRecursive } from '../src/set-recursive'
 
 const person = {
   id: 1,

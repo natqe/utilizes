@@ -1,11 +1,11 @@
 {
   "name": "utilizes",
-  "version": "1.2.66",
+  "version": "1.2.67",
   "description": "Simple js utilities to speed your work",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "tsc && npm version patch && npm publish"
+    "build": "rm -rf dist && tsc && npm version patch  && cp package.json dist/package.json && cd dist/ && npm publish"
   },
   "repository": {
     "type": "git",

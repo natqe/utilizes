@@ -14,10 +14,11 @@
     "outDir": "./dist",
     "baseUrl": "./src"
   },
-  "include": ["*"],
+  "include": ["src/*"],
   "exclude": [
     "node_modules",
     "**/*.test.ts",
-    "test"
+    "test",
+    "dist"
   ]
 }

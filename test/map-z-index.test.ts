@@ -1,4 +1,4 @@
-import { mapZIndex } from '../map-z-index'
+import { mapZIndex } from '../src/map-z-index'
 
 test(``, () => {
 

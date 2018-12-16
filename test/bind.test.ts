@@ -1,4 +1,4 @@
-import { bind } from '../bind'
+import { bind } from '../src/bind'
 
 class TestingBind {
 

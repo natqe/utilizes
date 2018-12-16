@@ -1,4 +1,4 @@
-import { someTruthy } from '../some-truthy'
+import { someTruthy } from '../src/some-truthy'
 
 test(`Return the first truthy value it find`, () => expect(someTruthy([0, 1, 2], num => num)).toBe(1))
 

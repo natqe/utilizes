@@ -1,4 +1,4 @@
-import { createStyle } from '../create-style'
+import { createStyle } from '../src/create-style'
 
 test(`Creating style element with the css text inserted to it`, () => {
 

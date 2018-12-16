@@ -1,4 +1,4 @@
-import { push } from '../push'
+import { push } from '../src/push'
 
 test(`Using with array that should be inside an object`, () => {
 

@@ -1,3 +1,3 @@
-import { visiblePartOf } from '../visible-part-of'
+import { visiblePartOf } from '../src/visible-part-of'
 
 test(``, () => expect(``).toBe(``))

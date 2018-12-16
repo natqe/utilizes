@@ -1,4 +1,4 @@
-import { prefix } from '../prefix'
+import { prefix } from '../src/prefix'
 
 test(`Adding fix to beginning of string`, () => expect(prefix(`Mr `, `john`)).toBe(`Mr john`))
 

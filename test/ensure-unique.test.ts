@@ -1,4 +1,4 @@
-import { ensureUnique } from '../ensure-unique'
+import { ensureUnique } from '../src/ensure-unique'
 
 test(`Return the str with number in the end when the array have already the str, first time the number is 2`, () => expect(ensureUnique('name', ['name', 'otherName', 'oneMoreName'])).toBe(`name2`))
 

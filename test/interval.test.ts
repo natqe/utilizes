@@ -1,4 +1,4 @@
-import { interval } from '../interval'
+import { interval } from '../src/interval'
 
 jest.useFakeTimers()
 

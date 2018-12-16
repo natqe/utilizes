@@ -1,4 +1,4 @@
-import { doDeclare } from '../do-declare'
+import { doDeclare } from '../src/do-declare'
 
 export default doDeclare(
   (use: typeof doDeclare) => {

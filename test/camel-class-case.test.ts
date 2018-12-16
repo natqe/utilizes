@@ -4,8 +4,8 @@ import lowerCase from 'lodash/lowerCase'
 import snakeCase from 'lodash/snakeCase'
 import startCase from 'lodash/startCase'
 import upperCase from 'lodash/upperCase'
-import { camelClassCase } from '../camel-class-case'
-import { returns } from '../returns'
+import { camelClassCase } from '../src/camel-class-case'
+import { returns } from '../src/returns'
 
 const expected = `CamelCaseClass`
 

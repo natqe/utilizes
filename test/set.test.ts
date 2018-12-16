@@ -1,4 +1,4 @@
-import { set } from '../set'
+import { set } from '../src/set'
 
 test(`Set value to path in object. path can br one or more path's`, () => expect(set({ prop: 1 }, 2, 'prop', 'anotherProp', '0.0')).toEqual({
   prop: 2,

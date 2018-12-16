@@ -1,4 +1,4 @@
-import { oneOrAll } from '../one-or-all'
+import { oneOrAll } from '../src/one-or-all'
 
 test(`Return the value when is have value that are not array`, () => expect(oneOrAll(0)).toBe(0))
 

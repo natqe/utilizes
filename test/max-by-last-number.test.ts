@@ -1,4 +1,4 @@
-import { maxByLastNumber } from '../max-by-last-number'
+import { maxByLastNumber } from '../src/max-by-last-number'
 
 test(`Return the item with the highest suffix number`, () => expect(maxByLastNumber(`name`, [`name1`, `name2`, `otherName`])).toBe(`name2`))
 
