@@ -214,7 +214,7 @@ const stopDetection = easyStyleShadow({
  'ion-not-styleable-element': `
     :host{
        padding-bottom: 5px;
-    };
+    }
     ion-child-element{
       display: none !important;
     }
