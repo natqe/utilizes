@@ -13,7 +13,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./src",
-    "sourceRoot": "node_modules/utilizes/src"
+    "sourceRoot": "../../node_modules/utilizes/src"
   },
   "include": ["src/*"],
   "exclude": [
