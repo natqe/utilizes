@@ -6,7 +6,7 @@ import { interval } from './interval'
 export const easyStyleShadow = (css: { [k: string]: string }, timeout = 0) => {
 
   let
-    cancel: boolean,
+    stopTracking = false,
     previousAll: Array<Element> = []
 
   const token = `easy-style-shadow-${random(toSafeInteger(Infinity))}`
@@ -30,13 +30,13 @@ export const easyStyleShadow = (css: { [k: string]: string }, timeout = 0) => {
 
       }
 
-      return cancel
+      return stopTracking
 
     },
     timeout
   )
 
-  return (value: typeof cancel) => cancel = value
+  return () => stopTracking = true
 
 }
 
