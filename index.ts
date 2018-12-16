@@ -4,7 +4,6 @@ import { camelClassCase } from './camel-class-case'
 import { chars } from './chars'
 import { charsAll } from './chars-all'
 import { createStyle } from './create-style'
-import { amountOfWeekDaysInMonth, amountOfWeekDaysInYear, isPast, lengthSeconds, secondsToHours, secondsToTime } from './dates.service'
 import { delRecursive } from './del-recursive'
 import { doDeclare } from './do-declare'
 import { ensureUnique } from './ensure-unique'
@@ -36,12 +35,6 @@ export {
   chars,
   charsAll,
   createStyle,
-  amountOfWeekDaysInMonth,
-  amountOfWeekDaysInYear,
-  isPast,
-  lengthSeconds,
-  secondsToHours,
-  secondsToTime,
   delRecursive,
   doDeclare,
   ensureUnique,
@@ -74,12 +67,6 @@ export default {
   chars,
   charsAll,
   createStyle,
-  amountOfWeekDaysInMonth,
-  amountOfWeekDaysInYear,
-  isPast,
-  lengthSeconds,
-  secondsToHours,
-  secondsToTime,
   delRecursive,
   doDeclare,
   ensureUnique,

@@ -59,13 +59,15 @@ $ npm i utilizes
 ```
 
 In Node.js:
+
 ```js
 const utilizes = require('utilizes')
 ```
 
-using typescript:
+using typescript or es6:
+
   ```typescript
-  import * as utilizes from 'utilizes'
+  import utilizes from 'utilizes'
   ```
 
 ## Array
@@ -77,7 +79,7 @@ Return one when is have only one item, return all when is have more then one ite
 **Usage:** `oneOrAll<T>(array: Array<T> | T): Array<T> | T`
 
 ```typescript
-import { oneOrAll } from '../one-or-all'
+import { oneOrAll } from 'utilizes/one-or-all'
 
 oneOrAll(['item']) // Return one when is have only one item
 // Output: 'item'
