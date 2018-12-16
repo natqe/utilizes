@@ -1,3 +1,4 @@
+import get from 'lodash/get'
 import random from 'lodash/random'
 import toSafeInteger from 'lodash/toSafeInteger'
 import { createStyle } from './create-style'
@@ -22,9 +23,19 @@ export const easyStyleShadow = (css: { [k: string]: string }, timeout = 0) => {
 
         for (const { shadowRoot, classList, localName } of previousAll) if (shadowRoot && css[localName] && !classList.contains(token)) {
 
+          const newStyle = createStyle(css[localName])
+
           classList.add(token)
 
-          shadowRoot.appendChild(createStyle(css[localName]))
+          try {
+
+            const { styleSheets, children } = shadowRoot
+
+            shadowRoot.insertBefore(newStyle, get(styleSheets.item(styleSheets.length - 1), `ownerNode.nextSibling`) || children.item(0))
+
+          } catch {
+            shadowRoot.appendChild(newStyle)
+          }
 
         }
 
