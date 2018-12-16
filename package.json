@@ -1,6 +1,6 @@
 {
   "name": "utilizes",
-  "version": "1.2.65",
+  "version": "1.2.66",
   "description": "Simple js utilities to speed your work",
   "main": "dist/index.js",
   "scripts": {
