@@ -1,41 +1,54 @@
+import each from 'lodash/each'
+import filter from 'lodash/filter'
 import get from 'lodash/get'
-import random from 'lodash/random'
-import toSafeInteger from 'lodash/toSafeInteger'
+import includes from 'lodash/includes'
+import map from 'lodash/map'
 import { createStyle } from './create-style'
 import { interval } from './interval'
 
 export const easyStyleShadow = (css: { [k: string]: string }, timeout = 0) => {
 
-  let
-    stopTracking = false,
-    previousAll: Array<Element> = []
+  let stopTracking = false
 
-  const token = `easy-style-shadow-${random(toSafeInteger(Infinity))}`
+  const
+    attachStyle = (items: NodeListOf<Element> | Array<Element>, styleText: string) => each(items, ({ shadowRoot }) => {
+
+      const newStyle = createStyle(styleText)
+
+      try {
+
+        const { styleSheets, children } = shadowRoot
+
+        shadowRoot.insertBefore(newStyle, get(styleSheets.item(styleSheets.length - 1), `ownerNode.nextSibling`) || children.item(0))
+
+      } catch {
+        shadowRoot.appendChild(newStyle)
+      }
+
+    }),
+    initialSelect = map(css, (styleText, selectors) => {
+
+      const elements = Array.from(document.querySelectorAll(selectors))
+
+      attachStyle(elements, styleText)
+
+      return { selectors, styleText, elements }
+
+    })
 
   interval(
     () => {
 
-      const all = document.all || document.getElementsByTagName(`*`)
 
-      if (previousAll.length !== all.length) {
+      for (const item of initialSelect) {
 
-        previousAll = Array.from(all)
+        const newElements = filter(document.querySelectorAll(item.selectors), target => !includes(item.elements, target))
 
-        for (const { shadowRoot, classList, localName } of previousAll) if (shadowRoot && css[localName] && !classList.contains(token)) {
+        if (newElements.length) {
 
-          const newStyle = createStyle(css[localName])
+          item.elements = [...item.elements, ...newElements]
 
-          classList.add(token)
-
-          try {
-
-            const { styleSheets, children } = shadowRoot
-
-            shadowRoot.insertBefore(newStyle, get(styleSheets.item(styleSheets.length - 1), `ownerNode.nextSibling`) || children.item(0))
-
-          } catch {
-            shadowRoot.appendChild(newStyle)
-          }
+          attachStyle(newElements, item.styleText)
 
         }
 
