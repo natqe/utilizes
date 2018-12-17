@@ -2,61 +2,51 @@ import each from 'lodash/each'
 import filter from 'lodash/filter'
 import get from 'lodash/get'
 import includes from 'lodash/includes'
-import map from 'lodash/map'
 import { createStyle } from './create-style'
+import { doDeclare } from './do-declare'
 import { interval } from './interval'
+import { push } from './push'
 
 export const easyStyleShadow = (css: { [k: string]: string }, timeout = 0) => {
 
-  let stopTracking = false
-
-  const
-    attachStyle = (items: NodeListOf<Element> | Array<Element>, styleText: string) => each(items, ({ shadowRoot }) => {
-
-      const newStyle = createStyle(styleText)
-
-      try {
-
-        const { styleSheets, children } = shadowRoot
-
-        shadowRoot.insertBefore(newStyle, get(styleSheets.item(styleSheets.length - 1), `ownerNode.nextSibling`) || children.item(0))
-
-      } catch {
-        shadowRoot.appendChild(newStyle)
-      }
-
-    }),
-    initialSelect = map(css, (styleText, selectors) => {
-
-      const elements = Array.from(document.querySelectorAll(selectors))
-
-      attachStyle(elements, styleText)
-
-      return { selectors, styleText, elements }
-
-    })
+  let
+    stopTracking = false,
+    mapElements: { [k: string]: Array<Element> } = {}
 
   interval(
-    () => {
+    doDeclare(() => {
 
+      each(css, (styleText, selectors) => {
 
-      for (const item of initialSelect) {
-
-        const newElements = filter(document.querySelectorAll(item.selectors), target => !includes(item.elements, target))
+        const newElements = filter(document.querySelectorAll(selectors), target => !includes(mapElements[selectors], target))
 
         if (newElements.length) {
 
-          item.elements = [...item.elements, ...newElements]
+          push(mapElements, selectors, ...newElements)
 
-          attachStyle(newElements, item.styleText)
+          for (const { shadowRoot } of newElements) {
+
+            const newStyle = createStyle(styleText)
+
+            try {
+
+              const { styleSheets, children } = shadowRoot
+
+              shadowRoot.insertBefore(newStyle, get(styleSheets.item(styleSheets.length - 1), `ownerNode.nextSibling`) || children.item(0))
+
+            } catch {
+              shadowRoot.appendChild(newStyle)
+            }
+
+          }
 
         }
 
-      }
+      })
 
       return stopTracking
 
-    },
+    }),
     timeout
   )
 
