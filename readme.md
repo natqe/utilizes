@@ -166,7 +166,7 @@ someTruthyRight([0, false, undefined, null], falsy => falsy) // Return the last 
 
 Return true if the given area is found on a given element, else false
 
-**Usage:** `area({ pageX: number; pageY: number; }, of: HTMLElement): boolean`
+**Usage:** `area({ pageX: number, pageY: number }, of: HTMLElement): boolean`
 
 ```typescript
 import { area } from 'utilizes/area'
@@ -205,7 +205,7 @@ so if you want to cancel the detection in any point, you can invoke the return f
 
 The second argument is for setting the timeout for detection cycle.
 
-**Usage:** `easyStyleShadow(css: { [k: string]: string; }, timeout?: number): Function`
+**Usage:** `easyStyleShadow(css: { [k: string]: string }, timeout?: number): Function`
 
 ```typescript
 import { easyStyleShadow } from 'utilizes/easy-style-shadow'
@@ -315,7 +315,7 @@ Invoke your function when you declare it.
 
 aliases: "invoke"
 
-**Usage:** `doDeclare(func: Function, args?: any[]): Function`
+**Usage:** `doDeclare(func: Function, args?: Array): Function`
 
 ```typescript
 import { doDeclare } from 'utilizes/do-declare'
@@ -330,7 +330,7 @@ func()
 
 Invoke set of functions with same arguments at ones, and get the results.
 
-**Usage:** `returns<T>(functions: Array<T>, ...args: any[]): Array<ReturnType<T>>`
+**Usage:** `returns<T>(functions: Array<T>, ...args: Array): Array<ReturnType<T>>`
 
 ```typescript
 import { returns } from 'utilizes/returns'
@@ -345,7 +345,7 @@ returns([(a, b) => a + b, (a, b)=> a - b], 2,1)
 
 Creates an array of objects from given range, each object contain number and his name
 
-**Usage:** `rangeWithNames(start: number, end: number, step?: number): Array<{ number: number; name: string; }>`
+**Usage:** `rangeWithNames(start: number, end: number, step?: number): Array<{ number: number, name: string }>`
 
 ```typescript
 import { rangeWithNames } from 'utilizes/range-with-names'
@@ -362,7 +362,7 @@ rangeWithNames(3,5)
 
 Delete recursive properties of object
 
-**Usage:** `delRecursive<T extends Object>(on: T, to: any[]): T`
+**Usage:** `delRecursive<T extends Object>(ob: T, toDelete: Array): T`
 
 ```typescript
 import { delRecursive } from 'utilizes/del-recursive'
@@ -462,7 +462,7 @@ setEach(ob, 2, 'prop')
 
 Set recursive properties on object
 
-**Usage:** `setRecursive<T extends Object>(on: T, to: { [k: string]: any; }, whenExist?: boolean): T`
+**Usage:** `setRecursive<T extends Object>(on: T, to: { [key: string]: any }, whenExist?: boolean): T`
 
 ```typescript
 import { setRecursive } from 'utilizes/set-recursive'
@@ -516,7 +516,7 @@ setRecursive(person, propsToSet, false) // This will set the given properties ev
 
 Convert given object to enum like
 
-**Usage:** `toEnum(ob: { [k: string]: any; }): { [x: string]: any; }`
+**Usage:** `toEnum(ob: { [key: string]: any }): { [key: string]: any }`
 
 ```typescript
 import { toEnum } from 'utilizes/to-enum'
@@ -544,7 +544,7 @@ camelClassCase('mr_john')
 
 Return characters of the english language
 
-**Usage:** `chars(type?: "number" | "lower" | "upper"): string[]`
+**Usage:** `chars(type?: "number" | "lower" | "upper"): Array<string>`
 
 ```typescript
 import { chars } from 'utilizes/chars'
@@ -561,7 +561,7 @@ chars('number')
 
 Return characters of the english language
 
-**Usage:** `charsAll(): string[]`
+**Usage:** `charsAll(): Array<string>`
 
 ```typescript
 import { charsAll } from 'utilizes/chars-all'

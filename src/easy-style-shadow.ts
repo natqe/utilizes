@@ -17,31 +17,33 @@ export const easyStyleShadow = (css: { [k: string]: string }, timeout = 0) => {
     doDeclare(() => {
 
       each(css, (styleText, selectors) => {
+        if (styleText && selectors) {
 
-        const newElements = filter(document.querySelectorAll(selectors), target => !includes(mapElements[selectors], target))
+          const newElements = filter(document.querySelectorAll(selectors), target => !includes(mapElements[selectors], target))
 
-        if (newElements.length) {
+          if (newElements.length) {
 
-          push(mapElements, selectors, ...newElements)
+            push(mapElements, selectors, ...newElements)
 
-          for (const { shadowRoot } of newElements) {
+            for (const { shadowRoot } of newElements) {
 
-            const newStyle = createStyle(styleText)
+              const newStyle = createStyle(styleText)
 
-            try {
+              try {
 
-              const { styleSheets, children } = shadowRoot
+                const { styleSheets, children } = shadowRoot
 
-              shadowRoot.insertBefore(newStyle, get(styleSheets.item(styleSheets.length - 1), `ownerNode.nextSibling`) || children.item(0))
+                shadowRoot.insertBefore(newStyle, get(styleSheets.item(styleSheets.length - 1), `ownerNode.nextSibling`) || children.item(0))
 
-            } catch {
-              shadowRoot.appendChild(newStyle)
+              } catch {
+                shadowRoot.appendChild(newStyle)
+              }
+
             }
 
           }
 
         }
-
       })
 
       return stopTracking
