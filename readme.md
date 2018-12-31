@@ -40,6 +40,7 @@ Simple js utilities to speed your work
   - [maxByLastNumber](#maxbylastnumber)
   - [prefix](#prefix)
   - [sumBestMatch](#sumbestmatch)
+  - [titleCase](#titlecase)
 - [Timer](#timer)
   - [interval](#interval)
 <!-- - [Date](#date)
@@ -683,6 +684,19 @@ sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
 //       { target: 'three', rating: 0.2222222222222222 }
 //     ]
 //   }
+```
+
+### titleCase
+
+Convert given string to title case like
+
+**Usage:** `titleCase(str: string): string`
+
+```typescript
+import { titleCase } from 'utilizes/title-case'
+
+titleCase('mr_john')
+// Output: 'Mr John'
 ```
 
 ## Timer

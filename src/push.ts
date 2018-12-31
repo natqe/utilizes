@@ -2,9 +2,13 @@ import get from 'lodash/get'
 import isArray from 'lodash/isArray'
 import set from 'lodash/set'
 
-export function push<T>(arr: Array<T>, item: T): ReturnType<typeof Array.prototype.push>
-export function push<T extends object>(object: T, pathToArray: _.PropertyPath, ...items): ReturnType<typeof Array.prototype.push>
-export function push<T extends object>(object: T, pathToArray: _.PropertyPath, ...items): ReturnType<typeof Array.prototype.push> {
+type returnType = ReturnType<typeof Array.prototype.push>
+
+type path = _.PropertyPath
+
+export function push<T>(arr: Array<T>, item: T): returnType
+export function push<T extends object>(object: T, pathToArray: path, ...items): returnType
+export function push<T extends object>(object: T, pathToArray: path, ...items): returnType {
 
   if (!items.length && get(object, 'push') === Array.prototype.push) return (<Array<any>>object).push(pathToArray)
 
