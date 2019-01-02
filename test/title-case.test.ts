@@ -12,4 +12,3 @@ const expected = `Title Case`
 
 for (const str of returns([camelCase, kebabCase, lowerCase, snakeCase, startCase, upperCase, camelClassCase], expected))
   test(`${str} should be converted to ${expected}`, () => expect(titleCase(str)).toBe(expected))
-
