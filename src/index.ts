@@ -7,8 +7,10 @@ import { charsAll } from './chars-all'
 import { createStyle } from './create-style'
 import { delRecursive } from './del-recursive'
 import { doDeclare } from './do-declare'
+import { eachDiff } from './each-diff'
 import { ensureUnique } from './ensure-unique'
 import { extractLastNumber } from './extract-last-number'
+import { includesMany } from './includes-many'
 import { incrementLast } from './increment-last'
 import { interval } from './interval'
 import { invoke } from './invoke'
@@ -63,7 +65,9 @@ export {
   visiblePartOf,
   titleCase,
   mapDiff,
-  easyStyleShadow
+  eachDiff,
+  easyStyleShadow,
+  includesMany
 }
 
 export default {
@@ -98,5 +102,7 @@ export default {
   visiblePartOf,
   titleCase,
   mapDiff,
-  easyStyleShadow
+  eachDiff,
+  easyStyleShadow,
+  includesMany
 }
