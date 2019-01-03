@@ -1,15 +1,10 @@
 import flatten from 'lodash/flatten'
 import get from 'lodash/get'
 import isEqual from 'lodash/isEqual'
-import isEqualWith from 'lodash/isEqualWith'
 import map from 'lodash/map'
 import unionWith from 'lodash/unionWith'
 
-interface ICallback<T, R> {
-  (items: Array<T>, indexes: Array<number>, lists: Array<Array<T>>): R
-}
-
-export const mapDiff = <T, R>(lists: Array<Array<T>>, callback: ICallback<T, R>, by?: string) => {
+export const mapDiff = <T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists: Array<Array<T>>) => R, by?: string) => {
 
   const result: Array<Array<{ item: T, index: number }>> = unionWith(
     flatten(lists.map(list => list.map(item => lists.map(l => {

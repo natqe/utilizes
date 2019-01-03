@@ -1,3 +1,4 @@
+import { easyStyleShadow } from 'easy-style-shadow'
 import { area } from './area'
 import { bind } from './bind'
 import { camelClassCase } from './camel-class-case'
@@ -11,6 +12,7 @@ import { extractLastNumber } from './extract-last-number'
 import { incrementLast } from './increment-last'
 import { interval } from './interval'
 import { invoke } from './invoke'
+import { mapDiff } from './map-diff'
 import { mapZIndex } from './map-z-index'
 import { maxByLastNumber } from './max-by-last-number'
 import { offset } from './offset'
@@ -25,6 +27,7 @@ import { setRecursive } from './set-recursive'
 import { someTruthy } from './some-truthy'
 import { someTruthyRight } from './some-truthy-right'
 import { sumBestMatch } from './sum-best-match'
+import { titleCase } from './title-case'
 import { toEnum } from './to-enum'
 import { visiblePartOf } from './visible-part-of'
 
@@ -57,7 +60,10 @@ export {
   someTruthyRight,
   sumBestMatch,
   toEnum,
-  visiblePartOf
+  visiblePartOf,
+  titleCase,
+  mapDiff,
+  easyStyleShadow
 }
 
 export default {
@@ -89,5 +95,8 @@ export default {
   someTruthyRight,
   sumBestMatch,
   toEnum,
-  visiblePartOf
+  visiblePartOf,
+  titleCase,
+  mapDiff,
+  easyStyleShadow
 }
