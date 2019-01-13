@@ -4,7 +4,7 @@ import isEqual from 'lodash/isEqual'
 import map from 'lodash/map'
 import unionWith from 'lodash/unionWith'
 
-export const mapDiff = <T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists: Array<Array<T>>) => R, detectBy?: string) => {
+export const mapDiff = <T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists: Array<Array<T>>) => R, detectBy?: keyof T) => {
 
   const result: Array<Array<{ item: T, index: number }>> = unionWith(
     flatten(lists.map(list => list.map(item => lists.map(l => {

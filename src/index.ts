@@ -1,5 +1,6 @@
 import { easyStyleShadow } from 'easy-style-shadow'
 import { area } from './area'
+import beside from './beside'
 import { bind } from './bind'
 import { camelClassCase } from './camel-class-case'
 import { chars } from './chars'
@@ -67,7 +68,8 @@ export {
   mapDiff,
   eachDiff,
   easyStyleShadow,
-  includesMany
+  includesMany,
+  beside
 }
 
 export default {
@@ -104,5 +106,6 @@ export default {
   mapDiff,
   eachDiff,
   easyStyleShadow,
-  includesMany
+  includesMany,
+  beside
 }

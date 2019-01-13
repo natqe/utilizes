@@ -7,6 +7,10 @@ Simple js utilities to speed your work
 - [Installation](#installation)
  <!-- - [Changelog](CHANGELOG.md) -->
 - [Array](#array)
+  - [beside](#beside)
+  - [eachDiff](#eachdiff)
+  - [includesMany](#includesmany)
+  - [mapDiff](#mapdiff)
   - [oneOrAll](#oneorall)
   - [push](#push)
   - [someTruthy](#sometruthy)
@@ -73,6 +77,145 @@ using typescript or es6:
   ```
 
 ## Array
+
+### beside
+
+Put children beside there father
+
+**Usage:** `beside<T>(tree: Array<T>, prop: keyof T): Array<T>`
+
+```typescript
+import { beside } from 'utilizes/beside'
+
+const tree = [
+  {
+    level: 0,
+    id: 1,
+    children: [
+      {
+        level: 1,
+        id: 2
+      }
+    ]
+  },
+  {
+    level: 0,
+    id: 3,
+    children: [
+      {
+        level: 1,
+        id: 4
+      }
+    ]
+  }
+]
+
+beside(tree, `children`)
+// Output: [{ id:1, ... }, { id:2, ... }, { id:3, ... }, { id:4,... }]
+```
+
+### eachDiff
+
+Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.
+if the object will not exist on some list you get an undefined on he's place.
+
+**Usage:** `eachDiff<T>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => void, detectBy?: keyof T): lists`
+
+```typescript
+import { eachDiff } from 'utilizes/each-diff'
+
+const
+  listVersionA = [
+    {
+      name: `Sharon`,
+      stars: 100
+    },
+    {
+      name: `Adrien`,
+      stars: 100
+    }
+  ],
+  listVersionB = [
+    {
+      name: `Skye`,
+      stars: 100
+    },
+    {
+      name: `Adrien`,
+      stars: 150
+    }
+  ]
+
+eachDiff(
+  [listVersionA, listVersionB], // it can be any length of lists
+  ([obVersionA, obVersionB]) => {
+    if (obVersionA === undefined) console.log(`${obVersionB.name} he's newer`)
+    else if (obVersionB === undefined) console.log(`${obVersionA.name} deleted`)
+    else if (obVersionB.stars > obVersionA.stars) console.log(`${obVersionA.name} have now ${obVersionB.stars} stars over ${obVersionA.stars}`)
+  },
+  `name` // unique unchangeable property to determain that it same object in other version
+)
+// Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 stars over 100"
+```
+
+### mapDiff
+
+Same as [eachDiff](#eachdiff) except it return array of the value that you return from the callback
+
+**Usage:** `mapDiff<T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => R, detectBy?: keyof T): Array<R>`
+
+```typescript
+import { mapDiff } from 'utilizes/map-diff'
+
+const
+  listVersionA = [
+    {
+      name: `Sharon`,
+      stars: 100
+    },
+    {
+      name: `Adrien`,
+      stars: 100
+    }
+  ],
+  listVersionB = [
+    {
+      name: `Skye`,
+      stars: 100
+    },
+    {
+      name: `Adrien`,
+      stars: 150
+    }
+  ]
+
+mapDiff(
+  [listVersionA, listVersionB], // it can be any length of lists
+  ([obVersionA, obVersionB]) => {
+    if (obVersionA === undefined) return `${obVersionB.name} he's newer`
+    else if (obVersionB === undefined) return `${obVersionA.name} deleted`
+    else if (obVersionB.stars > obVersionA.stars) return `${obVersionA.name} have now ${obVersionB.stars} stars over ${obVersionA.stars}`
+  },
+  `name` // unique unchangeable property to determain that it same object in other version
+)
+// Output:  ["Skye he's newer", "Sharon deleted", "Adrien have now 150 stars over 100"]
+```
+
+### includesMany
+
+Return false when one or more of the given values not include in the array
+
+**Usage:** `includesMany<T>(collection: ArrayLike<T>, ...targets: Array<T>): boolean`
+
+```typescript
+import { includesMany } from 'utilizes/includes-many'
+
+includesMany([`value1`], `value1`, `value2`)
+// Output: false
+
+includesMany([`value1`, `value2`], `value1`, `value2`)
+// Output: true
+```
 
 ### oneOrAll
 
