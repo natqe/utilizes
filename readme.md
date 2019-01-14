@@ -155,7 +155,7 @@ eachDiff(
   },
   `name` // unique unchangeable property to determain that it same object in other version
 )
-// Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 stars over 100"
+// Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 instad of 100"
 ```
 
 ### mapDiff
@@ -201,7 +201,7 @@ mapDiff(
   },
   `name` // unique unchangeable property to determain that it same object in other version
 )
-// Output:  ["Skye he's newer", "Sharon deleted", "Adrien have now 150 stars over 100"]
+// Output:  ["Skye he's newer", "Sharon deleted", "Adrien have now 150 instad of 100"]
 ```
 
 ### includesMany
