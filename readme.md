@@ -160,7 +160,10 @@ eachDiff(
 
 ### mapDiff
 
-Same as [eachDiff](#eachdiff) except it return array of the value that you return from the callback
+Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.
+if the object will not exist on some list you get an undefined on he's place.
+
+return array of the value that you return from the callback
 
 **Usage:** `mapDiff<T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => R, detectBy?: keyof T): Array<R>`
 
@@ -290,7 +293,11 @@ someTruthy([0, 1, 2], num => num, true) // The last argument is for iterates fro
 
 ### someTruthyRight
 
-This function is like [someTruthy](#someTruthy) but with the third argument evaluate to true
+Checks if the callback returns truthy for any element of the array. Iteration is stopped once the callback returns truthy
+
+Return the truthy value or the last falsy value if none of the iteration returns truthy
+
+Run over the given array from right to left
 
 **Usage:** `someTruthyRight<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y): Y`
 
@@ -575,7 +582,11 @@ import { set } from 'utilizes/set'
 
 ### setEach
 
-This function is like [set](#set) except its for multiple objects.
+Set value to path's in object. value can be a function (with three arguments: currentValue, path, object) that invoked for the specific path.
+
+When value is function, the return value from it is set for the current path. if the return value is undefined, the current path is skipped.
+
+this method is for multiple objects.
 
 **Usage:** `setEach<T extends object>(object: []T, value: any, ...paths: Many<string | number | symbol>[]): []T`
 
