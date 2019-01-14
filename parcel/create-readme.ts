@@ -13,7 +13,7 @@ export const
 
       result = result.replace(`### ${nameCamel}`, `# ${nameCamel}
 
-The utilizes method utilizes.${nameCamel} exported as a Node.js module.
+The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.${nameCamel} exported as a Node.js module.
 `)
 
       if (!packageJSON) packageJSON = await promisify(readFile)(`${outDir}/package.json`, `utf8`)
