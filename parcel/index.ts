@@ -1,9 +1,9 @@
 import { exec } from 'child_process'
 import { copyFile, exists, readdir, readFile, writeFile } from 'fs'
-import { camelCase } from 'lodash'
 import Bundler from 'parcel-bundler'
 import { promisify } from 'util'
 import { createReadme } from './create-readme'
+import { PackageJSONModel } from './package-json.model'
 
 const execPromise = promisify(exec)
 
@@ -12,38 +12,27 @@ execPromise(`npm run build`).then(async () => {
   try {
 
     const
-      readdirPromise = promisify(readdir),
       readFilePromise = (path: string) => promisify(readFile)(path, `utf8`),
       existsPromise = promisify(exists),
       writeFilePromise = promisify(writeFile),
       copyFilePromise = promisify(copyFile),
-      files = await readdirPromise(`src`),
+      files = await promisify(readdir)(`src`),
       packageJSONFileName = `package.json`,
-      packageJSON = await readFilePromise(`parcel/package-example.json`),
-      readme = await readFilePromise(`readme.md`)
+      readmeFileName = `readme.md`,
+      readme = await readFilePromise(readmeFileName)
 
     for (const file of files.filter(file => !file.startsWith(`invoke`) && !file.startsWith(`index`) && !file.startsWith(`_`))) {
 
-      let prevState = ``
-
       const
-        fileName = file.slice(0, file.lastIndexOf(`.`)),
-        outDir = `sub/${fileName}`,
-        fileTypeDefinition = `${fileName}.d.ts`
+        nameFile = file.slice(0, file.lastIndexOf(`.`)),
+        outDir = `sub/${nameFile}`,
+        readOutDirFile = (file: string) => readFilePromise(`${outDir}/${file}`),
+        fileTypeDefinition = `${nameFile}.d.ts`,
+        isExist = await existsPromise(`${outDir}/${packageJSONFileName}`),
+        state = async () => isExist ? `${await readOutDirFile(nameFile + `.js`)}${await readOutDirFile(fileTypeDefinition)}${await readOutDirFile(readmeFileName)}`.replace(/\n\t\s/g, ``) : ``,
+        prevState = await state()
 
-      try {
-
-        prevState += await readFilePromise(`${outDir}/${fileName}.js`)
-
-        prevState += await readFilePromise(`${outDir}/${fileTypeDefinition}`)
-
-        prevState += await readFilePromise(`${outDir}/readme.md`)
-
-        prevState = prevState.replace(/\n\t\s/g, ``)
-
-      } catch {
-
-      }
+      const fileName = file.slice(0, file.lastIndexOf(`.`))
 
       await new Bundler(`src/${file}`, {
         outDir,
@@ -55,49 +44,27 @@ execPromise(`npm run build`).then(async () => {
         watch: false
       }).bundle()
 
-      let displayPackageJSON = ``
-
       await copyFilePromise(`dist/${fileTypeDefinition}`, `${outDir}/${fileTypeDefinition}`)
 
       await copyFilePromise(`LICENSE`, `${outDir}/LICENSE`)
 
-      if (!await existsPromise(`${outDir}/${packageJSONFileName}`)) {
+      const packageJSONObject = new PackageJSONModel(isExist ? JSON.parse(await readOutDirFile(packageJSONFileName)) : { name: nameFile })
 
-        displayPackageJSON = packageJSON.replace(`utilizes.$name`, `utilizes.${camelCase(fileName)}`).replace(/\$name/g, fileName)
+      await createReadme(fileName, readme, packageJSONObject)
 
-        await writeFilePromise(`${outDir}/${packageJSONFileName}`, displayPackageJSON)
+      await writeFilePromise(`${outDir}/${packageJSONFileName}`, JSON.stringify(packageJSONObject))
 
-      }
-
-      await createReadme(outDir, fileName, readme, displayPackageJSON)
-
-      let currentState = ``
-
-      try {
-
-        currentState += await readFilePromise(`${outDir}/${fileName}.js`)
-
-        currentState += await readFilePromise(`${outDir}/${fileTypeDefinition}`)
-
-        currentState += await readFilePromise(`${outDir}/readme.md`)
-
-        currentState = currentState.replace(/\n\t\s/g, ``)
-
-      } catch {
-
-      }
-
-      if (prevState !== currentState) try {
+      if (prevState !== await state()) try {
         await execPromise(`npm run start --prefix ${outDir}`)
       } catch (error) {
 
         console.error(error)
 
-        displayPackageJSON = packageJSON.replace(`$name`, `utilizes.${fileName}`).replace(`utilizes.$name`, `utilizes.${camelCase(fileName)}`).replace(/\$name/g, fileName)
+        packageJSONObject.name = `utilizes.${nameFile}`
 
-        await writeFilePromise(`${outDir}/${packageJSONFileName}`, displayPackageJSON)
+        await createReadme(fileName, readme, packageJSONObject)
 
-        await createReadme(outDir, fileName, readme, displayPackageJSON)
+        await writeFilePromise(`${outDir}/${packageJSONFileName}`, JSON.stringify(packageJSONObject))
 
         await execPromise(`npm run start --prefix ${outDir}`)
 

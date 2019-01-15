@@ -35,6 +35,7 @@ Simple js utilities to speed your work
   - [setRecursive](#setrecursive)
   - [toEnum](#toenum)
 - [String](#string)
+  - [allCombinations](#allcombinations)
   - [camelClassCase](#camelclasscase)
   - [chars](#chars)
   - [charsAll](#charsall)
@@ -114,6 +115,8 @@ beside(tree, `children`)
 // Output: [{ id:1, ... }, { id:2, ... }, { id:3, ... }, { id:4,... }]
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### eachDiff
 
 Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.
@@ -157,6 +160,8 @@ eachDiff(
 )
 // Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 instad of 100"
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### mapDiff
 
@@ -204,6 +209,8 @@ mapDiff(
 // Output:  ["Skye he's newer", "Sharon deleted", "Adrien have now 150 instad of 100"]
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### includesMany
 
 Return false when one or more of the given values not include in the array
@@ -219,6 +226,8 @@ includesMany([`value1`], `value1`, `value2`)
 includesMany([`value1`, `value2`], `value1`, `value2`)
 // Output: true
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### oneOrAll
 
@@ -238,6 +247,8 @@ oneOrAll('item') // Return the value when is have value that are not array
 oneOrAll([]) // Ignore when its not have an items
 // Output: undefined
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### push
 
@@ -272,6 +283,8 @@ import { push } from 'utilizes/push'
 }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### someTruthy
 
 Checks if the callback returns truthy for any element of the array. Iteration is stopped once the callback returns truthy
@@ -290,6 +303,8 @@ someTruthy([0, false, undefined, null], falsy => falsy) // Return the last falsy
 someTruthy([0, 1, 2], num => num, true) // The last argument is for iterates from right to left instead of left to right
 // Output: 2
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### someTruthyRight
 
@@ -310,6 +325,7 @@ someTruthyRight([0, false, undefined, null], falsy => falsy) // Return the last 
 // Output: 0
 ```
 
+<!-- *keywords [] *keywordsend -->
 
 ## Dom
 
@@ -331,6 +347,8 @@ window.addEventListener('click', ({ pageX, pageY }) => {
 })
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### createStyle
 
 Creates style element with the css inserted to him and ready to put into the document
@@ -346,6 +364,8 @@ document.head.appendChild(createStyle(`
     }
 `))
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### easyStyleShadow
 
@@ -380,6 +400,8 @@ const stopDetection = easyStyleShadow({
 stopDetection()
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### mapZIndex
 
 Get information about z-index state in your application
@@ -392,6 +414,8 @@ import { mapZIndex } from 'utilizes/map-z-index'
 mapZIndex()
 // Output: tree of your elements with the information about they z-index value
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### offset
 
@@ -410,6 +434,8 @@ offset(specialElement.getBoundingClientRect())
 // also work
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### visiblePartOf
 
 Get the current x and y of given element. also return the offset.
@@ -424,6 +450,8 @@ const specialElement = document.getElementById('special-element')
 visiblePartOf(specialElement)
 // Output the x and y of the element, also give you information about the current offset top and left
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ## Function
 
@@ -460,6 +488,8 @@ console.log(coolService.count)
 // Output: 1
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### doDeclare
 
 Invoke your function when you declare it.
@@ -477,6 +507,8 @@ func()
 // Output: 123
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### returns
 
 Invoke set of functions with same arguments at ones, and get the results.
@@ -489,6 +521,8 @@ import { returns } from 'utilizes/returns'
 returns([(a, b) => a + b, (a, b)=> a - b], 2,1)
 // Output: [3,1]
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ## Number
 
@@ -506,6 +540,8 @@ rangeWithNames(1,3)
 rangeWithNames(3,5)
 // Output: [ { number: 3, name: 'three' }, { number: 4, name: 'four' } ]
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ## Object
 
@@ -541,6 +577,8 @@ delRecursive(person, propsToDelete)
 //   }
 // }
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### set
 
@@ -580,6 +618,8 @@ import { set } from 'utilizes/set'
 }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### setEach
 
 Set value to path's in object. value can be a function (with three arguments: currentValue, path, object) that invoked for the specific path.
@@ -612,6 +652,8 @@ setEach(ob, 2, 'prop')
 //    }
 // ]
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### setRecursive
 
@@ -667,6 +709,8 @@ setRecursive(person, propsToSet, false) // This will set the given properties ev
 //   }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### toEnum
 
 Convert given object to enum like
@@ -680,7 +724,32 @@ toEnum({ 1: 'good' })
 // Output: { '1': 'good', good: '1' }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ## String
+
+### allCombinations
+
+Get all combinations from a given string. you can specify the separator and how you want to get the result (join with specific symbol)
+
+**Usage:** `allCombinations(target: string | Array<string>, joinSymbol?:string, separator?:string):  Array<string> | Array<Array<string>>`
+
+```typescript
+import { allCombinations } from 'utilizes/all-combinations'
+
+allCombinations(`all-combinations`, `-`) // the separator (the third argument) is the same as the joinSymbol by default
+// Output: ["all", "combinations", "all-combinations", "combinations-all"]
+allCombinations(`all-combinations`, ` `, `-`) // if you want the separator to be other from the join symbol, specify it in the third argument
+// Output: ["all", "combinations", "all combinations", "combinations all"]
+allCombinations(`all-combinations`, null, `-`) // it can be also without the join symbol, so it will cause result without joining aka array of array of string
+// Output: [["all"], ["combinations"], ["all", "combinations"], ["combinations", "all"]]
+allCombinations([`all`, `combinations`], null) // the target can be also an array
+// Output: [["all"], ["combinations"], ["all", "combinations"], ["combinations", "all"]]
+allCombinations(`ab`, ``) // example how to use it with letters
+// Output: [ "a", "b", "ab", "ba" ]
+```
+
+<!-- *keywords [] *keywordsend -->
 
 ### camelClassCase
 
@@ -694,6 +763,8 @@ import { camelClassCase } from 'utilizes/camel-class-case'
 camelClassCase('mr_john')
 // Output: 'MrJohn'
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### chars
 
@@ -712,6 +783,8 @@ chars('number')
 // Output: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### charsAll
 
 Return characters of the english language
@@ -724,6 +797,8 @@ import { charsAll } from 'utilizes/chars-all'
 charsAll()
 // Output: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### ensureUnique
 
@@ -744,6 +819,8 @@ ensureUnique('name', ['name', 'Name2'], null, true) // the fourth argument is fo
 // Output: "name3"
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### extractLastNumber
 
 Extract last number from given string. return array with the string without the number, and the number himself
@@ -760,6 +837,8 @@ extractLastNumber('name')
 extractLastNumber('name01')
 // Output: ["name0", 1]
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### incrementLast
 
@@ -782,6 +861,8 @@ incrementLast('name1', 5) // defaultNum has no effect in this case
 // Output: "name2"
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### maxByLastNumber
 
 Check array of items and return the item with the highest suffix number. if non is found return undefined.
@@ -796,6 +877,8 @@ maxByLastNumber('name', ['name1', 'name2', 'otherName'])
 maxByLastNumber('dexter', [{ nickname: 'dexter3' }, { nickname: 'dexter2' }], 'nickname')
 // Output: "dexter3"
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ### prefix
 
@@ -820,6 +903,8 @@ prefix('Mr ', 'john', null, ' rich')
 // Output: 'Mr john rich'
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### sumBestMatch
 
 get sum of best match for the given strings
@@ -840,6 +925,8 @@ sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
 //   }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
 ### titleCase
 
 Convert given string to title case like
@@ -852,6 +939,8 @@ import { titleCase } from 'utilizes/title-case'
 titleCase('mr_john')
 // Output: 'Mr John'
 ```
+
+<!-- *keywords [] *keywordsend -->
 
 ## Timer
 
@@ -892,3 +981,5 @@ interval(()=>{
 })
 // this will not stop the interval process
 ```
+
+<!-- *keywords [] *keywordsend -->

@@ -1,29 +1,30 @@
-import { readFile, writeFile } from 'fs'
+import { writeFile } from 'fs'
 import { camelCase, get } from 'lodash'
 import { promisify } from 'util'
+import { PackageJSONModel } from './package-json.model'
 
-export const
-  createReadme = async (outDir: string, fileName: string, generalReadme: string, packageJSON?: string) => {
+export const createReadme = async (fileName: string, generalReadme: string, packageJSONObject: PackageJSONModel) => {
 
-    const nameCamel = camelCase(fileName)
+  const nameCamel = camelCase(fileName)
 
-    let result = get(generalReadme.match(new RegExp(`### ${nameCamel}[^#]+`)), 0)
+  let result = get(generalReadme.match(new RegExp(`### ${nameCamel}[^#]+`)), 0)
 
-    if (result) {
+  if (result) {
 
-      result = result.replace(`### ${nameCamel}`, `# ${nameCamel}
+    packageJSONObject.description = result.split(`### ${nameCamel}`).pop().split(`**Usage:**`).shift().trim()
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.${nameCamel} exported as a Node.js module.
-`)
-
-      if (!packageJSON) packageJSON = await promisify(readFile)(`${outDir}/package.json`, `utf8`)
-
-      const { name } = JSON.parse(packageJSON)
-
-      result = result.replace(`utilizes/${fileName}`, `${name}`)
-
-      return promisify(writeFile)(`${outDir}/readme.md`, result)
-
+    try {
+      packageJSONObject.keywords.push(...JSON.parse(result.match(/\*keywords\s(\[[.\n]*\])\s\*keywordsend/)[1]))
+    } catch (error) {
+      console.error(error && error.message)
     }
 
+    result = result.replace(`### ${nameCamel}`, `# ${nameCamel}`).replace(`utilizes/${fileName}`, `${packageJSONObject.name}`)
+
+    result += `\n\nThis module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.`
+
+    return promisify(writeFile)(`sub/${fileName}/readme.md`, result)
+
   }
+
+}
