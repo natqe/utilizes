@@ -21,5 +21,3 @@ oneOrAll([]) // Ignore when its not have an items
 
 
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
-
-<!-- -->

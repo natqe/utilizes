@@ -56,5 +56,3 @@ setRecursive(person, propsToSet, false) // This will set the given properties ev
 
 
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
-
-<!-- -->

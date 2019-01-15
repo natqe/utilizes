@@ -21,5 +21,3 @@ someTruthyRight([0, false, undefined, null], falsy => falsy) // Return the last 
 
 
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
-
-<!-- -->

@@ -22,5 +22,3 @@ sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
 
 
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
-
-<!-- -->

@@ -21,5 +21,3 @@ ensureUnique('name', ['name', 'Name2'], null, true) // the fourth argument is fo
 
 
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
-
-<!-- -->
