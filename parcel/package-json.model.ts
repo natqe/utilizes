@@ -32,7 +32,7 @@ export class PackageJSONModel {
 
       } else ++version[2]
 
-      options.version = version.join(`.`).trim()
+      options.version = version.join(`.`)
 
     }
 
@@ -46,6 +46,9 @@ export class PackageJSONModel {
     if (options.scripts && options.scripts.start) options.scripts.start = this.scripts.start
 
     merge(this, options)
+
+    // TODO remove
+    this.version = this.version.trim()
 
   }
 
