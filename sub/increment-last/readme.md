@@ -1,8 +1,5 @@
 # incrementLast
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.incrementLast exported as a Node.js module.
-
-
 Return string with the number in the end incremented
 
 **Usage:** `incrementLast(str: string, defaultNum?: number): string`
@@ -22,3 +19,8 @@ incrementLast('name1', 5) // defaultNum has no effect in this case
 // Output: "name2"
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

@@ -1,8 +1,5 @@
 # eachDiff
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.eachDiff exported as a Node.js module.
-
-
 Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.
 if the object will not exist on some list you get an undefined on he's place.
 
@@ -45,3 +42,8 @@ eachDiff(
 // Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 instad of 100"
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

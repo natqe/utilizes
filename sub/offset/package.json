@@ -1,22 +1,23 @@
 {
-  "name": "utilizes.offset",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.offset exported as a Node.js module.",
-  "main": "offset.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "offset"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "utilizes.offset",
+  "description": "Get the current offset of the given element",
+  "main": "utilizes.offset.js",
+  "keywords": [
+    "offset",
+    "offset"
+  ]
 }

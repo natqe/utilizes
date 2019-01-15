@@ -1,8 +1,5 @@
 # sumBestMatch
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.sumBestMatch exported as a Node.js module.
-
-
 get sum of best match for the given strings
 
 **Usage:** `sumBestMatch(mainStrings: string[], targetStrings: string[]): { bestMatch: { target: string, rating: number }, ratings: Array<{ target: string, rating: number }> }`
@@ -21,3 +18,8 @@ sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
 //   }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

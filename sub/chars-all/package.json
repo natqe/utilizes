@@ -1,22 +1,26 @@
 {
-  "name": "chars-all",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.charsAll exported as a Node.js module.",
-  "main": "chars-all.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "chars-all"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "chars-all",
+  "description": "Return characters of the english language",
+  "main": "chars-all.js",
+  "keywords": [
+    "chars",
+    "all",
+    "chars-all",
+    "all-chars",
+    "chars-all"
+  ]
 }

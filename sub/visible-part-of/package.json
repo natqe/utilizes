@@ -1,22 +1,37 @@
 {
-  "name": "visible-part-of",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.visiblePartOf exported as a Node.js module.",
-  "main": "visible-part-of.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "visible-part-of"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "visible-part-of",
+  "description": "Get the current x and y of given element. also return the offset.",
+  "main": "visible-part-of.js",
+  "keywords": [
+    "visible",
+    "part",
+    "of",
+    "visible-part",
+    "visible-of",
+    "part-visible",
+    "part-of",
+    "of-visible",
+    "of-part",
+    "visible-part-of",
+    "visible-of-part",
+    "part-visible-of",
+    "part-of-visible",
+    "of-visible-part",
+    "of-part-visible",
+    "visible-part-of"
+  ]
 }

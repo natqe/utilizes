@@ -1,8 +1,5 @@
 # ensureUnique
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.ensureUnique exported as a Node.js module.
-
-
 Return safety unique string from bunch of items
 
 **Usage:** `ensureUnique(toBeUniq: string | number, items: Array<typeof toBeUniq> | Array<{ [key: string]: any }>, by?: string | number): typeof toBeUniq`
@@ -20,3 +17,8 @@ ensureUnique('name', ['name', 'Name2'], null, true) // the fourth argument is fo
 // Output: "name3"
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

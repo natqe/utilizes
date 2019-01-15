@@ -1,8 +1,5 @@
 # easyStyleShadow
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.easyStyleShadow exported as a Node.js module.
-
-
 Easy way to inject style to web components with attach shadow. note that it only work if the shadow mode set to "open".
 
 This helper keep track of changes in the dom for keep the dom upgrade with the needed styles.
@@ -34,3 +31,8 @@ const stopDetection = easyStyleShadow({
 stopDetection()
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

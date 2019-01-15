@@ -1,8 +1,5 @@
 # camelClassCase
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.camelClassCase exported as a Node.js module.
-
-
 Convert given string to class like syntax
 
 **Usage:** `camelClassCase(str: string): string`
@@ -14,3 +11,8 @@ camelClassCase('mr_john')
 // Output: 'MrJohn'
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

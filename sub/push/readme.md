@@ -1,8 +1,5 @@
 # push
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.push exported as a Node.js module.
-
-
 Push safely to array. returning the length of the array - if the item pushed successfully.
 
 **Usage:** `push(object, pathToArray, ...items): number`
@@ -34,3 +31,8 @@ import { push } from 'utilizes.push'
 }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

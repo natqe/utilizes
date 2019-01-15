@@ -1,8 +1,5 @@
 # delRecursive
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.delRecursive exported as a Node.js module.
-
-
 Delete recursive properties of object
 
 **Usage:** `delRecursive<T extends Object>(ob: T, toDelete: Array): T`
@@ -34,3 +31,8 @@ delRecursive(person, propsToDelete)
 // }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

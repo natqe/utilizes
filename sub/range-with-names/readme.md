@@ -1,8 +1,5 @@
 # rangeWithNames
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.rangeWithNames exported as a Node.js module.
-
-
 Creates an array of objects from given range, each object contain number and his name
 
 **Usage:** `rangeWithNames(start: number, end: number, step?: number): Array<{ number: number, name: string }>`
@@ -16,3 +13,8 @@ rangeWithNames(3,5)
 // Output: [ { number: 3, name: 'three' }, { number: 4, name: 'four' } ]
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

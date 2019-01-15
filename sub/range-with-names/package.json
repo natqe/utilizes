@@ -1,22 +1,37 @@
 {
-  "name": "range-with-names",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.rangeWithNames exported as a Node.js module.",
-  "main": "range-with-names.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "range-with-names"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "range-with-names",
+  "description": "Creates an array of objects from given range, each object contain number and his name",
+  "main": "range-with-names.js",
+  "keywords": [
+    "range",
+    "with",
+    "names",
+    "range-with",
+    "range-names",
+    "with-range",
+    "with-names",
+    "names-range",
+    "names-with",
+    "range-with-names",
+    "range-names-with",
+    "with-range-names",
+    "with-names-range",
+    "names-range-with",
+    "names-with-range",
+    "range-with-names"
+  ]
 }

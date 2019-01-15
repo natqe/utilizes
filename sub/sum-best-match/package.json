@@ -1,22 +1,37 @@
 {
-  "name": "sum-best-match",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.sumBestMatch exported as a Node.js module.",
-  "main": "sum-best-match.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "sum-best-match"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "sum-best-match",
+  "description": "get sum of best match for the given strings",
+  "main": "sum-best-match.js",
+  "keywords": [
+    "sum",
+    "best",
+    "match",
+    "sum-best",
+    "sum-match",
+    "best-sum",
+    "best-match",
+    "match-sum",
+    "match-best",
+    "sum-best-match",
+    "sum-match-best",
+    "best-sum-match",
+    "best-match-sum",
+    "match-sum-best",
+    "match-best-sum",
+    "sum-best-match"
+  ]
 }

@@ -1,22 +1,26 @@
 {
-  "name": "to-enum",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.toEnum exported as a Node.js module.",
-  "main": "to-enum.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "to-enum"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "to-enum",
+  "description": "Convert given object to enum like",
+  "main": "to-enum.js",
+  "keywords": [
+    "to",
+    "enum",
+    "to-enum",
+    "enum-to",
+    "to-enum"
+  ]
 }

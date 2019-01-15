@@ -1,22 +1,37 @@
 {
-  "name": "extract-last-number",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.extractLastNumber exported as a Node.js module.",
-  "main": "extract-last-number.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "extract-last-number"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "extract-last-number",
+  "description": "Extract last number from given string. return array with the string without the number, and the number himself",
+  "main": "extract-last-number.js",
+  "keywords": [
+    "extract",
+    "last",
+    "number",
+    "extract-last",
+    "extract-number",
+    "last-extract",
+    "last-number",
+    "number-extract",
+    "number-last",
+    "extract-last-number",
+    "extract-number-last",
+    "last-extract-number",
+    "last-number-extract",
+    "number-extract-last",
+    "number-last-extract",
+    "extract-last-number"
+  ]
 }

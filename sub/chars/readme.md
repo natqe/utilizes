@@ -1,8 +1,5 @@
 # chars
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.chars exported as a Node.js module.
-
-
 Return characters of the english language
 
 **Usage:** `chars(type?: "number" | "lower" | "upper"): Array<string>`
@@ -18,3 +15,8 @@ chars('number')
 // Output: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

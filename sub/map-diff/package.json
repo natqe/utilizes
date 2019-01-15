@@ -1,22 +1,26 @@
 {
-  "name": "map-diff",
-  "version": "1.0.6",
-  "description": "The utilizes method utilizes.mapDiff exported as a Node.js module.",
-  "main": "map-diff.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "map-diff"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.13",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "map-diff",
+  "description": "Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.\r\nif the object will not exist on some list you get an undefined on he's place.\r\n\r\nreturn array of the value that you return from the callback",
+  "main": "map-diff.js",
+  "keywords": [
+    "map",
+    "diff",
+    "map-diff",
+    "diff-map",
+    "map-diff"
+  ]
 }

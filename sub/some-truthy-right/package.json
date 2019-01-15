@@ -1,22 +1,37 @@
 {
-  "name": "some-truthy-right",
-  "version": "1.0.5",
-  "description": "The utilizes method utilizes.someTruthyRight exported as a Node.js module.",
-  "main": "some-truthy-right.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "some-truthy-right"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.12",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "some-truthy-right",
+  "description": "Checks if the callback returns truthy for any element of the array. Iteration is stopped once the callback returns truthy\r\n\r\nReturn the truthy value or the last falsy value if none of the iteration returns truthy\r\n\r\nRun over the given array from right to left",
+  "main": "some-truthy-right.js",
+  "keywords": [
+    "some",
+    "truthy",
+    "right",
+    "some-truthy",
+    "some-right",
+    "truthy-some",
+    "truthy-right",
+    "right-some",
+    "right-truthy",
+    "some-truthy-right",
+    "some-right-truthy",
+    "truthy-some-right",
+    "truthy-right-some",
+    "right-some-truthy",
+    "right-truthy-some",
+    "some-truthy-right"
+  ]
 }

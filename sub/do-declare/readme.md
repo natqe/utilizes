@@ -1,8 +1,5 @@
 # doDeclare
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.doDeclare exported as a Node.js module.
-
-
 Invoke your function when you declare it.
 
 aliases: "invoke"
@@ -18,3 +15,8 @@ func()
 // Output: 123
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

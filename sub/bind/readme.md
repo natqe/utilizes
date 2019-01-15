@@ -1,8 +1,5 @@
 # bind
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.bind exported as a Node.js module.
-
-
 Bind all methods of the given object to the object
 
 **Usage:** `bind<T>(this: T): T`
@@ -34,3 +31,8 @@ console.log(coolService.count)
 // Output: 1
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

@@ -1,22 +1,26 @@
 {
-  "name": "utilizes.ensure-unique",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.ensureUnique exported as a Node.js module.",
-  "main": "ensure-unique.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "ensure-unique"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "utilizes.ensure-unique",
+  "description": "Return safety unique string from bunch of items",
+  "main": "utilizes.ensure-unique.js",
+  "keywords": [
+    "ensure",
+    "unique",
+    "ensure-unique",
+    "unique-ensure",
+    "ensure-unique"
+  ]
 }

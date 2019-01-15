@@ -1,8 +1,5 @@
 # setEach
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.setEach exported as a Node.js module.
-
-
 Set value to path's in object. value can be a function (with three arguments: currentValue, path, object) that invoked for the specific path.
 
 When value is function, the return value from it is set for the current path. if the return value is undefined, the current path is skipped.
@@ -34,3 +31,8 @@ setEach(ob, 2, 'prop')
 // ]
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

@@ -1,8 +1,5 @@
 # interval
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.interval exported as a Node.js module.
-
-
 This function is like native setInterval, except its stopped when the given handler returns true or an error is accrue
 
 **Usage:** `interval(handler: (...args: any[]) => boolean, timeout?: number, ...args: any[]): number`
@@ -38,3 +35,7 @@ interval(()=>{
 })
 // this will not stop the interval process
 ```
+
+<!-- *keywords [] *keywordsend -->
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

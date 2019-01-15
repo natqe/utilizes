@@ -1,22 +1,23 @@
 {
-  "name": "utilizes.returns",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.returns exported as a Node.js module.",
-  "main": "returns.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "returns"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "utilizes.returns",
+  "description": "Invoke set of functions with same arguments at ones, and get the results.",
+  "main": "utilizes.returns.js",
+  "keywords": [
+    "returns",
+    "returns"
+  ]
 }

@@ -1,22 +1,37 @@
 {
-  "name": "one-or-all",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.oneOrAll exported as a Node.js module.",
-  "main": "one-or-all.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "one-or-all"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "one-or-all",
+  "description": "Return one when is have only one item, return all when is have more then one item.",
+  "main": "one-or-all.js",
+  "keywords": [
+    "one",
+    "or",
+    "all",
+    "one-or",
+    "one-all",
+    "or-one",
+    "or-all",
+    "all-one",
+    "all-or",
+    "one-or-all",
+    "one-all-or",
+    "or-one-all",
+    "or-all-one",
+    "all-one-or",
+    "all-or-one",
+    "one-or-all"
+  ]
 }

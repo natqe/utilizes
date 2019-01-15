@@ -1,22 +1,26 @@
 {
-  "name": "each-diff",
-  "version": "1.0.5",
-  "description": "The utilizes method utilizes.eachDiff exported as a Node.js module.",
-  "main": "each-diff.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "each-diff"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.12",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "each-diff",
+  "description": "Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.\r\nif the object will not exist on some list you get an undefined on he's place.",
+  "main": "each-diff.js",
+  "keywords": [
+    "each",
+    "diff",
+    "each-diff",
+    "diff-each",
+    "each-diff"
+  ]
 }

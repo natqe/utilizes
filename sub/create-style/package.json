@@ -1,22 +1,26 @@
 {
-  "name": "create-style",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.createStyle exported as a Node.js module.",
-  "main": "create-style.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "create-style"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "create-style",
+  "description": "Creates style element with the css inserted to him and ready to put into the document",
+  "main": "create-style.js",
+  "keywords": [
+    "create",
+    "style",
+    "create-style",
+    "style-create",
+    "create-style"
+  ]
 }

@@ -1,8 +1,5 @@
 # prefix
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.prefix exported as a Node.js module.
-
-
 Adding fix to beginning of string only if the string is present.
 
 **Usage:** `prefix(...args: string[]): string`
@@ -24,3 +21,8 @@ prefix('Mr ', 'john', null, ' rich')
 // Output: 'Mr john rich'
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

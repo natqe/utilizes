@@ -1,22 +1,26 @@
 {
-  "name": "some-truthy",
-  "version": "1.0.4",
-  "description": "The utilizes method utilizes.someTruthy exported as a Node.js module.",
-  "main": "some-truthy.js",
-  "scripts": {
-    "start": "npm version patch &&  npm publish"
-  },
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natqe/utilizes.git"
   },
-  "keywords": [
-    "some-truthy"
-  ],
-  "author": "Natan Farkash",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/natqe/utilizes/issues"
   },
-  "homepage": "https://github.com/natqe/utilizes#readme"
+  "version": "1.0.11",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "name": "some-truthy",
+  "description": "Checks if the callback returns truthy for any element of the array. Iteration is stopped once the callback returns truthy\r\n\r\nReturn the truthy value or the last falsy value if none of the iteration returns truthy",
+  "main": "some-truthy.js",
+  "keywords": [
+    "some",
+    "truthy",
+    "some-truthy",
+    "truthy-some",
+    "some-truthy"
+  ]
 }

@@ -1,8 +1,5 @@
 # area
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.area exported as a Node.js module.
-
-
 Return true if the given area is found on a given element, else false
 
 **Usage:** `area({ pageX: number, pageY: number }, of: HTMLElement): boolean`
@@ -19,3 +16,8 @@ window.addEventListener('click', ({ pageX, pageY }) => {
 })
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

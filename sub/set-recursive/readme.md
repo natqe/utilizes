@@ -1,8 +1,5 @@
 # setRecursive
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.setRecursive exported as a Node.js module.
-
-
 Set recursive properties on object
 
 **Usage:** `setRecursive<T extends Object>(on: T, to: { [key: string]: any }, whenExist?: boolean): T`
@@ -55,3 +52,8 @@ setRecursive(person, propsToSet, false) // This will set the given properties ev
 //   }
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

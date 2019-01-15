@@ -1,8 +1,5 @@
 # offset
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.offset exported as a Node.js module.
-
-
 Get the current offset of the given element
 
 **Usage:** `offset(item: Element | Partial<ClientRect> | Partial<DOMRect>): { top: number, left: number }`
@@ -18,3 +15,8 @@ offset(specialElement.getBoundingClientRect())
 // also work
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

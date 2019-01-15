@@ -1,8 +1,5 @@
 # oneOrAll
 
-The [utilizes](https://www.npmjs.com/package/utilizes) method utilizes.oneOrAll exported as a Node.js module.
-
-
 Return one when is have only one item, return all when is have more then one item.
 
 **Usage:** `oneOrAll<T>(array: Array<T> | T): Array<T> | T`
@@ -20,3 +17,8 @@ oneOrAll([]) // Ignore when its not have an items
 // Output: undefined
 ```
 
+<!-- *keywords [] *keywordsend -->
+
+
+
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
