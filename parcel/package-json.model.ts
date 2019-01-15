@@ -5,6 +5,12 @@ export class PackageJSONModel {
 
   name: string
 
+  description: string
+
+  keywords: Array<string>
+
+  main: string
+
   constructor(options: Partial<PackageJSONModel> & { name: PackageJSONModel['name'] }) {
 
     if (options.version && options.version !== this.version) {
@@ -30,6 +36,12 @@ export class PackageJSONModel {
 
     }
 
+    options.keywords = [...allCombinations(options.name, `-`), ...(options.keywords || [])]
+
+    options.main = `${options.name}.js`
+
+    if(!options.description) options.description = `The utilizes method utilizes.${camelCase(options.name)} exported as a Node.js module.`
+
     merge(this, options)
 
   }
@@ -50,12 +62,6 @@ export class PackageJSONModel {
   }
 
   version = `1.0.0 `
-
-  description = `The utilizes method utilizes.${camelCase(this.name)} exported as a Node.js module.`
-
-  keywords = allCombinations(this.name, `-`)
-
-  main = `${this.name}.js`
 
   scripts = {
     start: `npm version patch &&  npm publish`
