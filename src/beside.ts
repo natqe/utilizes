@@ -13,22 +13,3 @@ export const beside = <T extends { [prop: string]: any }>(tree: Array<T>, prop: 
 }
 
 export default beside
-
-const tree = [
-  {
-    level: 0,
-    children: [
-      {
-        level: 1
-      }
-    ]
-  },
-  {
-    level: 0,
-    children: [
-      {
-        level: 1
-      }
-    ]
-  }
-]
