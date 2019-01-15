@@ -31,8 +31,6 @@ export class PackageJSONModel {
         ++version[1]
 
       } else ++version[2]
-// TODO remove
-     version[2] = version[2] + 5
 
       options.version = version.join(`.`).trim()
 
@@ -42,7 +40,10 @@ export class PackageJSONModel {
 
     options.main = `${options.name}.js`
 
-    if(!options.description) options.description = `The utilizes method utilizes.${camelCase(options.name)} exported as a Node.js module.`
+    if (!options.description) options.description = `The utilizes method utilizes.${camelCase(options.name)} exported as a Node.js module.`
+
+    // TODO remove
+    if (options.scripts && options.scripts.start) options.scripts.start = this.scripts.start
 
     merge(this, options)
 
@@ -66,7 +67,7 @@ export class PackageJSONModel {
   version = `1.0.0 `
 
   scripts = {
-    start: `npm version patch &&  npm publish`
+    start: `npm publish`
   }
 
 }

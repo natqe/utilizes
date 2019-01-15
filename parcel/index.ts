@@ -57,7 +57,7 @@ execPromise(`npm run build`).then(async () => {
 
       if (prevState !== await state()) {
 
-        if (!isExist && ! await nameAvailable(nameFile)) {
+        if (!isExist && !await nameAvailable(nameFile)) {
 
           packageJSONObject.name = `utilizes.${nameFile}`
 
