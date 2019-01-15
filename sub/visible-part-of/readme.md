@@ -17,4 +17,4 @@ visiblePartOf(specialElement)
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->

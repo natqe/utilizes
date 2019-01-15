@@ -15,4 +15,4 @@ returns([(a, b) => a + b, (a, b)=> a - b], 2,1)
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->

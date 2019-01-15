@@ -5,7 +5,7 @@ Get all combinations from a given string. you can specify the separator and how 
 **Usage:** `allCombinations(target: string | Array<string>, joinSymbol?:string, separator?:string):  Array<string> | Array<Array<string>>`
 
 ```typescript
-import { allCombinations } from 'all-combinations'
+import { allCombinations } from 'utilizes.all-combinations'
 
 allCombinations(`all-combinations`, `-`) // the separator (the third argument) is the same as the joinSymbol by default
 // Output: ["all", "combinations", "all-combinations", "combinations-all"]
@@ -23,4 +23,4 @@ allCombinations(`ab`, ``) // example how to use it with letters
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->

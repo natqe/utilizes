@@ -23,4 +23,4 @@ incrementLast('name1', 5) // defaultNum has no effect in this case
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->

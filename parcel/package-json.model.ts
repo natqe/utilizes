@@ -42,9 +42,6 @@ export class PackageJSONModel {
 
     if (!options.description) options.description = `The utilizes method utilizes.${camelCase(options.name)} exported as a Node.js module.`
 
-    // TODO remove
-    if (options.scripts && options.scripts.start) options.scripts.start = this.scripts.start
-
     merge(this, options)
 
     // TODO remove
