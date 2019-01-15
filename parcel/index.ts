@@ -29,7 +29,9 @@ execPromise(`npm run build`).then(async () => {
         readOutDirFile = (file: string) => readFilePromise(`${outDir}/${file}`),
         fileTypeDefinition = `${nameFile}.d.ts`,
         isExist = await existsPromise(`${outDir}/${packageJSONFileName}`),
-        state = async () => isExist ? `${await readOutDirFile(nameFile + `.js`)}${await readOutDirFile(fileTypeDefinition)}${await readOutDirFile(readmeFileName)}`.replace(/\n\t\s/g, ``) : ``,
+        state = async () => await existsPromise(`${outDir}/${packageJSONFileName}`) ?
+          `${await readOutDirFile(nameFile + `.js`)}${await readOutDirFile(fileTypeDefinition)}${await readOutDirFile(readmeFileName)}`.replace(/\n\t\s/g, ``) :
+          ``,
         prevState = await state()
 
       const fileName = file.slice(0, file.lastIndexOf(`.`))
