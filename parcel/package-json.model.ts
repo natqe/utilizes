@@ -31,6 +31,8 @@ export class PackageJSONModel {
         ++version[1]
 
       } else ++version[2]
+// TODO remove
+     version[2] = version[2] + 5
 
       options.version = version.join(`.`).trim()
 
