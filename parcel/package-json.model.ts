@@ -32,7 +32,7 @@ export class PackageJSONModel {
 
       } else ++version[2]
 
-      options.version = version.join(`.`)
+      options.version = version.join(`.`).trim()
 
     }
 

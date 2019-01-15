@@ -55,7 +55,7 @@ execPromise(`npm run build`).then(async () => {
 
       await writeFilePromise(`${outDir}/${packageJSONFileName}`, JSON.stringify(packageJSONObject))
 
-      if (true || prevState !== await state()) {
+      if (prevState !== await state()) {
 
         if (!isExist && ! await nameAvailable(nameFile)) {
 
