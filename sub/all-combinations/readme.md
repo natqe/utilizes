@@ -9,7 +9,7 @@ import { allCombinations } from 'utilizes.all-combinations'
 
 allCombinations(`all-combinations`, `-`) // the separator (the third argument) is the same as the joinSymbol by default
 // Output: ["all", "combinations", "all-combinations", "combinations-all"]
-allCombinations(`all-combinations`, ` `, `-`) // if you want the separator to be other from the join symbol, specify it in the third argument
+allCombinations(`all-combinations`, ` `, `-`) // if you want the separator to be other then join-symbol, specify it in the third argument
 // Output: ["all", "combinations", "all combinations", "combinations all"]
 allCombinations(`all-combinations`, null, `-`) // it can be also without the join symbol, so it will cause result without joining aka array of array of string
 // Output: [["all"], ["combinations"], ["all", "combinations"], ["combinations", "all"]]
