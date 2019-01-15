@@ -23,7 +23,7 @@ export const createReadme = async (fileName: string, generalReadme: string, pack
 
     result += `\n\nThis module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.`
 // TODO remove
-    result += `<!-- -->`
+    result += `<!-- end -->`
 
     return promisify(writeFile)(`sub/${fileName}/readme.md`, result)
 
