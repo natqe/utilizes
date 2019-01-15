@@ -23,4 +23,4 @@ allCombinations(`ab`, ``) // example how to use it with letters
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

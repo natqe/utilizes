@@ -21,4 +21,4 @@ someTruthy([0, 1, 2], num => num, true) // The last argument is for iterates fro
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

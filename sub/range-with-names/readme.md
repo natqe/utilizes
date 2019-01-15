@@ -17,4 +17,4 @@ rangeWithNames(3,5)
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

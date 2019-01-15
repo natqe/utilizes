@@ -18,4 +18,4 @@ includesMany([`value1`, `value2`], `value1`, `value2`)
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

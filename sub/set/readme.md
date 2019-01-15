@@ -40,4 +40,4 @@ import { set } from 'utilizes.set'
 
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- end -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
