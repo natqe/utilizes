@@ -35,11 +35,11 @@ eachDiff(
   ([obVersionA, obVersionB]) => {
     if (obVersionA === undefined) console.log(`${obVersionB.name} he's newer`)
     else if (obVersionB === undefined) console.log(`${obVersionA.name} deleted`)
-    else if (obVersionB.stars > obVersionA.stars) console.log(`${obVersionA.name} have now ${obVersionB.stars} stars over ${obVersionA.stars}`)
+    else if (obVersionB.stars > obVersionA.stars) console.log(`${obVersionA.name} have now ${obVersionB.stars} stars instad of ${obVersionA.stars}`)
   },
   `name` // unique unchangeable property to determain that it same object in other version
 )
-// Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 instad of 100"
+// Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 stars instad of 100"
 ```
 
 <!-- *keywords [] *keywordsend -->
