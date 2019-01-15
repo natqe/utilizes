@@ -1,0 +1,22 @@
+{
+  "name": "set-recursive",
+  "version": "1.0.4",
+  "description": "The utilizes method utilizes.setRecursive exported as a Node.js module.",
+  "main": "set-recursive.js",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natqe/utilizes.git"
+  },
+  "keywords": [
+    "set-recursive"
+  ],
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/natqe/utilizes/issues"
+  },
+  "homepage": "https://github.com/natqe/utilizes#readme"
+}

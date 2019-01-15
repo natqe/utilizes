@@ -1,5 +1,6 @@
 import { exec } from 'child_process'
 import { copyFile, exists, readdir, readFile, writeFile } from 'fs'
+import nameAvailable from 'name-available'
 import Bundler from 'parcel-bundler'
 import { promisify } from 'util'
 import { createReadme } from './create-readme'
@@ -54,17 +55,17 @@ execPromise(`npm run build`).then(async () => {
 
       await writeFilePromise(`${outDir}/${packageJSONFileName}`, JSON.stringify(packageJSONObject))
 
-      if (prevState !== await state()) try {
-        await execPromise(`npm run start --prefix ${outDir}`)
-      } catch (error) {
+      if (prevState !== await state()) {
 
-        console.error(error)
+        if (! await nameAvailable(nameFile)) {
 
-        packageJSONObject.name = `utilizes.${nameFile}`
+          packageJSONObject.name = `utilizes.${nameFile}`
 
-        await createReadme(fileName, readme, packageJSONObject)
+          await createReadme(fileName, readme, packageJSONObject)
 
-        await writeFilePromise(`${outDir}/${packageJSONFileName}`, JSON.stringify(packageJSONObject))
+          await writeFilePromise(`${outDir}/${packageJSONFileName}`, JSON.stringify(packageJSONObject))
+
+        }
 
         await execPromise(`npm run start --prefix ${outDir}`)
 

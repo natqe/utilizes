@@ -1,0 +1,22 @@
+{
+  "name": "visible-part-of",
+  "version": "1.0.4",
+  "description": "The utilizes method utilizes.visiblePartOf exported as a Node.js module.",
+  "main": "visible-part-of.js",
+  "scripts": {
+    "start": "npm version patch &&  npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natqe/utilizes.git"
+  },
+  "keywords": [
+    "visible-part-of"
+  ],
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/natqe/utilizes/issues"
+  },
+  "homepage": "https://github.com/natqe/utilizes#readme"
+}
