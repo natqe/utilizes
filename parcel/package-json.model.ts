@@ -36,7 +36,7 @@ export class PackageJSONModel {
 
     }
 
-    options.keywords = [...allCombinations(options.name, `-`), ...(options.keywords || [])]
+    options.keywords = [...allCombinations(options.name.split(`.`).pop(), `-`), ...(options.keywords || [])]
 
     options.main = `${options.name}.js`
 
