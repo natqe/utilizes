@@ -17,5 +17,6 @@ includesMany([`value1`, `value2`], `value1`, `value2`)
 <!-- *keywords [] *keywordsend -->
 
 
-
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
+
+<!-- -->

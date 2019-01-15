@@ -16,5 +16,6 @@ maxByLastNumber('dexter', [{ nickname: 'dexter3' }, { nickname: 'dexter2' }], 'n
 <!-- *keywords [] *keywordsend -->
 
 
-
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
+
+<!-- -->

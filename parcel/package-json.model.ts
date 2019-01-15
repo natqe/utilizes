@@ -7,8 +7,6 @@ export class PackageJSONModel {
 
   description: string
 
-  keywords: Array<string>
-
   main: string
 
   constructor(options: Partial<PackageJSONModel> & { name: PackageJSONModel['name'] }) {
@@ -36,16 +34,13 @@ export class PackageJSONModel {
 
     }
 
-    options.keywords = uniq([...allCombinations(options.name.split(`.`).pop(), `-`), ...(options.keywords || [])])
-
-    options.main = `${options.name}.js`
-
-    if (!options.description) options.description = `The utilizes method utilizes.${camelCase(options.name)} exported as a Node.js module.`
-
     merge(this, options)
 
-    // TODO remove
-    this.version = this.version.trim()
+    if (!this.description) this.description = `The utilizes method utilizes.${camelCase(this.name)} exported as a Node.js module.`
+
+    this.keywords = uniq(this.keywords.concat(allCombinations(this.name.split(`.`).pop(), `-`)))
+
+    this.main = `${this.name}.js`
 
   }
 
@@ -64,7 +59,9 @@ export class PackageJSONModel {
     url: `https://github.com/natqe/utilizes/issues`
   }
 
-  version = `1.0.0 `
+  keywords: Array<string> = []
+
+  version = `1.0.0`
 
   scripts = {
     start: `npm publish`
