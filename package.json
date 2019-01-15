@@ -1,6 +1,6 @@
 {
   "name": "utilizes",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Simple js utilities to speed your work",
   "main": "index.js",
   "scripts": {
