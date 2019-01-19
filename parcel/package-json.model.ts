@@ -36,11 +36,13 @@ export class PackageJSONModel {
 
     merge(this, options)
 
+    const actualName = this.name.split(`.`).pop()
+
     if (!this.description) this.description = `The utilizes method utilizes.${camelCase(this.name)} exported as a Node.js module.`
 
-    this.keywords = uniq(this.keywords.concat(allCombinations(this.name.split(`.`).pop(), `-`)))
+    this.keywords = uniq(this.keywords.concat(allCombinations(actualName, `-`)))
 
-    this.main = `${this.name}.js`
+    this.main = `${actualName}.js`
 
   }
 
@@ -59,12 +61,12 @@ export class PackageJSONModel {
     url: `https://github.com/natqe/utilizes/issues`
   }
 
-  keywords: Array<string> = []
-
-  version = `1.0.0`
-
-  scripts = {
+  readonly scripts = {
     start: `npm publish`
   }
+
+  keywords = [`utilizes`, `util`]
+
+  version = `1.0.0`
 
 }

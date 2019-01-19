@@ -3,7 +3,7 @@ import { camelCase, get } from 'lodash'
 import { promisify } from 'util'
 import { PackageJSONModel } from './package-json.model'
 
-export const createReadme = async (fileName: string, generalReadme: string, packageJSONObject: PackageJSONModel) => {
+export const createReadme = (fileName: string, generalReadme: string, packageJSONObject: PackageJSONModel) => {
 
   const nameCamel = camelCase(fileName)
 
@@ -15,8 +15,8 @@ export const createReadme = async (fileName: string, generalReadme: string, pack
 
     try {
       packageJSONObject.keywords.push(...JSON.parse(result.match(/\*keywords\s(\[[.\n]*\])\s\*keywordsend/)[1]))
-    } catch (error) {
-      console.error(error && error.message)
+    } catch ({ message }) {
+      console.error(message)
     }
 
     result = result.replace(`### ${nameCamel}`, `# ${nameCamel}`).replace(`utilizes/${fileName}`, `${packageJSONObject.name}`)
