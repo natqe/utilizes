@@ -1,6 +1,6 @@
 # beside
 
-Put children beside there father
+Put children beside their father
 
 **Usage:** `beside<T>(tree: Array<T>, prop: keyof T): Array<T>`
 
@@ -34,7 +34,7 @@ beside(tree, `children`)
 // Output: [{ id:1, ... }, { id:2, ... }, { id:3, ... }, { id:4,... }]
 ```
 
-<!-- *keywords [] *keywordsend -->
+<!-- *keywords ["tree", "children"] *keywordsend -->
 
 
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

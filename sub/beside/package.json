@@ -1,1 +1,27 @@
-{"author":"Natan Farkash","license":"MIT","homepage":"https://github.com/natqe/utilizes#readme","repository":{"type":"git","url":"git+https://github.com/natqe/utilizes.git"},"bugs":{"url":"https://github.com/natqe/utilizes/issues"},"keywords":["beside"],"version":"1.1.4","scripts":{"start":"npm publish"},"name":"utilizes.beside","description":"Put children beside there father","main":"utilizes.beside.js"}
+{
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natqe/utilizes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/natqe/utilizes/issues"
+  },
+  "scripts": {
+    "start": "npm publish"
+  },
+  "keywords": [
+    "beside",
+    "util",
+    "tree",
+    "children",
+    "tree",
+    "children"
+  ],
+  "version": "1.1.6",
+  "name": "utilizes.beside",
+  "description": "Put children beside their father",
+  "main": "beside.js"
+}
