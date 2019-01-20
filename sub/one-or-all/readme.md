@@ -1,11 +1,11 @@
 # oneOrAll
 
-Return one when is have only one item, return all when is have more then one item.
+Return one when is have only one item, return all when is have more then one item
 
 **Usage:** `oneOrAll<T>(array: Array<T> | T): Array<T> | T`
 
 ```typescript
-import { oneOrAll } from 'one-or-all'
+import { oneOrAll } from 'utilizes.one-or-all'
 
 oneOrAll(['item']) // Return one when is have only one item
 // Output: 'item'

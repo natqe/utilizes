@@ -1,12 +1,12 @@
 # eachDiff
 
-Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.
-if the object will not exist on some list you get an undefined on he's place.
+Run on each unique object of the lists and bring the same object from the other lists and give them to you, so you can be able to compare them.
+If the object does not exist in some list you get an undefined in is place.
 
 **Usage:** `eachDiff<T>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => void, detectBy?: keyof T): lists`
 
 ```typescript
-import { eachDiff } from 'each-diff'
+import { eachDiff } from 'utilizes.each-diff'
 
 const
   listVersionA = [
@@ -31,18 +31,18 @@ const
   ]
 
 eachDiff(
-  [listVersionA, listVersionB], // it can be any length of lists
+  [listVersionA, listVersionB], // It can be any length of lists
   ([obVersionA, obVersionB]) => {
-    if (obVersionA === undefined) console.log(`${obVersionB.name} he's newer`)
+    if (obVersionA === undefined) console.log(`${obVersionB.name} is newer`)
     else if (obVersionB === undefined) console.log(`${obVersionA.name} deleted`)
     else if (obVersionB.stars > obVersionA.stars) console.log(`${obVersionA.name} have now ${obVersionB.stars} stars instad of ${obVersionA.stars}`)
   },
-  `name` // unique unchangeable property to determain that it same object in other version
+  `name` // unique unchangeable property to determain that it is the same object in another version
 )
-// Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 stars instad of 100"
+// Output:  "Skye is newer" and "Sharon deleted" and "Adrien have now 150 stars instad of 100"
 ```
 
-<!-- *keywords [] *keywordsend -->
+<!-- *keywords ["objects", "comparison", "track-objects"] *keywordsend -->
 
 
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

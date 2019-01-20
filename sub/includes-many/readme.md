@@ -1,11 +1,11 @@
 # includesMany
 
-Return false when one or more of the given values not include in the array
+Return false when one or more of the given values not include in the array, else return true
 
 **Usage:** `includesMany<T>(collection: ArrayLike<T>, ...targets: Array<T>): boolean`
 
 ```typescript
-import { includesMany } from 'includes-many'
+import { includesMany } from 'utilizes.includes-many'
 
 includesMany([`value1`], `value1`, `value2`)
 // Output: false
