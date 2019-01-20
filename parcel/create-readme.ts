@@ -22,8 +22,6 @@ export const createReadme = (fileName: string, generalReadme: string, packageJSO
     result = result.replace(`### ${nameCamel}`, `# ${nameCamel}`).replace(`utilizes/${fileName}`, `${packageJSONObject.name}`)
 
     result += `\nThis module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.`
-// TODO remove
-    result += `<!-- -->`
 
     return promisify(writeFile)(`sub/${fileName}/readme.md`, result)
 
