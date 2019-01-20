@@ -29,8 +29,6 @@ export class PackageJSONModel {
         ++version[1]
 
       } else ++version[2]
-// TODO remove
-      version[2] += 1
 
       options.version = version.join(`.`)
 

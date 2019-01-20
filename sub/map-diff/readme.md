@@ -8,7 +8,7 @@ Return array of the value that you return from the callback function
 **Usage:** `mapDiff<T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => R, detectBy?: keyof T): Array<R>`
 
 ```typescript
-import { mapDiff } from 'utilizes.map-diff'
+import { mapDiff } from 'map-diff'
 
 const
   listVersionA = [
@@ -47,4 +47,4 @@ mapDiff(
 <!-- *keywords ["objects", "comparison", "track-objects"] *keywordsend -->
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

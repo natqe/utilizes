@@ -5,7 +5,7 @@ Return one when is have only one item, return all when is have more then one ite
 **Usage:** `oneOrAll<T>(array: Array<T> | T): Array<T> | T`
 
 ```typescript
-import { oneOrAll } from 'utilizes.one-or-all'
+import { oneOrAll } from 'one-or-all'
 
 oneOrAll(['item']) // Return one when is have only one item
 // Output: 'item'
@@ -20,4 +20,4 @@ oneOrAll([]) // Ignore when its not have an items
 <!-- *keywords [] *keywordsend -->
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

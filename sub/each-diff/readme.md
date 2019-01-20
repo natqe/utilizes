@@ -6,7 +6,7 @@ If the object does not exist in some list you get an undefined in is place.
 **Usage:** `eachDiff<T>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => void, detectBy?: keyof T): lists`
 
 ```typescript
-import { eachDiff } from 'utilizes.each-diff'
+import { eachDiff } from 'each-diff'
 
 const
   listVersionA = [
@@ -45,4 +45,4 @@ eachDiff(
 <!-- *keywords ["objects", "comparison", "track-objects"] *keywordsend -->
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

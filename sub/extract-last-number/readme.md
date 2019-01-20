@@ -18,4 +18,4 @@ extractLastNumber('name01')
 <!-- *keywords [] *keywordsend -->
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- -->
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
