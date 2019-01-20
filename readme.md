@@ -81,7 +81,7 @@ using typescript or es6:
 
 ### beside
 
-Put children beside there father
+Put children beside their father
 
 **Usage:** `beside<T>(tree: Array<T>, prop: keyof T): Array<T>`
 
@@ -115,12 +115,12 @@ beside(tree, `children`)
 // Output: [{ id:1, ... }, { id:2, ... }, { id:3, ... }, { id:4,... }]
 ```
 
-<!-- *keywords [] *keywordsend -->
+<!-- *keywords ["tree", "children"] *keywordsend -->
 
 ### eachDiff
 
-Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.
-if the object will not exist on some list you get an undefined on he's place.
+Run on each unique object of the lists and bring the same object from the other lists and give them to you, so you can be able to compare them.
+If the object does not exist in some list you get an undefined in is place.
 
 **Usage:** `eachDiff<T>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => void, detectBy?: keyof T): lists`
 
@@ -150,25 +150,25 @@ const
   ]
 
 eachDiff(
-  [listVersionA, listVersionB], // it can be any length of lists
+  [listVersionA, listVersionB], // It can be any length of lists
   ([obVersionA, obVersionB]) => {
-    if (obVersionA === undefined) console.log(`${obVersionB.name} he's newer`)
+    if (obVersionA === undefined) console.log(`${obVersionB.name} is newer`)
     else if (obVersionB === undefined) console.log(`${obVersionA.name} deleted`)
     else if (obVersionB.stars > obVersionA.stars) console.log(`${obVersionA.name} have now ${obVersionB.stars} stars instad of ${obVersionA.stars}`)
   },
-  `name` // unique unchangeable property to determain that it same object in other version
+  `name` // unique unchangeable property to determain that it is the same object in another version
 )
-// Output:  "Skye he's newer" and "Sharon deleted" and "Adrien have now 150 stars instad of 100"
+// Output:  "Skye is newer" and "Sharon deleted" and "Adrien have now 150 stars instad of 100"
 ```
 
-<!-- *keywords [] *keywordsend -->
+<!-- *keywords ["objects", "comparison", "track-objects"] *keywordsend -->
 
 ### mapDiff
 
-Run on each unique object of a lists and fetch the same object from the other lists and give you them to you, for you to be able to compare between them.
-if the object will not exist on some list you get an undefined on he's place.
+Run on each unique object of the lists and bring the same object from the other lists and give them to you, so you can be able to compare them.
+If the object does not exist in some list you get an undefined in is place.
 
-return array of the value that you return from the callback
+Return array of the value that you return from the callback function
 
 **Usage:** `mapDiff<T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists) => R, detectBy?: keyof T): Array<R>`
 
@@ -198,22 +198,22 @@ const
   ]
 
 mapDiff(
-  [listVersionA, listVersionB], // it can be any length of lists
+  [listVersionA, listVersionB], // It can be any length of lists
   ([obVersionA, obVersionB]) => {
-    if (obVersionA === undefined) return `${obVersionB.name} he's newer`
+    if (obVersionA === undefined) return `${obVersionB.name} is newer`
     else if (obVersionB === undefined) return `${obVersionA.name} deleted`
     else if (obVersionB.stars > obVersionA.stars) return `${obVersionA.name} have now ${obVersionB.stars} stars instad of ${obVersionA.stars}`
   },
-  `name` // unique unchangeable property to determain that it same object in other version
+  `name` // unique unchangeable property to determain that it is the same object in another version
 )
-// Output:  ["Skye he's newer", "Sharon deleted", "Adrien have now 150 stars instad of 100"]
+// Output:  ["Skye is newer", "Sharon deleted", "Adrien have now 150 stars instad of 100"]
 ```
 
-<!-- *keywords [] *keywordsend -->
+<!-- *keywords ["objects", "comparison", "track-objects"] *keywordsend -->
 
 ### includesMany
 
-Return false when one or more of the given values not include in the array
+Return false when one or more of the given values not include in the array, else return true
 
 **Usage:** `includesMany<T>(collection: ArrayLike<T>, ...targets: Array<T>): boolean`
 
@@ -231,7 +231,7 @@ includesMany([`value1`, `value2`], `value1`, `value2`)
 
 ### oneOrAll
 
-Return one when is have only one item, return all when is have more then one item.
+Return one when is have only one item, return all when is have more then one item
 
 **Usage:** `oneOrAll<T>(array: Array<T> | T): Array<T> | T`
 
