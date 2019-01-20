@@ -20,4 +20,4 @@ someTruthyRight([0, false, undefined, null], falsy => falsy) // Return the last 
 <!-- *keywords [] *keywordsend -->
 
 
-This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.
+This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.<!-- -->

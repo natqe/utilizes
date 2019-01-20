@@ -23,8 +23,6 @@ export const createReadme = (fileName: string, generalReadme: string, packageJSO
 
     result += `\nThis module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.`
 
-    result += `<!-- -->`
-
     return promisify(writeFile)(`sub/${fileName}/readme.md`, result)
 
   }

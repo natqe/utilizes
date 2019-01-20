@@ -1,1 +1,36 @@
-{"author":"Natan Farkash","license":"MIT","homepage":"https://github.com/natqe/utilizes#readme","repository":{"type":"git","url":"git+https://github.com/natqe/utilizes.git"},"bugs":{"url":"https://github.com/natqe/utilizes/issues"},"scripts":{"start":"npm publish"},"keywords":["one","or","all","one-or","one-all","or-one","or-all","all-one","all-or","one-or-all","one-all-or","or-one-all","or-all-one","all-one-or","all-or-one"],"version":"1.1.4","name":"utilizes.one-or-all","description":"Return one when is have only one item, return all when is have more then one item","main":"one-or-all.js"}
+{
+  "author": "Natan Farkash",
+  "license": "MIT",
+  "homepage": "https://github.com/natqe/utilizes#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natqe/utilizes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/natqe/utilizes/issues"
+  },
+  "scripts": {
+    "start": "npm publish"
+  },
+  "keywords": [
+    "one",
+    "or",
+    "all",
+    "one-or",
+    "one-all",
+    "or-one",
+    "or-all",
+    "all-one",
+    "all-or",
+    "one-or-all",
+    "one-all-or",
+    "or-one-all",
+    "or-all-one",
+    "all-one-or",
+    "all-or-one"
+  ],
+  "version": "1.1.7",
+  "name": "one-or-all",
+  "description": "Return one when is have only one item, return all when is have more then one item",
+  "main": "one-or-all.js"
+}
