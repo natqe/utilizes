@@ -1,5 +1,5 @@
 import { writeFile } from 'fs'
-import { camelCase, get } from 'lodash'
+import { camelCase, get, uniq } from 'lodash'
 import { promisify } from 'util'
 import { PackageJSONModel } from './package-json.model'
 
@@ -14,7 +14,11 @@ export const createReadme = (fileName: string, generalReadme: string, packageJSO
     packageJSONObject.description = result.split(`### ${nameCamel}`).pop().split(`**Usage:**`).shift().trim()
 
     try {
+
       packageJSONObject.keywords.push(...JSON.parse(result.match(/\*keywords\s(\[(?:.|\n|\s|\t)*\])\s\*keywordsend/)[1]))
+
+      packageJSONObject.keywords = uniq(packageJSONObject.keywords)
+
     } catch ({ message }) {
       console.error(message)
     }
