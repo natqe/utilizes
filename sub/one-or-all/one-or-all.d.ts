@@ -1,2 +1,2 @@
-export declare const oneOrAll: <T>(array: import("lodash").Many<T>) => import("lodash").Many<T>;
+export declare const oneOrAll: <T>(array: T | ReadonlyArray<T>) => T | ReadonlyArray<T>;
 export default oneOrAll;
