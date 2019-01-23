@@ -32,6 +32,7 @@ import { someTruthyRight } from './some-truthy-right'
 import { sumBestMatch } from './sum-best-match'
 import { titleCase } from './title-case'
 import { toEnum } from './to-enum'
+import { toggle } from './toggle'
 import { visiblePartOf } from './visible-part-of'
 
 export {
@@ -69,7 +70,8 @@ export {
   eachDiff,
   easyStyleShadow,
   includesMany,
-  beside
+  beside,
+  toggle
 }
 
 export default {
@@ -107,5 +109,6 @@ export default {
   eachDiff,
   easyStyleShadow,
   includesMany,
-  beside
+  beside,
+  toggle
 }

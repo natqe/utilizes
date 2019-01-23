@@ -26,3 +26,5 @@ export function allCombinations(target: string | Array<string>, joinSymbol?: str
   return typeof joinSymbol === `string` ? result.map(list => list.join(joinSymbol)) : result
 
 }
+
+export default allCombinations
