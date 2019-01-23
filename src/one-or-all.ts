@@ -1,7 +1,9 @@
 import isArray from 'lodash/isArray'
 import size from 'lodash/size'
 
-export const oneOrAll = <T>(array: _.Many<T>): _.Many<T> => {
+type Many<T> = T | ReadonlyArray<T>
+
+export const oneOrAll = <T>(array: Many<T>): Many<T> => {
   if (!isArray(array) || size(array) > 1) return array
   else if (size(array) === 1) return array[0]
 }

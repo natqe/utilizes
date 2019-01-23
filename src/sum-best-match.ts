@@ -1,7 +1,16 @@
-import { findBestMatch, BestMatch, Rating } from 'string-similarity'
-import mean from 'lodash/mean'
 import find from 'lodash/find'
 import maxBy from 'lodash/maxBy'
+import mean from 'lodash/mean'
+import { findBestMatch } from 'string-similarity'
+
+export interface Rating {
+  target: string;
+  rating: number;
+}
+export interface BestMatch {
+  ratings: Rating[];
+  bestMatch: Rating;
+}
 
 export const sumBestMatch = (mainStrings: string[], targetStrings: string[]) => {
 

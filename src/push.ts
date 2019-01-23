@@ -4,7 +4,11 @@ import set from 'lodash/set'
 
 type returnType = ReturnType<typeof Array.prototype.push>
 
-type path = _.PropertyPath
+type PropertyName = string | number | symbol
+
+type PropertyPath =PropertyName | ReadonlyArray<PropertyName>
+
+type path = PropertyPath
 
 export function push<T>(arr: Array<T>, item: T): returnType
 export function push<T extends object>(object: T, pathToArray: path, ...items): returnType
