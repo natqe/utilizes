@@ -54,7 +54,7 @@ execPromise(`npm run build`).then(async () => {
 
       await createReadme(fileName, readme, packageJSONObject)
 
-      if (prevState !== await state()) try {
+      if (!prevState || prevState !== await state()) try {
 
         await writeFilePromise(`${outDir}/${packageJSONFileName}`, JSON.stringify(packageJSONObject))
 
