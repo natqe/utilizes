@@ -9,9 +9,11 @@ export class PackageJSONModel {
 
   main: string
 
+  version: string
+
   constructor(options: Partial<PackageJSONModel> & { name: PackageJSONModel['name'] }) {
 
-    if (options.version && options.version !== this.version) {
+    if (options.version) {
 
       const version = options.version.split(`.`).map(n => +n)
 
@@ -33,6 +35,7 @@ export class PackageJSONModel {
       options.version = version.join(`.`)
 
     }
+    else this.version = `1.0.0`
 
     merge(this, options)
 
@@ -66,7 +69,5 @@ export class PackageJSONModel {
   }
 
   keywords = [`utilizes`, `util`]
-
-  version = `1.0.0`
 
 }
