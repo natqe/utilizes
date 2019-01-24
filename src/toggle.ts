@@ -1,19 +1,47 @@
+import findLastIndex from 'lodash/findLastIndex'
 import get from 'lodash/get'
+import isEqual from 'lodash/isEqual'
 import set from 'lodash/set'
 
 type PropertyName = string | number | symbol;
 
 type PropertyPath = PropertyName | ReadonlyArray<PropertyName>
 
+type falsy = false | 0 | '' | null | undefined
 
-export function toggle<TObject extends object, TKey extends keyof TObject>(object: TObject, path: TKey | [TKey]): boolean
-export function toggle<T>(object: { [index: number]: T } | { [index: string]: T }, path: number): boolean
-export function toggle(object, path: PropertyPath): boolean
-export function toggle(object, path: PropertyPath) {
+export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], values: Array<I>): I | (I extends falsy ? true : false)
+export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], values: Array<I>): typeof values['length'] extends 0 ? boolean : I
+export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, values: Array<I>): I | (I extends falsy ? true : false)
+export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, values: Array<I>): typeof values['length'] extends 0 ? boolean : I
+export function toggle<I = true | false>(object, path: PropertyPath, values: [I]): I | (I extends falsy ? true : false)
+export function toggle<I = true | false>(object, path: PropertyPath, values: Array<I>): typeof values['length'] extends 0 ? boolean : I
+export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], ...values: Array<I>): I | (I extends falsy ? true : false)
+export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I
+export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, ...values: Array<I>): I | (I extends falsy ? true : false)
+export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I
+export function toggle<I = true | false>(object, path: PropertyPath, ...values: [I]): I | (I extends falsy ? true : false)
+export function toggle<I = true | false>(object, path: PropertyPath, ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I
+export function toggle<I = true | false>(object, path: PropertyPath, ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I {
 
-  set(object, path, !get(object, path))
+  let valuesToWorkWith: Array<boolean | I>
 
-  return !!get(object, path)
+  if (!values.length) valuesToWorkWith = [true, false]
+  else if (values.length === 1) {
+
+    if (Array.isArray(values[0])) return toggle(object, path, ...values[0] as any)
+
+    valuesToWorkWith = [values[0], !values[0]]
+
+  }
+  else valuesToWorkWith = [...values]
+
+  const
+    current: I = get(object, path),
+    nextIndex = findLastIndex(valuesToWorkWith, value => isEqual(value, current)) + 1
+
+  set(object, path, valuesToWorkWith[nextIndex in valuesToWorkWith ? nextIndex : 0])
+
+  return get(object, path)
 
 }
 
