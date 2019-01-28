@@ -1,4 +1,3 @@
-import { easyStyleShadow } from 'easy-style-shadow'
 import { area } from './area'
 import beside from './beside'
 import { bind } from './bind'
@@ -9,6 +8,7 @@ import { createStyle } from './create-style'
 import { delRecursive } from './del-recursive'
 import { doDeclare } from './do-declare'
 import { eachDiff } from './each-diff'
+import { easyStyleShadow } from './easy-style-shadow'
 import { ensureUnique } from './ensure-unique'
 import { extractLastNumber } from './extract-last-number'
 import { includesMany } from './includes-many'
@@ -34,6 +34,45 @@ import { titleCase } from './title-case'
 import { toEnum } from './to-enum'
 import { toggle } from './toggle'
 import { visiblePartOf } from './visible-part-of'
+
+const utilizes = {
+  area,
+  bind,
+  camelClassCase,
+  chars,
+  charsAll,
+  createStyle,
+  delRecursive,
+  doDeclare,
+  ensureUnique,
+  extractLastNumber,
+  incrementLast,
+  interval,
+  invoke,
+  mapZIndex,
+  maxByLastNumber,
+  offset,
+  oneOrAll,
+  prefix,
+  push,
+  rangeWithNames,
+  returns,
+  set,
+  setEach,
+  setRecursive,
+  someTruthy,
+  someTruthyRight,
+  sumBestMatch,
+  toEnum,
+  visiblePartOf,
+  titleCase,
+  mapDiff,
+  eachDiff,
+  easyStyleShadow,
+  includesMany,
+  beside,
+  toggle
+}
 
 export {
   area,
@@ -71,44 +110,8 @@ export {
   easyStyleShadow,
   includesMany,
   beside,
-  toggle
+  toggle,
+  utilizes
 }
 
-export default {
-  area,
-  bind,
-  camelClassCase,
-  chars,
-  charsAll,
-  createStyle,
-  delRecursive,
-  doDeclare,
-  ensureUnique,
-  extractLastNumber,
-  incrementLast,
-  interval,
-  invoke,
-  mapZIndex,
-  maxByLastNumber,
-  offset,
-  oneOrAll,
-  prefix,
-  push,
-  rangeWithNames,
-  returns,
-  set,
-  setEach,
-  setRecursive,
-  someTruthy,
-  someTruthyRight,
-  sumBestMatch,
-  toEnum,
-  visiblePartOf,
-  titleCase,
-  mapDiff,
-  eachDiff,
-  easyStyleShadow,
-  includesMany,
-  beside,
-  toggle
-}
+export default utilizes
