@@ -1,5 +1,5 @@
 import { area } from './area'
-import beside from './beside'
+import { beside } from './beside'
 import { bind } from './bind'
 import { camelClassCase } from './camel-class-case'
 import { chars } from './chars'
