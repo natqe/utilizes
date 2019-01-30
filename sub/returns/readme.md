@@ -7,7 +7,11 @@ Invoke set of functions with same arguments at ones, and get the results.
 ```typescript
 import { returns } from 'utilizes.returns'
 
-returns([(a, b) => a + b, (a, b)=> a - b], 2,1)
+const
+    add = (a, b) => a + b
+    subtract = (a, b)=> a - b
+
+returns([add, subtract], 2,1)
 // Output: [3,1]
 ```
 
