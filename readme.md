@@ -26,6 +26,7 @@ Simple js utilities to speed up your work
   - [bind](#bind)
   - [doDeclare](#dodeclare)
   - [returns](#returns)
+  - [scenarios](#scenarios)
 - [Number](#number)
   - [rangeWithNames](#rangwithnames)
 - [Object](#object)
@@ -43,7 +44,9 @@ Simple js utilities to speed up your work
   - [ensureUnique](#ensureunique)
   - [extractLastNumber](#extractlastnumber)
   - [incrementLast](#incrementlast)
+  - [lastPlaceOf](#lastplaceof)
   - [maxByLastNumber](#maxbylastnumber)
+  - [placeOf](#placeof)
   - [prefix](#prefix)
   - [sumBestMatch](#sumbestmatch)
   - [titleCase](#titlecase)
@@ -519,8 +522,29 @@ Invoke set of functions with same arguments at ones, and get the results.
 ```typescript
 import { returns } from 'utilizes/returns'
 
-returns([(a, b) => a + b, (a, b)=> a - b], 2,1)
+const
+    add = (a, b) => a + b
+    subtract = (a, b)=> a - b
+
+returns([add, subtract], 2,1)
 // Output: [3,1]
+```
+
+<!-- *keywords [] *keywordsend -->
+
+### scenarios
+
+Invoke function multiple times with other arguments, and get the results.
+
+**Usage:** `scenarios(func: (...args) => any, ...funcArgs: Array<typeof args>): Array<ReturnType<typeof func>>`
+
+```typescript
+import { scenarios } from 'utilizes/scenarios'
+
+const add = (a, b) => a + b
+
+scenarios(add, [1, 2], [3, 4])
+// Output: [3, 7]
 ```
 
 <!-- *keywords [] *keywordsend -->
@@ -892,6 +916,23 @@ incrementLast('name1', 5) // defaultNum has no effect in this case
 
 <!-- *keywords [] *keywordsend -->
 
+### lastPlaceOf
+
+Return the last place of a given input in a given value.
+
+**Usage:** `lastPlaceOf<T>(target: string | Array<T>, searchValue: string | T, startSearchFrom?: number): number`
+
+```typescript
+import { lastPlaceOf } from 'utilizes/last-place-of'
+
+lastPlaceOf('abca', 'a')
+// Output: 4
+lastPlaceOf([1,2,3,1], 1)
+// Output: 4
+```
+
+<!-- *keywords [] *keywordsend -->
+
 ### maxByLastNumber
 
 Check array of items and return the item with the highest suffix number. if non is found return undefined.
@@ -905,6 +946,23 @@ maxByLastNumber('name', ['name1', 'name2', 'otherName'])
 // Output: "name2"
 maxByLastNumber('dexter', [{ nickname: 'dexter3' }, { nickname: 'dexter2' }], 'nickname')
 // Output: "dexter3"
+```
+
+<!-- *keywords [] *keywordsend -->
+
+### placeOf
+
+Return the first place of a given input in a given value.
+
+**Usage:** `placeOf<T>(target: string | Array<T>, searchValue: string | T, startSearchFrom?: number): number`
+
+```typescript
+import { placeOf } from 'utilizes/place-of'
+
+placeOf('abc', 'b')
+// Output: 2
+placeOf([1,2,3], 2)
+// Output: 2
 ```
 
 <!-- *keywords [] *keywordsend -->

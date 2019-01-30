@@ -15,15 +15,18 @@ import { includesMany } from './includes-many'
 import { incrementLast } from './increment-last'
 import { interval } from './interval'
 import { invoke } from './invoke'
+import { lastPlaceOf } from './last-place-of'
 import { mapDiff } from './map-diff'
 import { mapZIndex } from './map-z-index'
 import { maxByLastNumber } from './max-by-last-number'
 import { offset } from './offset'
 import { oneOrAll } from './one-or-all'
+import { placeOf } from './place-of'
 import { prefix } from './prefix'
 import { push } from './push'
 import { rangeWithNames } from './range-with-names'
 import { returns } from './returns'
+import { scenarios } from './scenarios'
 import { set } from './set'
 import { setEach } from './set-each'
 import { setRecursive } from './set-recursive'
@@ -71,10 +74,14 @@ const utilizes = {
   easyStyleShadow,
   includesMany,
   beside,
-  toggle
+  toggle,
+  placeOf,
+  lastPlaceOf,
+  scenarios
 }
 
 export {
+  utilizes,
   area,
   bind,
   camelClassCase,
@@ -111,7 +118,9 @@ export {
   includesMany,
   beside,
   toggle,
-  utilizes
+  placeOf,
+  lastPlaceOf,
+  scenarios
 }
 
 export default utilizes
