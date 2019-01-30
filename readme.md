@@ -929,6 +929,8 @@ lastPlaceOf('abca', 'a')
 // Output: 4
 lastPlaceOf([1,2,3,1], 1)
 // Output: 4
+lastPlaceOf([1,2,3,4], 6)
+// Output: 0
 ```
 
 <!-- *keywords [] *keywordsend -->
@@ -959,10 +961,12 @@ Return the first place of a given input in a given value.
 ```typescript
 import { placeOf } from 'utilizes/place-of'
 
-placeOf('abc', 'b')
-// Output: 2
-placeOf([1,2,3], 2)
-// Output: 2
+lastPlaceOf('abca', 'a')
+// Output: 1
+lastPlaceOf([1,2,3,1], 1)
+// Output: 1
+lastPlaceOf([1,2,3,4], 6)
+// Output: 0
 ```
 
 <!-- *keywords [] *keywordsend -->
