@@ -11,6 +11,8 @@ lastPlaceOf('abca', 'a')
 // Output: 4
 lastPlaceOf([1,2,3,1], 1)
 // Output: 4
+lastPlaceOf([1,2,3,4], 6)
+// Output: 0
 ```
 
 <!-- *keywords [] *keywordsend -->
