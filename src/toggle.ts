@@ -9,19 +9,22 @@ type PropertyPath = PropertyName | ReadonlyArray<PropertyName>
 
 type falsy = false | 0 | '' | null | undefined
 
-export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], values: Array<I>): I | (I extends falsy ? true : false)
-export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], values: Array<I>): typeof values['length'] extends 0 ? boolean : I
-export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, values: Array<I>): I | (I extends falsy ? true : false)
-export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, values: Array<I>): typeof values['length'] extends 0 ? boolean : I
-export function toggle<I = true | false>(object, path: PropertyPath, values: [I]): I | (I extends falsy ? true : false)
-export function toggle<I = true | false>(object, path: PropertyPath, values: Array<I>): typeof values['length'] extends 0 ? boolean : I
-export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], ...values: Array<I>): I | (I extends falsy ? true : false)
+export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], ...values: [[I]]): I | (I extends falsy ? true : false)
+export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], ...values:[Array<I>]): typeof values[0]['length'] extends 0 ? boolean : I
+export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, ...values: [[I]]): I | (I extends falsy ? true : false)
+export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, ...values: [Array<I>]): typeof values[0]['length'] extends 0 ? boolean : I
+export function toggle<I = true | false>(object, path: PropertyPath, ...values: [[I]]): I | (I extends falsy ? true : false)
+export function toggle<I = true | false>(object, path: PropertyPath, ...values: [Array<I>]): typeof values[0]['length'] extends 0 ? boolean : I
+export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], ...values: [I]): I | (I extends falsy ? true : false)
 export function toggle<TObject extends object, TKey extends keyof TObject, I = true | false>(object: TObject, path: TKey | [TKey], ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I
-export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, ...values: Array<I>): I | (I extends falsy ? true : false)
+export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, ...values: [I]): I | (I extends falsy ? true : false)
 export function toggle<T, I = true | false>(object: { [index: number]: T } | { [index: string]: T }, path: number, ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I
 export function toggle<I = true | false>(object, path: PropertyPath, ...values: [I]): I | (I extends falsy ? true : false)
 export function toggle<I = true | false>(object, path: PropertyPath, ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I
-export function toggle<I = true | false>(object, path: PropertyPath, ...values: Array<I>): typeof values['length'] extends 0 ? boolean : I {
+export function toggle<TObject extends object, TKey extends keyof TObject, T, I = true | false>(
+  object: { [index: number]: T } | { [index: string]: T } | TObject | any,
+  path: PropertyPath | number | TKey | [TKey],
+  ...values: Array<I> | [I] | [Array<I>]): typeof values['length'] extends 0 ? boolean : I {
 
   let valuesToWorkWith: Array<boolean | I>
 
@@ -33,6 +36,7 @@ export function toggle<I = true | false>(object, path: PropertyPath, ...values: 
     valuesToWorkWith = [values[0], !values[0]]
 
   }
+  //@ts-ignore
   else valuesToWorkWith = [...values]
 
   const
