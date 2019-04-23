@@ -48,6 +48,7 @@ Simple js utilities to speed up your work
   - [maxByLastNumber](#maxbylastnumber)
   - [placeOf](#placeof)
   - [prefix](#prefix)
+  - [suffix](#suffix)
   - [sumBestMatch](#sumbestmatch)
   - [titleCase](#titlecase)
 - [Timer](#timer)
@@ -295,7 +296,7 @@ Checks if the callback returns truthy for any element of the array. Iteration is
 
 Return the truthy value or the last falsy value if none of the iteration returns truthy
 
-**Usage:** `someTruthy<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y, reverse?: boolean): Y`
+**Usage:** `someTruthy<T, R>(list: Array<T>, callback: (value: T, index: number, list: Array<T>) => R, reverse?: boolean): R`
 
 ```typescript
 import { someTruthy } from 'utilizes/some-truthy'
@@ -318,7 +319,7 @@ Return the truthy value or the last falsy value if none of the iteration returns
 
 Run over the given array from right to left
 
-**Usage:** `someTruthyRight<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y): Y`
+**Usage:** `someTruthyRight<T, R>(list: Array<T>, callback: (value: T, index: number, list: Array<T>) => R): R`
 
 ```typescript
 import { someTruthyRight } from 'utilizes/some-truthy-right'
@@ -380,7 +381,7 @@ so if you want to cancel the detection in any point, you can invoke the return f
 
 The second argument is for setting the timeout for detection cycle.
 
-**Usage:** `easyStyleShadow(css: { [k: string]: string }, timeout?: number): Function`
+**Usage:** `easyStyleShadow(css: { [key: string]: string }, timeout?: number): Function`
 
 ```typescript
 import { easyStyleShadow } from 'utilizes/easy-style-shadow'
@@ -444,7 +445,7 @@ offset(specialElement.getBoundingClientRect())
 
 Get the current x and y of given element. also return the offset.
 
-**Usage:** `visiblePartOf(elem: HTMLElement): { x: number, y: number, offsetTop: number, offsetLeft: number }`
+**Usage:** `visiblePartOf(element: HTMLElement): { x: number, y: number, offsetTop: number, offsetLeft: number }`
 
 ```typescript
 import { visiblePartOf } from 'utilizes/visible-part-of'
@@ -463,7 +464,7 @@ visiblePartOf(specialElement)
 
 Bind all methods of the given object to the object
 
-**Usage:** `bind<T>(this: T): T`
+**Usage:** `bind(this): this`
 
 ```typescript
 import { bind } from 'utilizes/bind'
@@ -517,7 +518,7 @@ func()
 
 Invoke set of functions with same arguments at ones, and get the results.
 
-**Usage:** `returns<T>(functions: Array<T>, ...args: Array): Array<ReturnType<T>>`
+**Usage:** `returns<F>(functions: Array<F>, ...args: ArgumentsType<F>): Array<ReturnType<F>>`
 
 ```typescript
 import { returns } from 'utilizes/returns'
@@ -939,7 +940,7 @@ lastPlaceOf([1,2,3,4], 6)
 
 Check array of items and return the item with the highest suffix number. if non is found return undefined.
 
-**Usage:** `maxByLastNumber(prefix: string, items: { [k: string]: any; }[] | string[], by?: string | number): string`
+**Usage:** `maxByLastNumber(prefix: string, items: { [key: string]: any; }[] | string[], by?: string | number): string`
 
 ```typescript
 import { maxByLastNumber } from 'utilizes/max-by-last-number'
@@ -996,6 +997,25 @@ prefix('Mr ', 'john', null, ' rich')
 
 <!-- *keywords [] *keywordsend -->
 
+### suffix
+
+Adding fix to the end of a string only if the string is present.
+
+**Usage:** `suffix(value: string, fix: string): string`
+
+```typescript
+import { suffix } from 'utilizes/suffix'
+
+suffix('Mr ', 'john')
+// Output: 'Mr john'
+suffix('Mr ', null)
+// Output: 'Mr '
+suffix(null, 'john')
+// Output: ''
+```
+
+<!-- *keywords [] *keywordsend -->
+
 ### sumBestMatch
 
 get sum of best match for the given strings
@@ -1022,7 +1042,7 @@ sumBestMatch(['one', 'one two', 'one two three'], ['one', 'two', 'three'])
 
 Convert given string to title case like
 
-**Usage:** `titleCase(str: string): string`
+**Usage:** `titleCase(target: string): string`
 
 ```typescript
 import { titleCase } from 'utilizes/title-case'
@@ -1039,7 +1059,7 @@ titleCase('mr_john')
 
 This function is like native setInterval, except its stopped when the given handler returns true or an error is accrue
 
-**Usage:** `interval(handler: (...args: any[]) => boolean, timeout?: number, ...args: any[]): number`
+**Usage:** `interval(handler: (...args) => boolean, timeout?: number, ...args): number`
 
 ```typescript
 import { interval } from 'utilizes/interval'
@@ -1073,4 +1093,4 @@ interval(()=>{
 // this will not stop the interval process
 ```
 
-<!-- *keywords [] *keywordsend -->
+<!-- *keywords ["safety-interval","setInterval","clearInterval"] *keywordsend -->

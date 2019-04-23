@@ -1,9 +1,9 @@
 import get from 'lodash/get'
 
-export const interval = (handler: (...args: any[]) => boolean, timeout?: number, ...args: any[]) => {
+export const interval = <T, A extends Array<T>>(handler: (...args: A) => boolean, timeout?: number, ...args: A) => {
 
   const handle: number = <any>setInterval(
-    (...args: any[]) => {
+    (...args: A) => {
       try {
         if (handler(...args)) clearInterval(handle)
       } catch (e) {

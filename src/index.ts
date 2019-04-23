@@ -32,6 +32,7 @@ import { setEach } from './set-each'
 import { setRecursive } from './set-recursive'
 import { someTruthy } from './some-truthy'
 import { someTruthyRight } from './some-truthy-right'
+import { suffix } from './suffix'
 import { sumBestMatch } from './sum-best-match'
 import { titleCase } from './title-case'
 import { toEnum } from './to-enum'
@@ -77,7 +78,8 @@ const utilizes = {
   toggle,
   placeOf,
   lastPlaceOf,
-  scenarios
+  scenarios,
+  suffix
 }
 
 export {
@@ -120,7 +122,8 @@ export {
   toggle,
   placeOf,
   lastPlaceOf,
-  scenarios
+  scenarios,
+  suffix
 }
 
 export default utilizes
