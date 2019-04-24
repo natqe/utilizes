@@ -2,7 +2,7 @@
 
 Get the current x and y of given element. also return the offset.
 
-**Usage:** `visiblePartOf(elem: HTMLElement): { x: number, y: number, offsetTop: number, offsetLeft: number }`
+**Usage:** `visiblePartOf(element: HTMLElement): { x: number, y: number, offsetTop: number, offsetLeft: number }`
 
 ```typescript
 import { visiblePartOf } from 'visible-part-of'

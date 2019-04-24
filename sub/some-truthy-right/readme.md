@@ -6,7 +6,7 @@ Return the truthy value or the last falsy value if none of the iteration returns
 
 Run over the given array from right to left
 
-**Usage:** `someTruthyRight<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y): Y`
+**Usage:** `someTruthyRight<T, R>(list: Array<T>, callback: (value: T, index: number, list: Array<T>) => R): R`
 
 ```typescript
 import { someTruthyRight } from 'some-truthy-right'

@@ -2,7 +2,7 @@
 
 Convert given string to title case like
 
-**Usage:** `titleCase(str: string): string`
+**Usage:** `titleCase(target: string): string`
 
 ```typescript
 import { titleCase } from 'utilizes.title-case'

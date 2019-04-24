@@ -2,7 +2,7 @@
 
 Check array of items and return the item with the highest suffix number. if non is found return undefined.
 
-**Usage:** `maxByLastNumber(prefix: string, items: { [k: string]: any; }[] | string[], by?: string | number): string`
+**Usage:** `maxByLastNumber(prefix: string, items: { [key: string]: any; }[] | string[], by?: string | number): string`
 
 ```typescript
 import { maxByLastNumber } from 'max-by-last-number'

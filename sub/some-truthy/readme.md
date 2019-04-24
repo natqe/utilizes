@@ -4,7 +4,7 @@ Checks if the callback returns truthy for any element of the array. Iteration is
 
 Return the truthy value or the last falsy value if none of the iteration returns truthy
 
-**Usage:** `someTruthy<T, Y>(array: T[], callback: (value: T, index: number, array: T[]) => Y, reverse?: boolean): Y`
+**Usage:** `someTruthy<T, R>(list: Array<T>, callback: (value: T, index: number, list: Array<T>) => R, reverse?: boolean): R`
 
 ```typescript
 import { someTruthy } from 'some-truthy'

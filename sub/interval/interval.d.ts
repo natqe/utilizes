@@ -1,2 +1,2 @@
-export declare const interval: (handler: (...args: any[]) => boolean, timeout?: number, ...args: any[]) => number;
+export declare const interval: <T, A extends T[]>(handler: (...args: A) => boolean, timeout?: number, ...args: A) => number;
 export default interval;

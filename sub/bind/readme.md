@@ -2,7 +2,7 @@
 
 Bind all methods of the given object to the object
 
-**Usage:** `bind<T>(this: T): T`
+**Usage:** `bind(this): this`
 
 ```typescript
 import { bind } from 'utilizes.bind'

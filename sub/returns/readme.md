@@ -2,7 +2,7 @@
 
 Invoke set of functions with same arguments at ones, and get the results.
 
-**Usage:** `returns<T>(functions: Array<T>, ...args: Array): Array<ReturnType<T>>`
+**Usage:** `returns<F>(functions: Array<F>, ...args: ArgumentsType<F>): Array<ReturnType<F>>`
 
 ```typescript
 import { returns } from 'utilizes.returns'

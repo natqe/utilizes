@@ -2,7 +2,7 @@
 
 This function is like native setInterval, except its stopped when the given handler returns true or an error is accrue
 
-**Usage:** `interval(handler: (...args: any[]) => boolean, timeout?: number, ...args: any[]): number`
+**Usage:** `interval(handler: (...args) => boolean, timeout?: number, ...args): number`
 
 ```typescript
 import { interval } from 'utilizes.interval'
@@ -36,5 +36,5 @@ interval(()=>{
 // this will not stop the interval process
 ```
 
-<!-- *keywords [] *keywordsend -->
+<!-- *keywords ["safety-interval","setInterval","clearInterval"] *keywordsend -->
 This module exported from [utilizes](https://www.npmjs.com/package/utilizes) project.

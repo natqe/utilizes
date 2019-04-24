@@ -7,7 +7,7 @@ so if you want to cancel the detection in any point, you can invoke the return f
 
 The second argument is for setting the timeout for detection cycle.
 
-**Usage:** `easyStyleShadow(css: { [k: string]: string }, timeout?: number): Function`
+**Usage:** `easyStyleShadow(css: { [key: string]: string }, timeout?: number): Function`
 
 ```typescript
 import { easyStyleShadow } from 'easy-style-shadow'
