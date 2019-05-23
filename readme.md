@@ -46,6 +46,7 @@ Simple js utilities to speed up your work
   - [incrementLast](#incrementlast)
   - [lastPlaceOf](#lastplaceof)
   - [maxByLastNumber](#maxbylastnumber)
+  - [numericCode](#numericcode)
   - [placeOf](#placeof)
   - [prefix](#prefix)
   - [suffix](#suffix)
@@ -949,6 +950,23 @@ maxByLastNumber('name', ['name1', 'name2', 'otherName'])
 // Output: "name2"
 maxByLastNumber('dexter', [{ nickname: 'dexter3' }, { nickname: 'dexter2' }], 'nickname')
 // Output: "dexter3"
+```
+
+<!-- *keywords [] *keywordsend -->
+
+### numericCode
+
+Return random numeric string with specify length (default to six)
+
+**Usage:** `numericCode(size?: number): string`
+
+```typescript
+import { numericCode } from 'utilizes/numeric-code'
+
+numericCode(10)
+// Output random numeric string with length of 10 characters
+numericCode() // default size is six
+// Output random numeric string with length of 6 characters
 ```
 
 <!-- *keywords [] *keywordsend -->

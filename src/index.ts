@@ -19,6 +19,7 @@ import { lastPlaceOf } from './last-place-of'
 import { mapDiff } from './map-diff'
 import { mapZIndex } from './map-z-index'
 import { maxByLastNumber } from './max-by-last-number'
+import { numericCode } from './numeric-code'
 import { offset } from './offset'
 import { oneOrAll } from './one-or-all'
 import { placeOf } from './place-of'
@@ -79,7 +80,8 @@ const utilizes = {
   placeOf,
   lastPlaceOf,
   scenarios,
-  suffix
+  suffix,
+  numericCode
 }
 
 export {
@@ -123,7 +125,8 @@ export {
   placeOf,
   lastPlaceOf,
   scenarios,
-  suffix
+  suffix,
+  numericCode
 }
 
 export default utilizes
