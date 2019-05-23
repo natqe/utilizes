@@ -1,2 +1,2 @@
-export declare const oneOrAll: <T>(array: T | ReadonlyArray<T>) => T | ReadonlyArray<T>;
+export declare const oneOrAll: <T>(array: T | readonly T[]) => T | readonly T[];
 export default oneOrAll;
