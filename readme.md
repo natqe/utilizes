@@ -38,6 +38,7 @@ Simple js utilities to speed up your work
   - [toggle](#toggle)
 - [String](#string)
   - [allCombinations](#allcombinations)
+  - [assertLower](#assertlower)
   - [camelClassCase](#camelclasscase)
   - [chars](#chars)
   - [charsAll](#charsall)
@@ -805,6 +806,23 @@ allCombinations(`ab`, ``) // example how to use it with letters
 ```
 
 <!-- *keywords [] *keywordsend -->
+
+### assertLower
+
+Assert between two or more strings as they were writing in lower case
+
+**Usage:** `assertLower(...strings): boolean`
+
+```typescript
+import { assertLower } from 'utilizes/camel-class-case'
+
+assertLower(`aBc`, String(`AbC`), `ABC`)
+// Output: true
+assertLower(`abc`, `ABC`)
+// Output: true
+```
+
+<!-- *keywords ["lower-case", "case-sensitive"] *keywordsend -->
 
 ### camelClassCase
 
