@@ -1,4 +1,5 @@
 import { area } from './area'
+import { assertLower } from './assert-lower'
 import { beside } from './beside'
 import { bind } from './bind'
 import { camelClassCase } from './camel-class-case'
@@ -81,7 +82,8 @@ const utilizes = {
   lastPlaceOf,
   scenarios,
   suffix,
-  numericCode
+  numericCode,
+  assertLower
 }
 
 export {
@@ -126,7 +128,8 @@ export {
   lastPlaceOf,
   scenarios,
   suffix,
-  numericCode
+  numericCode,
+  assertLower
 }
 
 export default utilizes
