@@ -814,7 +814,7 @@ Assert between two or more strings as they were writing in lower case
 **Usage:** `assertLower(...strings): boolean`
 
 ```typescript
-import { assertLower } from 'utilizes/camel-class-case'
+import { assertLower } from 'utilizes/assert-lower'
 
 assertLower(`aBc`, String(`AbC`), `ABC`)
 // Output: true
