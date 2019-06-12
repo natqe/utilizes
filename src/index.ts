@@ -1,3 +1,4 @@
+import { suffixFrom } from 'suffix-from'
 import { area } from './area'
 import { assertLower } from './assert-lower'
 import { beside } from './beside'
@@ -83,7 +84,8 @@ const utilizes = {
   scenarios,
   suffix,
   numericCode,
-  assertLower
+  assertLower,
+  suffixFrom
 }
 
 export {
@@ -129,7 +131,8 @@ export {
   scenarios,
   suffix,
   numericCode,
-  assertLower
+  assertLower,
+  suffixFrom
 }
 
 export default utilizes

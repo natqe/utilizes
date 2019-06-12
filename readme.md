@@ -51,6 +51,7 @@ Simple js utilities to speed up your work
   - [placeOf](#placeof)
   - [prefix](#prefix)
   - [suffix](#suffix)
+  - [suffixFrom](#suffixfrom)
   - [sumBestMatch](#sumbestmatch)
   - [titleCase](#titlecase)
 - [Timer](#timer)
@@ -1048,6 +1049,21 @@ suffix('Mr ', null)
 // Output: 'Mr '
 suffix(null, 'john')
 // Output: ''
+```
+
+<!-- *keywords [] *keywordsend -->
+
+### suffixFrom
+
+ Get suffix from string - by splitter.
+
+**Usage:** `suffixFrom(subject: string, splitter: string | RegExp): string`
+
+```typescript
+import { suffixFrom } from 'utilizes/suffix-from'
+
+suffixFrom(`a/b/cd `, `/`)
+// Output: 'cd'
 ```
 
 <!-- *keywords [] *keywordsend -->
