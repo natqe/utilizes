@@ -1,0 +1,1 @@
+(function () {var a={};function b(r,$){return r.split($).pop()}Object.defineProperty(a,"__esModule",{value:!0});var c=b;a.suffixFrom=c;if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=a}else if(typeof define==="function"&&define.amd){define(function(){return a})}})();
