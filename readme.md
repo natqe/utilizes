@@ -31,6 +31,7 @@ Simple js utilities to speed up your work
   - [rangeWithNames](#rangwithnames)
 - [Object](#object)
   - [delRecursive](#delrecursive)
+  - [partialEqual](#partialequal)
   - [set](#set)
   - [setEach](#seteach)
   - [setRecursive](#setrecursive)
@@ -605,6 +606,25 @@ delRecursive(person, propsToDelete)
 //     family: { }
 //   }
 // }
+```
+
+<!-- *keywords [] *keywordsend -->
+
+### partialEqual
+
+Check if partial of object equal to another object. when pathes supplies, check the value of the pathes in the object if they equal
+
+**Usage:** `partialEqual<T>(input1: T, input2: T, ...pathes): boolean`
+
+```typescript
+import { partialEqual } from 'utilizes/partial-equal'
+
+partialEqual({ a: 1, b: 2 }, { a: 1, b: 1 })
+// Output: true
+partialEqual({ a: 2, b: 2 }, { a: 1, b: 2 }, `a`, `b`)
+// Output: false
+partialEqual({ a: 2, b: 2 }, { a: 1, b: 2 }, `b`))
+// Output: true
 ```
 
 <!-- *keywords [] *keywordsend -->

@@ -23,6 +23,7 @@ import { maxByLastNumber } from './max-by-last-number'
 import { numericCode } from './numeric-code'
 import { offset } from './offset'
 import { oneOrAll } from './one-or-all'
+import { partialEqual } from './partial-equal'
 import { placeOf } from './place-of'
 import { prefix } from './prefix'
 import { push } from './push'
@@ -85,7 +86,8 @@ const utilizes = {
   suffix,
   numericCode,
   assertLower,
-  suffixFrom
+  suffixFrom,
+  partialEqual
 }
 
 export {
@@ -132,7 +134,8 @@ export {
   suffix,
   numericCode,
   assertLower,
-  suffixFrom
+  suffixFrom,
+  partialEqual
 }
 
 export default utilizes
