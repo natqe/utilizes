@@ -31,6 +31,7 @@ Simple js utilities to speed up your work
   - [rangeWithNames](#rangwithnames)
 - [Object](#object)
   - [delRecursive](#delrecursive)
+  - [omitNil](#omitnil)
   - [partialEqual](#partialequal)
   - [set](#set)
   - [setEach](#seteach)
@@ -610,6 +611,26 @@ delRecursive(person, propsToDelete)
 //     family: { }
 //   }
 // }
+```
+
+<!-- *keywords [] *keywordsend -->
+
+### omitNil
+
+Creates an object composed of the own and inherited enumerable string keyed properties of object that doesn't null or undefined.
+
+**Usage:** `omitNil<T>(object: T): T`
+
+```typescript
+import { omitNil } from 'utilizes/omit-nil'
+
+omitNil({
+  a: null,
+  b: `Some value`,
+  c: undefined,
+  d: false
+})
+// Output: { b: 'Some value', d: false }
 ```
 
 <!-- *keywords [] *keywordsend -->

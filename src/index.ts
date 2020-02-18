@@ -42,6 +42,7 @@ import { titleCase } from './title-case'
 import { toEnum } from './to-enum'
 import { toggle } from './toggle'
 import { visiblePartOf } from './visible-part-of'
+import { omitNil } from './omit-nil'
 
 const utilizes = {
   area,
@@ -87,7 +88,8 @@ const utilizes = {
   numericCode,
   assertLower,
   suffixFrom,
-  partialEqual
+  partialEqual,
+  omitNil
 }
 
 export {
@@ -135,7 +137,8 @@ export {
   numericCode,
   assertLower,
   suffixFrom,
-  partialEqual
+  partialEqual,
+  omitNil
 }
 
 export default utilizes
