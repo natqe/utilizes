@@ -32,6 +32,7 @@ Simple js utilities to speed up your work
 - [Object](#object)
   - [delRecursive](#delrecursive)
   - [omitNil](#omitnil)
+  - [omitUndefined](#omitundefined)
   - [partialEqual](#partialequal)
   - [set](#set)
   - [setEach](#seteach)
@@ -631,6 +632,27 @@ omitNil({
   d: false
 })
 // Output: { b: 'Some value', d: false }
+```
+
+<!-- *keywords [] *keywordsend -->
+
+
+### omitUndefined
+
+Creates an object composed of the own and inherited enumerable string keyed properties of object that doesn't undefined.
+
+**Usage:** `omitUndefined<T>(object: T): T`
+
+```typescript
+import { omitUndefined } from 'utilizes/omit-undefined'
+
+omitUndefined({
+  a: null,
+  b: `Some value`,
+  c: undefined,
+  d: false
+})
+// Output: { a: null, b: `Some value`,  d: false }
 ```
 
 <!-- *keywords [] *keywordsend -->
