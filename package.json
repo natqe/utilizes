@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "parcel": "ts-node parcel",
-    "build": "rm -rf dist && npx typescript && cp readme.md dist/readme.md && cp LICENSE dist/LICENSE  && cp -R src dist/src && npm version patch && cp package.json dist/package.json && cd dist/ && npm publish"
+    "build": "rm -rf dist && npx tsc --module ES2015 --moduleResolution node && cp readme.md dist/readme.md && cp LICENSE dist/LICENSE  && cp -R src dist/src && npm version patch && cp package.json dist/package.json && cd dist/ && npm publish"
   },
   "repository": {
     "type": "git",
