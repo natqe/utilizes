@@ -1,15 +1,23 @@
 {
   "compilerOptions": {
-    "module": "es2020",
-    "moduleResolution": "node",
+    "module": "commonjs",
     "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "noLib": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "ES2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./src",
-    "sourceRoot": "../../node_modules/utilizes/src",
-    "skipLibCheck": true
+    "sourceRoot": "../../node_modules/utilizes/src"
   },
-  "include": ["src/*"]
+  "include": ["src/*"],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "test",
+    "dist"
+  ]
 }

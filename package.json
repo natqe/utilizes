@@ -2,10 +2,10 @@
   "name": "utilizes",
   "version": "1.3.44",
   "description": "Simple js utilities to speed your work",
-  "main": "index.js",
+  "main": "parcel/index.ts",
   "scripts": {
     "test": "jest",
-    "parcel": "ts-node parcel",
+    "parcel": "ts-node parcel/index.ts",
     "build": "rm -rf dist && npx tsc --module ES2015 --moduleResolution node && cp readme.md dist/readme.md && cp LICENSE dist/LICENSE  && cp -R src dist/src && npm version patch && cp package.json dist/package.json && cd dist/ && npm publish"
   },
   "repository": {
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/jest": "26.0.23",
     "@types/lodash-es": "^4.17.4",
-    "@types/node": "15.6.1",
+    "@types/node": "^15.6.1",
     "@types/number-to-words": "1.2.1",
     "@types/parcel-bundler": "1.12.3",
     "@types/string-similarity": "4.0.0",
