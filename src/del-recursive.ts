@@ -1,6 +1,6 @@
-import size from 'lodash-es/size'
-import each from 'lodash-es/each'
-import includes from 'lodash-es/includes'
+import { size } from 'lodash-es'
+import { each } from 'lodash-es'
+import { includes } from 'lodash-es'
 import { iterable } from './_iterable'
 
 export const delRecursive = (on: object | any[] | Function, to: any[]) => {

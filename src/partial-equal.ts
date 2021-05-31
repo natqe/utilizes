@@ -1,6 +1,6 @@
-import get from 'lodash-es/get'
-import isEqual from 'lodash-es/isEqual'
-import isObjectLike from 'lodash-es/isObjectLike'
+import { get } from 'lodash-es'
+import { isEqual } from 'lodash-es'
+import { isObjectLike } from 'lodash-es'
 
 export function partialEqual<T>(input1: T, input2: T, ...pathes: Array<keyof T>): boolean
 export function partialEqual<T>(input1: T, input2, ...pathes: Array<keyof T>): boolean

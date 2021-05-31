@@ -1,4 +1,4 @@
-import reduce from 'lodash-es/reduce'
+import { reduce } from 'lodash-es'
 import { CHAR_TYPES } from './_char_types'
 import { chars } from './chars'
 

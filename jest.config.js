@@ -4,6 +4,9 @@ module.exports = {
   transform: {
     "^.+\\.ts$": "ts-jest"
   },
+  moduleNameMapper: {
+    "^lodash-es$": "lodash"
+},
   moduleFileExtensions: [`ts`, `tsx`, `js`, `jsx`, `json`, `node`],
   collectCoverage: true,
 }

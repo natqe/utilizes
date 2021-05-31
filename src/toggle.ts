@@ -1,7 +1,7 @@
-import findLastIndex from 'lodash-es/findLastIndex'
-import get from 'lodash-es/get'
-import isEqual from 'lodash-es/isEqual'
-import set from 'lodash-es/set'
+import { findLastIndex } from 'lodash-es'
+import { get } from 'lodash-es'
+import { isEqual } from 'lodash-es'
+import { set } from 'lodash-es'
 
 type PropertyName = string | number | symbol;
 

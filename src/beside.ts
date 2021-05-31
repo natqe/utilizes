@@ -1,4 +1,4 @@
-import values from 'lodash-es/values'
+import { values } from 'lodash-es'
 
 export const beside = <T extends { [prop: string]: any }>(tree: Array<T>, prop: keyof T) => {
 

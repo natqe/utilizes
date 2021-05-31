@@ -1,5 +1,5 @@
-import size from 'lodash-es/size'
-import each from 'lodash-es/each'
+import { size } from 'lodash-es'
+import { each } from 'lodash-es'
 import { iterable } from './_iterable'
 
 export const setRecursive = (on: object | any[] | Function, to: { [k: string]: any }, whenExist = true) => {

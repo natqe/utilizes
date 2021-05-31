@@ -1,6 +1,6 @@
-import each from 'lodash-es/each'
-import get from 'lodash-es/get'
-import _set from 'lodash-es/set'
+import { each } from 'lodash-es'
+import { get } from 'lodash-es'
+import { _set } from 'lodash-es'
 
 type Many<T> = T | ReadonlyArray<T>
 

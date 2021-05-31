@@ -1,6 +1,6 @@
-import find from 'lodash-es/find'
-import maxBy from 'lodash-es/maxBy'
-import mean from 'lodash-es/mean'
+import { find } from 'lodash-es'
+import { maxBy } from 'lodash-es'
+import { mean } from 'lodash-es'
 import { findBestMatch } from 'string-similarity'
 
 export interface Rating {

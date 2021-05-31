@@ -1,5 +1,5 @@
-import lowerCase from 'lodash-es/lowerCase'
-import startCase from 'lodash-es/startCase'
+import { lowerCase } from 'lodash-es'
+import { startCase } from 'lodash-es'
 
 export const titleCase = (value: string) => startCase(lowerCase(value))
 

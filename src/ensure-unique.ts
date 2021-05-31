@@ -1,6 +1,6 @@
-import size from 'lodash-es/size'
-import map from 'lodash-es/map'
-import includes from 'lodash-es/includes'
+import { size } from 'lodash-es'
+import { map } from 'lodash-es'
+import { includes } from 'lodash-es'
 import { incrementLast } from './increment-last'
 
 export function ensureUnique(toBeUniq: number, items: Array<typeof toBeUniq> | Array<{ [k: string]: any }>, by?: string | number, caseInsensitive?: boolean): typeof toBeUniq // public signature

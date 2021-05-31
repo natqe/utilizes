@@ -1,8 +1,8 @@
-import flatten from 'lodash-es/flatten'
-import get from 'lodash-es/get'
-import isEqual from 'lodash-es/isEqual'
-import map from 'lodash-es/map'
-import unionWith from 'lodash-es/unionWith'
+import { flatten } from 'lodash-es'
+import { get } from 'lodash-es'
+import { isEqual } from 'lodash-es'
+import { map } from 'lodash-es'
+import { unionWith } from 'lodash-es'
 
 export const mapDiff = <T, R>(lists: Array<Array<T>>, callback: (items: Array<T>, indexes: Array<number>, lists: Array<Array<T>>) => R, detectBy?: keyof T) => {
 

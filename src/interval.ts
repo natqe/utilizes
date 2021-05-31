@@ -1,4 +1,4 @@
-import get from 'lodash-es/get'
+import { get } from 'lodash-es'
 
 export const interval = <T, A extends Array<T>>(handler: (...args: A) => boolean, timeout?: number, ...args: A) => {
 

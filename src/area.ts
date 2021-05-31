@@ -1,4 +1,4 @@
-import inRange from 'lodash-es/inRange'
+import { inRange } from 'lodash-es'
 import { visiblePartOf } from './visible-part-of'
 
 export const area = ({ pageX, pageY }: { pageX: number, pageY: number }, of: HTMLElement) => {

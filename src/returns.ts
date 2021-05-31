@@ -1,4 +1,4 @@
-import over from 'lodash-es/over'
+import { over } from 'lodash-es'
 
 type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
 
