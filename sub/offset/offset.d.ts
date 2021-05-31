@@ -1,4 +1,4 @@
-export declare const offset: (item: Element | Partial<DOMRect>) => {
+export declare const offset: (item: Element | Partial<ReturnType<Element['getBoundingClientRect']>>) => {
     top: number;
     left: number;
 };

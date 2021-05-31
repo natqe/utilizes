@@ -1,2 +1,2 @@
-export declare const assertLower: (...strings: string[]) => boolean;
+export declare const assertLower: (...strings: Array<string>) => boolean;
 export default assertLower;
