@@ -1,5 +1,5 @@
-import values from 'lodash/values'
-import isNaN from 'lodash/isNaN'
+import values from 'lodash-es/values'
+import isNaN from 'lodash-es/isNaN'
 
 export const mapZIndex = () => values(document.querySelectorAll('body *')).
   map(element => ({

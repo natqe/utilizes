@@ -1,4 +1,4 @@
-import invert from 'lodash/invert'
+import invert from 'lodash-es/invert'
 
 export const toEnum = (ob: { [k: string]: any }) => ({ ...ob, ...invert(ob) })
 

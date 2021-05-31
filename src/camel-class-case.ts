@@ -1,5 +1,5 @@
-import upperFirst from 'lodash/upperFirst'
-import camelCase from 'lodash/camelCase'
+import upperFirst from 'lodash-es/upperFirst'
+import camelCase from 'lodash-es/camelCase'
 
 export const camelClassCase = (word: string) => upperFirst(camelCase(word))
 

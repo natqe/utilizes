@@ -1,5 +1,5 @@
-import isArray from 'lodash/isArray'
-import size from 'lodash/size'
+import isArray from 'lodash-es/isArray'
+import size from 'lodash-es/size'
 
 export function oneOrAll<T, R>(value: T | Array<T>, callbackfn: (item: T, index?: number, array?: Array<T>) => R): R | Array<R>
 export function oneOrAll<T>(value: T | Array<T>): T | Array<T>

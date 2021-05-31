@@ -1,6 +1,6 @@
-import get from 'lodash/get'
-import isArray from 'lodash/isArray'
-import set from 'lodash/set'
+import get from 'lodash-es/get'
+import isArray from 'lodash-es/isArray'
+import set from 'lodash-es/set'
 
 type returnType = ReturnType<typeof Array.prototype.push>
 

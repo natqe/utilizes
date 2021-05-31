@@ -1,4 +1,4 @@
-import { camelCase, merge, uniq } from 'lodash'
+import { camelCase, merge, uniq } from 'lodash-es'
 import { allCombinations } from '../src/all-combinations'
 
 export class PackageJSONModel {

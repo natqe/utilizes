@@ -1,5 +1,5 @@
 import { toWords } from 'number-to-words'
-import range from 'lodash/range'
+import range from 'lodash-es/range'
 
 export const rangeWithNames = (start: number, end: number, step?: number) => range(start, end, step).map(number => ({
   number,

@@ -1,5 +1,5 @@
-import sampleSize from 'lodash/sampleSize'
-import times from 'lodash/times'
+import sampleSize from 'lodash-es/sampleSize'
+import times from 'lodash-es/times'
 import { chars } from './chars'
 
 export const numericCode = (size = 6) => {

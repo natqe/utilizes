@@ -1,5 +1,5 @@
 import { writeFile } from 'fs'
-import { camelCase, get, uniq } from 'lodash'
+import { camelCase, get, uniq } from 'lodash-es'
 import { promisify } from 'util'
 import { PackageJSONModel } from './package-json.model'
 
